@@ -33,6 +33,21 @@ Recompute the limited weight/grid sensitivity diagnostics with:
 python -m src.sensitivity_diagnostics
 ```
 
+Run the one-at-a-time fixed-structure stress test with:
+
+```bash
+python -m src.structural_sensitivity --output /tmp/structural_sensitivity.json
+```
+
+This analysis varies \(\phi_C\), \(\phi_M\), \(v_{S,0}\), \(q_K\), and \(c_a\)
+individually by \(\pm20\%\), keeps the nine fitted parameters fixed, and writes
+protocol-level results to the selected JSON path. The default tracked result is
+preserved; the runner refuses to overwrite an existing output. The archived
+reference results are in
+[`results/structural_sensitivity.json`](results/structural_sensitivity.json).
+These analyst-selected perturbations are numerical stress tests, not
+physiological ranges or parameter-uncertainty estimates.
+
 Rebuild the sampled-domain audit after placing the two source PDFs named below
 in the ignored local `refs/target_source/` directory:
 
@@ -88,12 +103,13 @@ manuscript and audit output describe these scope and limitations.
 ## Release status
 
 The public GitHub repository is available under AHSLab-UW. The
-`r11-revision` tag identifies the model and analysis source snapshot for the
-R11 revision; manuscript text, PDF, and highlights are not included. GitHub is
+`r12-r13-revision` tag identifies the model and analysis source snapshot for
+the combined R12/R13 revision; manuscript text, PDF, and highlights are not included. GitHub is
 the public source repository, not a DOI-backed archive; no archival DOI has
 been minted, and no software license has been assigned.
-Until a license is added, reuse is not granted. Funding and acknowledgement
-declarations also require author confirmation before manuscript submission.
+Until a license is added, reuse is not granted. The manuscript contains draft
+funding, acknowledgement, competing-interest, CRediT, and AI-use statements
+that require final author confirmation before submission.
 The source-publication PDFs and raster page images are not included; users must
 obtain source publications lawfully. Digitized observations are provided with
 citations and source-page hash metadata.

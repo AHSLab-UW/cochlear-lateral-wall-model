@@ -4,7 +4,7 @@
 \setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.10}
 \setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.4cm}r>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{8.0cm}@{}}
-\caption{Complete frozen parameter inventory: 78 model coefficients and two exposure proxies (nine fitted, 71 fixed). Values are generated from the verified freeze, rounded here to eight significant digits; simulations retain full precision. ``Fixed'' means not varied in the current joint fit, not directly measured. Dimensionless quantities are labeled as such.}\label{tab:model-parameters}\\
+\caption{Complete frozen parameter inventory: 78 model coefficients and two exposure proxies (nine fitted, 71 fixed). Values are generally rounded to eight significant digits; \(r_{\mathrm{series}}\) is displayed to four decimals while simulations retain full precision. ``Fixed'' means not varied in the current joint fit, not directly measured. Dimensionless quantities are labeled as such.}\label{tab:model-parameters}\\
 \toprule \textbf{Parameter / symbol} & \textbf{Value} & \textbf{Units} & \textbf{Status} & \textbf{Numerical source / qualification} \\ \midrule
 \endfirsthead
 \caption[]{Complete frozen parameter inventory (continued).}\\
@@ -69,7 +69,7 @@
 \(V_P\): ATP-sensitive load reversal & 0 & mV & fixed & A: zero-reversal approximation for a nonselective-cation load. \\
 \(C_V\): Effective circuit capacitance & 0.03 & \(G_0\,\mathrm{min}\) & fixed & A: normalized current-balance coefficient; not independently measured, and not itself the circuit time constant. \\
 \(V_0\): Reference EP & 80 & mV & fixed & A: representative resting voltage; \citet{SaltKonishi1979} provides context, not a universal baseline. \\
-\(r_{\mathrm{series}}\): Series-access resistance fraction & 0.4220148 & dimensionless & fixed & A: inherited effective resistance-observation coefficient; \citet{AsakumaSnow1980} provides resistance-ratio context, not this exact fraction. \\
+\(r_{\mathrm{series}}\): Series-access resistance fraction & 0.4220 & dimensionless & fixed & A: inherited effective coefficient; displayed to four decimals (\(0.4220\)) while the implementation retains \(0.4220148\). Extra stored digits do not imply measurement precision; exact source unresolved. \\
 \addlinespace[4pt]\multicolumn{5}{@{}l}{\textbf{Effective drug kinetics}}\\*
 \(\tau_{\mathrm{on}}\): Effective infusion-onset time & 0.22 & min & fixed & A: inherited onset time; \citet{PikeBosher1980} provides context, not a verified pharmacokinetic estimate. \\
 \(\tau_{\mathrm{fast}}\): Fast effective washout time & 1.55 & min & fixed & A: inherited washout time; \citet{PikeBosher1980} provides context, not a measured plasma clearance. \\

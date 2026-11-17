@@ -761,8 +761,8 @@ def build_figure5(t2_hou: dict | None = None):
 # GRAPHICAL ABSTRACT / ARCHITECTURAL SCHEMATIC
 # ==============================================================================
 def build_graphical_abstract():
-    from build_anatomical_infographic import build_anatomical_infographic
-    build_anatomical_infographic()
+    from build_anatomical_overview import build_anatomical_overview
+    build_anatomical_overview()
 
 
 def main():

@@ -1,0 +1,680 @@
+{
+  "status": "one-at-a-time fixed-structure sensitivity at the frozen fit",
+  "reference_parameters": {
+    "flow_base": 1.0,
+    "flow_min": 0.12,
+    "flow_smoothing": 0.01,
+    "autoregulation": 0.55,
+    "flow_tau": 1.5,
+    "oxygen_permeability": 1.0,
+    "arterial_oxygen": 0.13,
+    "oxygen_base": 0.07,
+    "oxygen_km": 0.035,
+    "oxygen_transport": 0.081,
+    "oxygen_stoichiometry": 6.0,
+    "oxygen_scaling": 0.0045,
+    "metabolism_base": 0.18,
+    "demand_gain": 0.35,
+    "atp_base": 1.0,
+    "sync_atp_tau": 2.0,
+    "marginal_atp_tau": 1.5,
+    "sync_pump_fraction": 0.65,
+    "marginal_pump_fraction": 0.78,
+    "sync_atp_km": 0.4,
+    "marginal_atp_km": 0.45,
+    "marginal_k_km": 4.0,
+    "strial_volume_base": 0.035,
+    "sync_volume": 0.4,
+    "marginal_volume": 0.042,
+    "water_permeability": 0.00024,
+    "potassium_reflection": 0.95,
+    "volume_restoration": 0.095,
+    "volume_span": 0.07,
+    "k_sync_base": 140.0,
+    "k_strial_base": 1.5,
+    "k_marginal_base": 145.0,
+    "k_endolymph_base": 150.0,
+    "k_plasma": 4.2,
+    "k_flux": 2.8,
+    "kir_fraction": 1.0,
+    "blb_leak": 0.0,
+    "drug_k_loss": 0.012931172189139986,
+    "drug_k_relax": 0.022,
+    "thermal_voltage": 26.7,
+    "pump_voltage": 15.0,
+    "voltage_offset": 10.16,
+    "intrastrial_voltage_offset": 4.87,
+    "sync_resistance": 1.0,
+    "strial_conductance": 1.0,
+    "drug_conductance_loss": 0.9491649325850179,
+    "met_conductance": 0.3,
+    "met_reversal": -70.0,
+    "p2x_reversal": 0.0,
+    "capacitance": 0.03,
+    "ep_base": 80.0,
+    "resistance_series_fraction": 0.4220148,
+    "drug_onset": 0.22,
+    "drug_fast": 1.55,
+    "drug_slow": 59.38031712461343,
+    "drug_slow_fraction": 0.6877569718262766,
+    "drug_hill": 2.6,
+    "atp_endolymph_base": 0.0074,
+    "atp_release": 0.1,
+    "atp_degradation": 1.5,
+    "atp_cleft_factor": 30.0,
+    "p2x_max": 0.9797,
+    "p2x_half": 12.34,
+    "p2x_hill": 1.0,
+    "adapt_rate": 0.1482397521170445,
+    "adapt_recovery": 90.0,
+    "adapt_half": 0.105,
+    "adapt_hill": 2.2,
+    "adapt_rest": 0.23,
+    "adapt_evoked": 0.9464138947187322,
+    "adapt_p2x_fraction": 0.78,
+    "adapt_p2x_half": 0.006,
+    "trauma_half": 0.272,
+    "trauma_hill": 14.0,
+    "trauma_time": 26.0,
+    "repair_time": 95.0,
+    "trauma_vasoconstriction": 0.20000000000000012,
+    "trauma_k_leak": 0.052
+  },
+  "fixed_parameters_varied": {
+    "phi_C": {
+      "implementation_field": "sync_volume",
+      "reference_value": 0.4,
+      "relative_changes": [
+        -0.2,
+        0.2
+      ]
+    },
+    "phi_M": {
+      "implementation_field": "marginal_volume",
+      "reference_value": 0.042,
+      "relative_changes": [
+        -0.2,
+        0.2
+      ]
+    },
+    "v_S_0": {
+      "implementation_field": "strial_volume_base",
+      "reference_value": 0.035,
+      "relative_changes": [
+        -0.2,
+        0.2
+      ]
+    },
+    "q_K": {
+      "implementation_field": "k_flux",
+      "reference_value": 2.8,
+      "relative_changes": [
+        -0.2,
+        0.2
+      ]
+    },
+    "c_a": {
+      "implementation_field": "atp_cleft_factor",
+      "reference_value": 30.0,
+      "relative_changes": [
+        -0.2,
+        0.2
+      ]
+    }
+  },
+  "fit_parameter_treatment": "All nine fitted parameters remain at their reference values; no refits are performed after changing a fixed structural parameter.",
+  "reference_measurements": {
+    "zhang_90_db_tone": {
+      "tone_level_db_spl": 90,
+      "outcome_informed_drive": 1.076,
+      "plateau_isp_mV": -2.5840520159276585,
+      "plateau_ep_mV": -2.5499110580993154,
+      "maximum_tone_evoked_delta_k_is_mM": 0.0007587026066915858
+    },
+    "generic_broadband_noise": {
+      "105": {
+        "maximum_k_m_during_exposure_mM": 146.005329384,
+        "minimum_ep_during_exposure_mV": 76.543405652,
+        "post_offset_ep_peak_mV": 85.962266656,
+        "post_offset_ep_peak_time_min": 21.5,
+        "ep_at_recovery_end_mV": 81.579735384
+      },
+      "115": {
+        "maximum_k_m_during_exposure_mM": 149.524308337,
+        "minimum_ep_during_exposure_mV": 72.693252743,
+        "post_offset_ep_peak_mV": 85.358313725,
+        "post_offset_ep_peak_time_min": 22.0,
+        "ep_at_recovery_end_mV": 81.226716821
+      },
+      "125": {
+        "maximum_k_m_during_exposure_mM": 195.038489978,
+        "minimum_ep_during_exposure_mV": 60.651716352,
+        "post_offset_ep_peak_mV": 73.385908481,
+        "post_offset_ep_peak_time_min": 120.0,
+        "ep_at_recovery_end_mV": 73.385908481
+      }
+    },
+    "80_mg_kg_furosemide": {
+      "dose_mg_kg": 80.0,
+      "furosemide_exposure_proxy_peak": 3.9062745673622006,
+      "minimum_k_m_during_protocol_mM": 52.46340008924839,
+      "time_of_minimum_k_m_min": 5.5,
+      "time_of_minimum_nkcc_availability_min": 0.5,
+      "minimum_nkcc_availability": 0.03696881942431647
+    }
+  },
+  "variants": [
+    {
+      "symbol": "phi_C",
+      "parameter_field": "sync_volume",
+      "relative_change": -0.2,
+      "reference_value": 0.4,
+      "changed_value": 0.32000000000000006,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.58427930133129,
+          "plateau_ep_mV": -2.549920889187097,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0009449047878438144
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.21145257,
+            "minimum_ep_during_exposure_mV": 76.542695602,
+            "post_offset_ep_peak_mV": 85.972639181,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.659069525
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.910635058,
+            "minimum_ep_during_exposure_mV": 72.68951859,
+            "post_offset_ep_peak_mV": 85.372692726,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.331634308
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 190.531466903,
+            "minimum_ep_during_exposure_mV": 61.399738814,
+            "post_offset_ep_peak_mV": 73.73500889,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.73500889
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.41647643407322,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "phi_C",
+      "parameter_field": "sync_volume",
+      "relative_change": 0.2,
+      "reference_value": 0.4,
+      "changed_value": 0.48,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.583898456751611,
+          "plateau_ep_mV": -2.549904045777468,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0006338233136654603
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 145.859073728,
+            "minimum_ep_during_exposure_mV": 76.543879525,
+            "post_offset_ep_peak_mV": 85.95420257,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.505509852
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.269965827,
+            "minimum_ep_during_exposure_mV": 72.695751292,
+            "post_offset_ep_peak_mV": 85.347835492,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.128726675
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 199.07751782,
+            "minimum_ep_during_exposure_mV": 60.01898497,
+            "post_offset_ep_peak_mV": 73.055064694,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.055064694
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.49471864512029,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "phi_M",
+      "parameter_field": "marginal_volume",
+      "relative_change": -0.2,
+      "reference_value": 0.042,
+      "changed_value": 0.033600000000000005,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.5840842775434036,
+          "plateau_ep_mV": -2.5498632810808823,
+          "maximum_tone_evoked_delta_k_is_mM": 0.000758796687789498
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.054822995,
+            "minimum_ep_during_exposure_mV": 76.543579482,
+            "post_offset_ep_peak_mV": 85.935619911,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.590263142
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.619425958,
+            "minimum_ep_during_exposure_mV": 72.69519261,
+            "post_offset_ep_peak_mV": 85.323441473,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.237835178
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 195.462514841,
+            "minimum_ep_during_exposure_mV": 60.577024621,
+            "post_offset_ep_peak_mV": 73.38830256,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.38830256
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 48.77393159964369,
+          "time_of_minimum_k_m_min": 4.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "phi_M",
+      "parameter_field": "marginal_volume",
+      "relative_change": 0.2,
+      "reference_value": 0.042,
+      "changed_value": 0.0504,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.584026501256044,
+          "plateau_ep_mV": -2.5499512298818723,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0007586323260448391
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 145.957676075,
+            "minimum_ep_during_exposure_mV": 76.543288145,
+            "post_offset_ep_peak_mV": 85.987958705,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.5692154
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.42283129,
+            "minimum_ep_during_exposure_mV": 72.691920997,
+            "post_offset_ep_peak_mV": 85.389680116,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.215608208
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 194.570153136,
+            "minimum_ep_during_exposure_mV": 60.715215781,
+            "post_offset_ep_peak_mV": 73.383542699,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.383542699
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 55.35353298933748,
+          "time_of_minimum_k_m_min": 6.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "v_S_0",
+      "parameter_field": "strial_volume_base",
+      "relative_change": -0.2,
+      "reference_value": 0.035,
+      "changed_value": 0.028000000000000004,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.5843485453010717,
+          "plateau_ep_mV": -2.5501915858003366,
+          "maximum_tone_evoked_delta_k_is_mM": 0.000779810763351596
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.005467406,
+            "minimum_ep_during_exposure_mV": 76.54302447,
+            "post_offset_ep_peak_mV": 85.962806128,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.579773435
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.52471624,
+            "minimum_ep_during_exposure_mV": 72.692260027,
+            "post_offset_ep_peak_mV": 85.359104001,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.226757653
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 195.045781763,
+            "minimum_ep_during_exposure_mV": 60.651175545,
+            "post_offset_ep_peak_mV": 73.385929171,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.385929171
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.50906427566858,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "v_S_0",
+      "parameter_field": "strial_volume_base",
+      "relative_change": 0.2,
+      "reference_value": 0.035,
+      "changed_value": 0.042,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.5837574506507313,
+          "plateau_ep_mV": -2.54963791376971,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0007374643150882543
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.005188264,
+            "minimum_ep_during_exposure_mV": 76.543786209,
+            "post_offset_ep_peak_mV": 85.961727151,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.579697334
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.523896294,
+            "minimum_ep_during_exposure_mV": 72.694244964,
+            "post_offset_ep_peak_mV": 85.357523326,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.226676002
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 195.031157458,
+            "minimum_ep_during_exposure_mV": 60.652263264,
+            "post_offset_ep_peak_mV": 73.385887779,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.385887779
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.408338932129816,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "q_K",
+      "parameter_field": "k_flux",
+      "relative_change": -0.2,
+      "reference_value": 2.8,
+      "changed_value": 2.2399999999999998,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.5833874354776287,
+          "plateau_ep_mV": -2.550102261745436,
+          "maximum_tone_evoked_delta_k_is_mM": 0.000588096289918405
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 145.789954274,
+            "minimum_ep_during_exposure_mV": 76.5429074,
+            "post_offset_ep_peak_mV": 86.054418956,
+            "post_offset_ep_peak_time_min": 21.75,
+            "ep_at_recovery_end_mV": 81.549428392
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.71364042,
+            "minimum_ep_during_exposure_mV": 72.6837907,
+            "post_offset_ep_peak_mV": 85.208690898,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.083909684
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 207.397617139,
+            "minimum_ep_during_exposure_mV": 56.671227954,
+            "post_offset_ep_peak_mV": 71.884951645,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 71.884951645
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 55.82182711278929,
+          "time_of_minimum_k_m_min": 6.75,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "q_K",
+      "parameter_field": "k_flux",
+      "relative_change": 0.2,
+      "reference_value": 2.8,
+      "changed_value": 3.36,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.584720760530737,
+          "plateau_ep_mV": -2.549721159148229,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0009280345567348469
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.208603507,
+            "minimum_ep_during_exposure_mV": 76.543967538,
+            "post_offset_ep_peak_mV": 85.877501167,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.601672147
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.600054698,
+            "minimum_ep_during_exposure_mV": 72.701122363,
+            "post_offset_ep_peak_mV": 85.429066132,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.32298498
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 186.706112817,
+            "minimum_ep_during_exposure_mV": 63.18287746,
+            "post_offset_ep_peak_mV": 74.435729578,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 74.435729578
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 49.63778724505366,
+          "time_of_minimum_k_m_min": 4.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "c_a",
+      "parameter_field": "atp_cleft_factor",
+      "relative_change": -0.2,
+      "reference_value": 30.0,
+      "changed_value": 24.0,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.576441787159571,
+          "plateau_ep_mV": -2.546786999800889,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0007657280923963339
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 145.995679488,
+            "minimum_ep_during_exposure_mV": 76.58370078,
+            "post_offset_ep_peak_mV": 85.815477429,
+            "post_offset_ep_peak_time_min": 21.5,
+            "ep_at_recovery_end_mV": 81.538384117
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.410043095,
+            "minimum_ep_during_exposure_mV": 72.820293488,
+            "post_offset_ep_peak_mV": 85.277348999,
+            "post_offset_ep_peak_time_min": 21.75,
+            "ep_at_recovery_end_mV": 81.205978394
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 194.764873423,
+            "minimum_ep_during_exposure_mV": 60.787375405,
+            "post_offset_ep_peak_mV": 73.371060611,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.371060611
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.46341387123076,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    },
+    {
+      "symbol": "c_a",
+      "parameter_field": "atp_cleft_factor",
+      "relative_change": 0.2,
+      "reference_value": 30.0,
+      "changed_value": 36.0,
+      "measurements": {
+        "zhang_90_db_tone": {
+          "tone_level_db_spl": 90,
+          "outcome_informed_drive": 1.076,
+          "plateau_isp_mV": -2.5931631652116147,
+          "plateau_ep_mV": -2.554429920502713,
+          "maximum_tone_evoked_delta_k_is_mM": 0.0007533795272559596
+        },
+        "generic_broadband_noise": {
+          "105": {
+            "maximum_k_m_during_exposure_mM": 146.029558128,
+            "minimum_ep_during_exposure_mV": 76.478632641,
+            "post_offset_ep_peak_mV": 86.070677919,
+            "post_offset_ep_peak_time_min": 21.75,
+            "ep_at_recovery_end_mV": 81.609503149
+          },
+          "115": {
+            "maximum_k_m_during_exposure_mM": 149.670919129,
+            "minimum_ep_during_exposure_mV": 72.548694426,
+            "post_offset_ep_peak_mV": 85.420197163,
+            "post_offset_ep_peak_time_min": 22.0,
+            "ep_at_recovery_end_mV": 81.241437285
+          },
+          "125": {
+            "maximum_k_m_during_exposure_mM": 195.368632651,
+            "minimum_ep_during_exposure_mV": 60.488013808,
+            "post_offset_ep_peak_mV": 73.396440826,
+            "post_offset_ep_peak_time_min": 120.0,
+            "ep_at_recovery_end_mV": 73.396440826
+          }
+        },
+        "80_mg_kg_furosemide": {
+          "dose_mg_kg": 80.0,
+          "furosemide_exposure_proxy_peak": 3.9062745673622006,
+          "minimum_k_m_during_protocol_mM": 52.46338637401719,
+          "time_of_minimum_k_m_min": 5.5,
+          "time_of_minimum_nkcc_availability_min": 0.5,
+          "minimum_nkcc_availability": 0.03696881942431647
+        }
+      }
+    }
+  ],
+  "protocols": {
+    "zhang_90_db_tone": {
+      "description": "Four 10-s pulses at 90 dB SPL, with the outcome-informed drive used for the separate Figure 4 cohort.",
+      "tone_drive": 1.076,
+      "requested_output_step_seconds": 0.1,
+      "solver": {
+        "method": "Radau",
+        "rtol": 1e-08,
+        "atol": 1e-10
+      }
+    },
+    "generic_broadband_noise": {
+      "description": "20-min model-only exposures followed by 100-min recovery; not study-matched or independently validated.",
+      "levels_db_spl": [
+        105.0,
+        115.0,
+        125.0
+      ],
+      "requested_output_step_min": 0.25,
+      "solver": {
+        "method": "Radau",
+        "rtol": 1e-08,
+        "atol": 1e-10
+      }
+    },
+    "80_mg_kg_furosemide": {
+      "description": "80-mg/kg guinea-pig dose proxy with a 0.542-min infusion and 240-min simulation; the boundary-exchange protocol flag remains on.",
+      "requested_output_step_min": 0.25,
+      "solver": {
+        "method": "Radau",
+        "rtol": 1e-08,
+        "atol": 1e-10
+      }
+    }
+  },
+  "interpretation": "The perturbation magnitudes are analyst-selected numerical stress tests, not empirical confidence ranges or physiological bounds. These frozen-fit comparisons assess only the listed outputs and do not establish global robustness, parameter identifiability, uncertainty, or physiological validity.",
+  "source_sha256": {
+    "freeze": "8045591bb1f9a782b04fc4a15b3b44a25e40db6ef412be372333d6866a444e30",
+    "fit": "d934d50febbb40d864ab09702f7fe8cea561d98914de96018b93ae0c0d96959f",
+    "model_equations": "c5b641501347b8bc0231d57d15f7018b9e2961bf756f3e2616e754b0f318dd34",
+    "analysis_code": "0a512ec3488a98534d0b87c47734ed5587bb7afd7c9f85bfd9ad7add08e77b32"
+  }
+}
