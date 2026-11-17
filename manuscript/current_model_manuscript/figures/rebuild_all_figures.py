@@ -390,7 +390,7 @@ def build_figure2(stab: dict | None = None):
         (85.37 - 60.0) / 120.0 * 100.0,
         (1.195 - 0.1) / 1.4 * 100.0,
     ]
-    axC.axvspan(0, 100, color="#F0FDF4", alpha=0.85, zorder=0, label="Analyst-selected screen display [0%, 100%]")
+    axC.axvspan(0, 100, color="#F0FDF4", alpha=0.85, zorder=0, label="Analyst-selected screen [0-100%]")
     axC.axvline(0, color=CRIMSON, lw=0.9, ls="--", zorder=2)
     axC.axvline(100, color=CRIMSON, lw=0.9, ls="--", zorder=2)
     axC.barh(y_pos - 0.16, ref_norm, height=0.28, color=ORANGE, zorder=3, label="Frozen reference")
@@ -399,7 +399,7 @@ def build_figure2(stab: dict | None = None):
     axC.text(ref_norm[0] + 2.5, 0 - 0.16, "195.0 mM (+15.0)", va="center", ha="left", fontsize=5.6, fontweight="bold", color=ORANGE)
     axC.text(cap_norm[0] - 2.5, 0 + 0.16, "164.3 mM", va="center", ha="right", fontsize=5.6, fontweight="bold", color="white")
 
-    axC.text(2.5, 1 - 0.16, "52.5 mM (−7.5 below floor)", va="center", ha="left", fontsize=5.6, fontweight="bold", color=ORANGE)
+    axC.text(2.5, 1 - 0.16, "52.5 mM", va="center", ha="left", fontsize=5.6, fontweight="bold", color=ORANGE)
     axC.text(cap_norm[1] + 2.5, 1 + 0.16, "85.4 mM", va="center", ha="left", fontsize=5.6, fontweight="bold", color=BLUE)
 
     axC.text(ref_norm[2] + 2.5, 2 - 0.16, "1.84 (+0.34)", va="center", ha="left", fontsize=5.6, fontweight="bold", color=ORANGE)
