@@ -4,6 +4,8 @@ This repository accompanies the *Hearing Research* manuscript in
 [`manuscript/current_model_manuscript/`](manuscript/current_model_manuscript/).
 It contains the model implementation, calibration and diagnostic scripts,
 selected digitized evidence, reproducibility outputs, manuscript source, and figures.
+Standalone fit and plotting workflows outside the current manuscript pipeline
+are excluded.
 
 ## Reproducibility
 
