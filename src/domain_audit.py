@@ -1,5 +1,6 @@
 """Reproduce the six-study objective and audit sampled model domains."""
 
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -27,6 +28,7 @@ from src.wang_noise_traces import load_noise
 FIT = joint_fit.OUTPUT
 RESIDUALS = ROOT / "results/calibration_residual_vector.json"
 OUTPUT = ROOT / "results/domain_audit.json"
+PROTOCOL_TABLE = ROOT / "results/protocol_domain_summary.csv"
 INPUT_SOURCES = (
     FIT,
     RESIDUALS,
@@ -57,6 +59,8 @@ class DomainRanges:
             for name in STATE_NAMES
         }
         self.observables = {}
+        self.initial_sample = None
+        self.final_sample = None
         self.invalid_sample_counts = {
             "nonfinite_state": 0,
             "nonpositive_required_state": 0,
@@ -73,6 +77,12 @@ class DomainRanges:
             raise ValueError("simulation output does not match the 13-state schema")
         self.simulation_calls += 1
         self.samples += len(times)
+        self.initial_sample = self._sample(
+            times[0], states[:, 0], forcing, closure, parameters
+        )
+        self.final_sample = self._sample(
+            times[-1], states[:, -1], forcing, closure, parameters
+        )
         if not np.isfinite(states).all():
             self.invalid_sample_counts["nonfinite_state"] += int(
                 np.size(states) - np.isfinite(states).sum()
@@ -110,10 +120,21 @@ class DomainRanges:
             if values["sync_workload"] < 0 or values["marginal_workload"] < 0:
                 self.invalid_sample_counts["negative_workload"] += 1
 
-    def report(self, rhs_evaluations):
+    @staticmethod
+    def _sample(time, state, forcing, closure, parameters):
+        values = observables(state, forcing(float(time)), closure, parameters)
+        if not all(np.isfinite(value) for value in values.values()):
+            raise ValueError("nonfinite derived observable at protocol endpoint")
+        return {
+            "time_min": float(time),
+            "states": dict(zip(STATE_NAMES, map(float, state))),
+            "derived_observables": {name: float(value) for name, value in values.items()},
+        }
+
+    def report(self, rhs_evaluations, *, include_endpoints=False):
         if not self.samples:
             raise ValueError("no sampled simulation states were audited")
-        return {
+        result = {
             "simulation_calls": self.simulation_calls,
             "sampled_output_count": self.samples,
             "completed_rhs_evaluations": rhs_evaluations,
@@ -121,10 +142,125 @@ class DomainRanges:
             "derived_observables": self.observables,
             "sampled_domain_violations": self.invalid_sample_counts,
         }
+        if include_endpoints:
+            result["initial_sample"] = self.initial_sample
+            result["final_sample"] = self.final_sample
+        return result
 
 
 def _sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def benchmark_protocol_metadata(call_index):
+    phases = ("quiet settling", "noise exposure", "matched quiet comparator")
+    health = ("Reference", "Moderate deficit", "Larger deficit")
+    susceptibility = ("Lower susceptibility", "Reference susceptibility",
+                      "Higher susceptibility")
+
+    if 1 <= call_index <= 4:
+        labels = (
+            "Zhang Fig. 4 broadband, 90 dB SPL",
+            "Zhang Fig. 4 tone, 90 dB SPL",
+            "Zhang Fig. 5 broadband levels",
+            "Zhang Fig. 5 tone levels",
+        )
+        return "Zhang et al. (2021)", labels[call_index - 1], "Radau reference"
+
+    if 5 <= call_index <= 31:
+        scenario, phase = divmod(call_index - 5, 3)
+        label = (
+            f"Hou {health[scenario // 3]} health, "
+            f"{susceptibility[scenario % 3]}: {phases[phase]}"
+        )
+        return "Hou et al. (2020)", label, "Radau reference"
+
+    if 32 <= call_index <= 35:
+        labels = (
+            "Zhang Fig. 4 tone, 90 dB SPL",
+            "Zhang Fig. 5 tone levels",
+            "Zhang Fig. 4 broadband, 90 dB SPL",
+            "Zhang Fig. 5 broadband levels",
+        )
+        return "Zhang et al. (2021)", labels[call_index - 32], "BDF solver comparison"
+
+    if 36 <= call_index <= 44:
+        scenario, phase = divmod(call_index - 36, 3)
+        scenario *= 4
+        label = (
+            f"Hou {health[scenario // 3]} health, "
+            f"{susceptibility[scenario % 3]}: {phases[phase]}"
+        )
+        return "Hou et al. (2020)", label, "BDF solver comparison"
+
+    if call_index == 45:
+        return (
+            "Zhang et al. (2021)",
+            "Zhang Fig. 4 tone, 90 dB SPL",
+            "0.05-s output-grid refinement",
+        )
+
+    if 46 <= call_index <= 48:
+        phase = call_index - 46
+        label = (
+            f"Hou Larger deficit health, Higher susceptibility: {phases[phase]}"
+        )
+        variant = "Radau output-grid refinement"
+        return "Hou et al. (2020)", label, variant
+
+    raise ValueError(f"unrecognized Zhang/Hou benchmark simulation call {call_index}")
+
+
+def write_protocol_table(report):
+    fields = (
+        "analysis_group", "study", "protocol_label", "protocol_variant",
+        "simulation_module", "call_index",
+        "requested_start_time_min", "requested_end_time_min",
+        "minimum_requested_output_spacing_min", "solver_method",
+        "solver_rtol", "solver_atol", "forcing_profile",
+        "quantity_class", "quantity", "initial", "minimum", "maximum", "final",
+    )
+    with PROTOCOL_TABLE.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer.writeheader()
+        for key, protocol in report["per_protocol_sampled_domain_audit"].items():
+            initial = protocol["initial_sample"]
+            final = protocol["final_sample"]
+            group, _, _ = key.split("/", 2)
+            shared = {
+                "analysis_group": group,
+                "study": protocol["study"],
+                "protocol_label": protocol["protocol_label"],
+                "protocol_variant": protocol["protocol_variant"],
+                "simulation_module": protocol["simulation_module"],
+                "call_index": protocol["call_index_within_module"],
+                "requested_start_time_min": protocol["requested_time_range_min"][0],
+                "requested_end_time_min": protocol["requested_time_range_min"][1],
+                "minimum_requested_output_spacing_min": protocol[
+                    "minimum_requested_output_spacing_min"
+                ],
+                "solver_method": protocol["solver_method"],
+                "solver_rtol": protocol["solver_rtol"],
+                "solver_atol": protocol["solver_atol"],
+                "forcing_profile": json.dumps(
+                    protocol["forcing_profile_at_start_midpoint_end"],
+                    sort_keys=True,
+                ),
+            }
+            for kind, field in (
+                ("state", "states"),
+                ("derived_observable", "derived_observables"),
+            ):
+                for name, bounds in protocol[field].items():
+                    writer.writerow({
+                        **shared,
+                        "quantity_class": kind,
+                        "quantity": name,
+                        "initial": initial[field][name],
+                        "minimum": bounds["minimum"],
+                        "maximum": bounds["maximum"],
+                        "final": final[field][name],
+                    })
 
 
 def build_report():
@@ -148,6 +284,8 @@ def build_report():
         "benchmarks": DomainRanges(),
         "model_only_scenarios": DomainRanges(),
     }
+    protocol_trackers = {}
+    protocol_call_counts = {}
     active_group = ["calibration"]
     rhs_counts = {
         "calibration": 0,
@@ -171,9 +309,11 @@ def build_report():
     for module in SIMULATION_MODULES:
         original = module.simulate
         originals[module] = original
+        module_name = module.__name__.rsplit(".", 1)[-1]
+        protocol_call_counts[module_name] = 0
 
         def capture(times, forcing, closure, parameters=Parameters(), *args,
-                    _original=original, **kwargs):
+                    _original=original, _module_name=module_name, **kwargs):
             requested_times = np.asarray(times, dtype=float)
             boundaries = np.asarray(kwargs.get("boundaries", ()), dtype=float)
             dense_times = np.unique(np.r_[
@@ -188,6 +328,74 @@ def build_report():
             trackers[active_group[0]].add(
                 dense_times, dense_states, forcing, closure, parameters
             )
+            protocol_call_counts[_module_name] += 1
+            call_index = protocol_call_counts[_module_name]
+            key = f"{active_group[0]}/{_module_name}/{call_index:02d}"
+            protocol_tracker = DomainRanges()
+            protocol_tracker.add(
+                dense_times, dense_states, forcing, closure, parameters
+            )
+            profile_times = np.unique(
+                [dense_times[0], dense_times[len(dense_times) // 2], dense_times[-1]]
+            )
+            forcing_profile = {
+                f"{time:.9g}": vars(forcing(float(time)))
+                for time in profile_times
+            }
+            if _module_name == "tier2_zhang_hou_benchmarks":
+                study, protocol_label, protocol_variant = (
+                    benchmark_protocol_metadata(call_index)
+                )
+            elif _module_name == "noise_scenarios":
+                study = "generic sound scenarios"
+                protocol_label = f"generic sound scenario {call_index:02d}"
+                protocol_variant = "model-only scenario"
+            elif _module_name == "drug_calibration":
+                study = "six-study calibration"
+                if call_index <= 3:
+                    dose = (40, 60, 80)[call_index - 1]
+                    protocol_label = f"Pike and Bosher {dose} mg/kg furosemide"
+                elif call_index == 4:
+                    protocol_label = "Asakuma and Snow 60 mg/kg furosemide"
+                else:
+                    dose = (25, 50, 100)[call_index - 5]
+                    protocol_label = f"Rybak and Morizono {dose} mg/kg furosemide"
+                protocol_variant = "calibration objective simulation"
+            elif _module_name == "wang_noise_traces":
+                study = "six-study calibration"
+                level = (105, 115, 125)[call_index - 1]
+                protocol_label = f"Wang et al. (1992) {level} dB SPL noise trace"
+                protocol_variant = "calibration objective simulation"
+            elif _module_name == "wang_noise_cohorts":
+                study = "six-study calibration"
+                duration = int(wang1990.WANG_MEANS[call_index - 1][0])
+                protocol_label = (
+                    f"Wang et al. (1990) 125 dB SPL, {duration}-min exposure cohort"
+                )
+                protocol_variant = "calibration objective simulation"
+            else:
+                study = "six-study calibration"
+                protocol_label = f"{_module_name} call {call_index:02d}"
+                protocol_variant = "calibration objective simulation"
+            protocol_trackers[key] = {
+                "study": study,
+                "protocol_label": protocol_label,
+                "protocol_variant": protocol_variant,
+                "simulation_module": _module_name,
+                "call_index_within_module": call_index,
+                "requested_time_range_min": [
+                    float(requested_times[0]), float(requested_times[-1])
+                ],
+                "minimum_requested_output_spacing_min": (
+                    float(np.min(np.diff(requested_times)))
+                    if len(requested_times) > 1 else None
+                ),
+                "solver_method": kwargs.get("method", "simulator default"),
+                "solver_rtol": kwargs.get("rtol"),
+                "solver_atol": kwargs.get("atol"),
+                "forcing_profile_at_start_midpoint_end": forcing_profile,
+                **protocol_tracker.report(None, include_endpoints=True),
+            }
             return dense_states[:, np.searchsorted(dense_times, requested_times)]
 
         module.simulate = capture
@@ -208,7 +416,9 @@ def build_report():
         for module, original in originals.items():
             module.simulate = original
 
-    benchmark_report["provenance"]["r9_domain_audit_sha256"] = _sha256(Path(__file__))
+    benchmark_report["provenance"]["domain_audit_script_sha256"] = _sha256(
+        Path(__file__)
+    )
     benchmarks.OUTPUT.write_text(
         json.dumps(benchmark_report, indent=2, allow_nan=False) + "\n"
     )
@@ -229,7 +439,7 @@ def build_report():
         })
 
     return {
-        "status": "Completed R9 reproducibility and sampled-domain audit",
+        "status": "Completed R11 reproducibility and sampled-domain audit",
         "interpretation": (
             "One local, seed-dependent, outcome-informed calibration; the two starts "
             "are nearby and are not robustness or global-optimality evidence."
@@ -290,6 +500,7 @@ def build_report():
             group: tracker.report(rhs_counts[group])
             for group, tracker in trackers.items()
         },
+        "per_protocol_sampled_domain_audit": protocol_trackers,
         "audit_sampling": {
             "calibration_scope": (
                 "One recomputation of the stored residual vector at the selected "
@@ -303,6 +514,14 @@ def build_report():
             "state_sampling": (
                 "States are the simulator outputs at requested t_eval times. Adaptive "
                 "internal solver steps are not added to the reported extrema."
+            ),
+            "per_protocol_indexing": (
+                "Each intercepted simulation call is listed separately by analysis "
+                "group, study, protocol label, simulation module, and deterministic "
+                "call order. Solver variant, requested output spacing, time range, "
+                "and start/midpoint/end forcing profile identify each protocol input. "
+                "A flat CSV includes initial, final, minimum, and maximum values for "
+                "each state and observable."
             ),
             "equation_domain_checks": (
                 "Every completed right-hand-side evaluation during the audited "
@@ -334,7 +553,9 @@ def build_report():
             "right-hand-side evaluation passed the model's logarithm/division domain "
             "checks. This is not a continuous-time invariant proof; physiological "
             "screen crossings remain unpenalized. Tiny negative adaptation or trauma "
-            "values within the model's 1e-8 validation tolerance are reported, not clipped."
+            "values within the model's 1e-8 validation tolerance are numerical output "
+            "artifacts, not biologically meaningful negative states, and are reported "
+            "rather than clipped."
         ),
         "input_sha256": {
             str(path.relative_to(ROOT)): _sha256(path)
@@ -346,7 +567,9 @@ def build_report():
 def main():
     report = build_report()
     OUTPUT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    write_protocol_table(report)
     print(f"Wrote {OUTPUT}")
+    print(f"Wrote {PROTOCOL_TABLE}")
     print("Sampled domain violations:", {
         group: audit["sampled_domain_violations"]
         for group, audit in report["sampled_domain_audit"].items()

@@ -1,7 +1,0 @@
-Highlights
-
-* Integrates four lateral-wall processes in a reduced 13-state circuit model.
-* Fits nine parameters to six pharmacological and acoustic studies.
-* Stability and range-screen diagnostics identify limits under severe forcing.
-* Outcome-informed tone comparison shows a voltage--ion mismatch.
-* Scenario grid explores analyst-selected vascular settings.

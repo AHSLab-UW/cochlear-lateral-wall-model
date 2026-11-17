@@ -1,0 +1,9 @@
+name: cochlear-lateral-wall-model
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.8
+  - numpy=1.26.4
+  - scipy=1.11.4
+  - matplotlib=3.8.0
+  - pytest=7.4.0

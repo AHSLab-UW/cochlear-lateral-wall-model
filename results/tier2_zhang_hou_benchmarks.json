@@ -8,7 +8,7 @@
       "zhang": "d0b3b136c6d14e08809e4e2cb815959a7f90b18ef4f18826f220620d19476a12",
       "hou": "09cd5de85896edd89377c2970f031798caacc54b2af9da7e9ce990e682603dbd"
     },
-    "r9_domain_audit_sha256": "3dc42061ed0bf9539fa2f5f4ccd063df6e19fff86ba32a049b9f720f88846307"
+    "domain_audit_script_sha256": "55d692246167ca342211983e4bf46dc6f6aafeb4b2a5d6d32c5e85088732af18"
   },
   "reference_parameters": {
     "flow_base": 1.0,

@@ -341,7 +341,7 @@ def build_anatomical_infographic():
     ax.add_patch(FancyBboxPatch((36.3, 46.8), 12.8, 11.2, boxstyle="round,pad=0.25",
                                 facecolor="white", edgecolor="#CA8A04", lw=1.05, alpha=0.96, zorder=6))
     ax.text(42.7, 56.2, "IS Microdomain", ha="center", va="center", color="#854D0E", fontsize=6.3, fontweight="bold", zorder=7)
-    ax.text(42.7, 51.0, r"$K_S = 1.5\ \mathrm{mM}$" + "\n" + r"Vol $v_S = 0.035$" + "\n" + r"$V_{\mathrm{ISP}} = +80\ \mathrm{mV}$",
+    ax.text(42.7, 51.0, r"$K_S = 1.5\ \mathrm{mM}$" + "\n" + r"Vol $v_S = 0.035$" + "\n" + r"$V_{\mathrm{ISP}} \approx +71.2\ \mathrm{mV}$ (derived)",
             ha="center", va="center", color=INK, fontsize=5.65, zorder=7)
     add_pill(ax, 43.2, 43.8, r"[F2] $v_S\uparrow$ (Edema)", fg=DRUG_RED, bg=DRUG_LIGHT, border=DRUG_RED, fontsize=5.05)
 
@@ -536,9 +536,11 @@ def build_anatomical_infographic():
         r"[F3] Collapses source $g_S$ ($\ell_D=0.949$)" + "\n"
         r"     $\rightarrow R/R_0\approx 2.15$, EP $\rightarrow -33\ \mathrm{mV}$" + "\n\n"
         r"[F4] Gates perilymphatic sink $J_{\mathrm{peri}}$" + "\n"
-        r"     $\rightarrow K_E\downarrow$ by $16–38\ \mathrm{mM}$"
+        r"     Model $\Delta K_E$ (25/50/100 mg/kg):" + "\n"
+        r"     4.09/15.91/37.94 mM; observed:" + "\n"
+        r"     11.3/15.7/32.5 mM"
     )
-    ax.text(115.0, 54.6, furo_text, ha="left", va="center", color=INK, fontsize=5.65, zorder=8)
+    ax.text(115.0, 54.6, furo_text, ha="left", va="center", color=INK, fontsize=5.35, zorder=8)
 
     ax.add_patch(FancyBboxPatch((114.0, 8.8), 22.5, 31.8, boxstyle="round,pad=0.35",
                                 facecolor="#FDF2F8", edgecolor=NOISE_BLUE, lw=1.6, zorder=7))

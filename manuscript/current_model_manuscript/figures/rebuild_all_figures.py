@@ -371,9 +371,9 @@ def build_figure2(stab: dict | None = None):
             ylabel="Max normalized trajectory distance")
     axB.legend(loc="upper right", fontsize=5.6, ncol=2, title="Forcing protocol", title_fontsize=5.6)
 
-    # Panel C: Declared-range excursions vs. Capacity-feedback counterfactual
+    # Panel C: Analyst-selected screen crossings vs. capacity-feedback counterfactual
     axC = fig.add_subplot(gs[1, 0])
-    style_axis(axC, "C", "Marginal-state range crossings & capacity-feedback test")
+    style_axis(axC, "C", "Marginal-state screen crossings & capacity-feedback test")
     categories = [
         "125 dB noise:\nPeak $K_M$\n(ceiling 180 mM)",
         "Drug 80 mg/kg:\nMin $K_M$\n(floor 60 mM)",
@@ -390,7 +390,7 @@ def build_figure2(stab: dict | None = None):
         (85.37 - 60.0) / 120.0 * 100.0,
         (1.195 - 0.1) / 1.4 * 100.0,
     ]
-    axC.axvspan(0, 100, color="#F0FDF4", alpha=0.85, zorder=0, label="Declared range [0%, 100%]")
+    axC.axvspan(0, 100, color="#F0FDF4", alpha=0.85, zorder=0, label="Analyst-selected screen display [0%, 100%]")
     axC.axvline(0, color=CRIMSON, lw=0.9, ls="--", zorder=2)
     axC.axvline(100, color=CRIMSON, lw=0.9, ls="--", zorder=2)
     axC.barh(y_pos - 0.16, ref_norm, height=0.28, color=ORANGE, zorder=3, label="Frozen reference")
@@ -406,7 +406,7 @@ def build_figure2(stab: dict | None = None):
     axC.text(cap_norm[2] - 2.5, 2 + 0.16, "1.20", va="center", ha="right", fontsize=5.6, fontweight="bold", color="white")
 
     axC.set(xlim=(-18, 178), ylim=(-0.55, 2.65), yticks=y_pos, yticklabels=categories,
-            xlabel="Position within declared audit bounds (0% = floor, 100% = ceiling)")
+            xlabel="Position within analyst-selected screening interval (0% = floor, 100% = ceiling)")
     axC.invert_yaxis()
     axC.legend(loc="center right", bbox_to_anchor=(1.0, 0.46), fontsize=5.3)
 
@@ -485,7 +485,7 @@ def build_figure3(data: dict | None = None):
         elif key == "marginal_k_mM":
             ax.axhline(180.0, color=CRIMSON, lw=0.85, ls="--", zorder=2)
             ax.axhspan(180.0, 198.0, color=WARN_BG, alpha=0.7, zorder=0)
-            ax.text(119, 181.2, "Declared upper audit limit (180 mM)", ha="right", va="bottom", fontsize=5.6, color=CRIMSON, fontweight="bold")
+            ax.text(119, 181.2, "Analyst-selected upper screen (180 mM)", ha="right", va="bottom", fontsize=5.6, color=CRIMSON, fontweight="bold")
             ax.annotate("Peak 195.0 mM\n(crosses 180 mM at 8.15 min)", xy=(18.5, 195.0), xytext=(45, 188.5),
                         arrowprops=dict(arrowstyle="->", color=GREEN, lw=0.7),
                         fontsize=5.7, color=GREEN, fontweight="bold")
@@ -761,8 +761,8 @@ def build_figure5(t2_hou: dict | None = None):
 # GRAPHICAL ABSTRACT / ARCHITECTURAL SCHEMATIC
 # ==============================================================================
 def build_graphical_abstract():
-    from build_anatomical_infographic import build_infographic
-    build_infographic()
+    from build_anatomical_infographic import build_anatomical_infographic
+    build_anatomical_infographic()
 
 
 def main():

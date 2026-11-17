@@ -1,0 +1,4327 @@
+{
+  "status": "post-review limited sensitivity diagnostics",
+  "reference_parameter_order": [
+    "guinea_pig_proxy_per_mg_kg",
+    "chinchilla_exposure_multiplier",
+    "drug_conductance_loss",
+    "drug_k_loss",
+    "drug_slow_fraction",
+    "drug_slow_min",
+    "adapt_rate",
+    "adapt_evoked",
+    "trauma_vasoconstriction"
+  ],
+  "reference_parameters": {
+    "guinea_pig_proxy_per_mg_kg": 0.04882843209202751,
+    "chinchilla_exposure_multiplier": 0.7862375537069135,
+    "drug_conductance_loss": 0.9491649325850179,
+    "drug_k_loss": 0.012931172189139986,
+    "drug_slow_fraction": 0.6877569718262766,
+    "drug_slow_min": 59.38031712461343,
+    "adapt_rate": 0.1482397521170445,
+    "adapt_evoked": 0.9464138947187322,
+    "trauma_vasoconstriction": 0.20000000000000012
+  },
+  "reference_optimality_unit_box": 0.014378178847623423,
+  "study_inclusion_sensitivity": {
+    "omitted_study": "Wang et al. (1990)",
+    "retained_score_at_reference": 19.906813,
+    "retained_score_after_refit": 19.906702,
+    "rho_W_at_lower_bound_before_and_after": 0.2,
+    "scope": "One existing exclusion refit; other study exclusions remain untested."
+  },
+  "requested_output_grid_sensitivity_at_frozen_fit": {
+    "coarse_solver": {
+      "step": 0.1,
+      "method": "Radau",
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "fine_solver": {
+      "step": 0.025,
+      "method": "Radau",
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "coarse_weighted_sum_squares": 20.31093852643596,
+    "fine_weighted_sum_squares": 20.341576226102653,
+    "component_changes": {
+      "pike_bosher": {
+        "coarse_weighted_sum_squares": 1.9577231813202456,
+        "fine_weighted_sum_squares": 1.9577231813202456,
+        "maximum_absolute_residual_change": 0.0,
+        "rms_residual_change": 0.0
+      },
+      "asakuma": {
+        "coarse_weighted_sum_squares": 0.581243775203571,
+        "fine_weighted_sum_squares": 0.575792224421903,
+        "maximum_absolute_residual_change": 0.018358864406509134,
+        "rms_residual_change": 0.012992116130867678
+      },
+      "rybak": {
+        "coarse_weighted_sum_squares": 8.946284579097085,
+        "fine_weighted_sum_squares": 8.982373829545445,
+        "maximum_absolute_residual_change": 0.020090951457875317,
+        "rms_residual_change": 0.008293162272686862
+      },
+      "wang_1992": {
+        "coarse_weighted_sum_squares": 5.391984537480024,
+        "fine_weighted_sum_squares": 5.391984537480024,
+        "maximum_absolute_residual_change": 0.0,
+        "rms_residual_change": 0.0
+      },
+      "wang_1990": {
+        "coarse_weighted_sum_squares": 0.4041249441828811,
+        "fine_weighted_sum_squares": 0.4041249441828811,
+        "maximum_absolute_residual_change": 0.0,
+        "rms_residual_change": 0.0
+      },
+      "salt_table_iii": {
+        "coarse_weighted_sum_squares": 1.9702593625638976,
+        "fine_weighted_sum_squares": 1.9702593625638976,
+        "maximum_absolute_residual_change": 0.0,
+        "rms_residual_change": 0.0
+      },
+      "salt_figure_3": {
+        "coarse_weighted_sum_squares": 1.0593181465882613,
+        "fine_weighted_sum_squares": 1.0593181465882613,
+        "maximum_absolute_residual_change": 0.0,
+        "rms_residual_change": 0.0
+      }
+    },
+    "peak_endpoint_predictions": {
+      "asakuma": {
+        "coarse": {
+          "ep_reduction_mV": 110.88346342059816,
+          "ep_nadir_mV_model_reference": -30.88346342059816,
+          "resistance_ratio_at_ep_nadir": 2.155424635076956,
+          "ep_nadir_time_min": 0.8,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        },
+        "fine": {
+          "ep_reduction_mV": 110.89082725668621,
+          "ep_nadir_mV_model_reference": -30.8908272566862,
+          "resistance_ratio_at_ep_nadir": 2.151752862195654,
+          "ep_nadir_time_min": 0.8250000000000001,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        }
+      },
+      "rybak": {
+        "coarse": {
+          "rybak_25": {
+            "ep_reduction_mV": 28.150393225054643,
+            "k_reduction_mM": 4.093629678013656,
+            "n": 3,
+            "ep_nadir_time_min": 0.6000000000000001,
+            "k_nadir_time_min": 37.6,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9818210297072746,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07017397958574643,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0180956462058597,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.067210785724156,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.034762822307043466,
+                "sampled_maximum": 0.035988842107297414,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 135.48508874420003,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.4481409052670295,
+                "sampled_maximum": 2.563688659493748,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 136.28773986119666,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 51.84960677494536,
+                "sampled_maximum": 80.21621569915524,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399836634424152,
+                "sampled_maximum": 0.007401450989033756,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.00020714672776062153,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_50": {
+            "ep_reduction_mV": 82.95177377996099,
+            "k_reduction_mM": 15.911721691515055,
+            "n": 5,
+            "ep_nadir_time_min": 0.7000000000000001,
+            "k_nadir_time_min": 46.900000000000006,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.923814365081575,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07068555365360814,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0726226936842322,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.2808922368460511,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03409557606876586,
+                "sampled_maximum": 0.04170693057382049,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 121.94870246524917,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3027864613949618,
+                "sampled_maximum": 8.50673720327108,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 110.15331585552462,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -2.951773779960988,
+                "sampled_maximum": 80.80193095300183,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.00739897968251177,
+                "sampled_maximum": 0.007410706507360097,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.001414564002477637,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_100": {
+            "ep_reduction_mV": 121.34342427538465,
+            "k_reduction_mM": 37.93637432114683,
+            "n": 7,
+            "ep_nadir_time_min": 1.0,
+            "k_nadir_time_min": 64.4,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.7813484599323152,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07148709856302823,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.997429399812878,
+                "sampled_maximum": 1.1831120278825034,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.8022355041791052,
+                "outside_sample_count": 458,
+                "first_outside_time_min": 1.7000000000000002
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03296514769739225,
+                "sampled_maximum": 0.07676066829004062,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 96.81166129869841,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0585009642314187,
+                "sampled_maximum": 24.340807133329733,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 55.73501670374163,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 54,
+                "first_outside_time_min": 3.5
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -41.343424275384656,
+                "sampled_maximum": 80.9260936717795,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007393608789317559,
+                "sampled_maximum": 0.00744234124134445,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.00885682937699876,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        },
+        "fine": {
+          "rybak_25": {
+            "ep_reduction_mV": 28.256875267781382,
+            "k_reduction_mM": 4.093632192917795,
+            "n": 3,
+            "ep_nadir_time_min": 0.5750000000000001,
+            "k_nadir_time_min": 37.550000000000004,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9818209742753639,
+                "sampled_maximum": 1.0000007635010364,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.0701739796167645,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.018095647074361,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0672132156249692,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03476282230160591,
+                "sampled_maximum": 0.03598884603117874,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 135.48508874420003,
+                "sampled_maximum": 140.00000400636532,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.4481408838436778,
+                "sampled_maximum": 2.576595107043623,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 136.28758497201997,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 51.74312473221862,
+                "sampled_maximum": 80.21621579399307,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399836634424152,
+                "sampled_maximum": 0.007401450989033756,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.00020714672776062153,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_50": {
+            "ep_reduction_mV": 82.98311604166922,
+            "k_reduction_mM": 15.911727889797788,
+            "n": 5,
+            "ep_nadir_time_min": 0.675,
+            "k_nadir_time_min": 46.95,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9238143394897818,
+                "sampled_maximum": 1.0000004167853322,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.0706855536876094,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0726227214251125,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.2808945840592332,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03409557582822555,
+                "sampled_maximum": 0.04170693057382049,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 121.94870246524917,
+                "sampled_maximum": 140.00000589641638,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3027864613949618,
+                "sampled_maximum": 8.50673720327108,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 110.15261720735735,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -2.9831160416692213,
+                "sampled_maximum": 80.80193095300183,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007398979677386347,
+                "sampled_maximum": 0.007410712281598914,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0014145811078296795,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_100": {
+            "ep_reduction_mV": 121.34992118413547,
+            "k_reduction_mM": 37.936375595075006,
+            "n": 7,
+            "ep_nadir_time_min": 1.05,
+            "k_nadir_time_min": 64.375,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.7813470488050658,
+                "sampled_maximum": 1.0000001579431699,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07148709863809051,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.997429399812878,
+                "sampled_maximum": 1.1831120280005105,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.8022367517562925,
+                "outside_sample_count": 1830,
+                "first_outside_time_min": 1.7000000000000002
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03296514682708073,
+                "sampled_maximum": 0.07676066829004062,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 96.81165754993873,
+                "sampled_maximum": 140.00002760707625,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0585007240247668,
+                "sampled_maximum": 24.344188900539397,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 55.73430167267159,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 216,
+                "first_outside_time_min": 3.4250000000000003
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -41.34992118413546,
+                "sampled_maximum": 80.9260936717795,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007393608765085985,
+                "sampled_maximum": 0.007442341940051764,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.008856876371706995,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "interpretation": "This compares requested-output-grid extrema at the same frozen parameter vector; it does not itself refit the objective or prove continuous-time extrema."
+  },
+  "twofold_acoustic_weight_refit": {
+    "weight_change": "Multiply all acoustic residual components by sqrt(2), doubling their combined squared-residual weight relative to pharmacological components.",
+    "success": true,
+    "termination": "`xtol` termination condition is satisfied.",
+    "function_evaluations": 6,
+    "optimality_unit_box": 0.008295897781356037,
+    "alternative_weighted_sum_squares": 29.1366252161109,
+    "unmodified_objective_at_alternative_fit": 20.310938239457315,
+    "parameter_values": {
+      "guinea_pig_proxy_per_mg_kg": 0.048828099505782506,
+      "chinchilla_exposure_multiplier": 0.7862410465706143,
+      "drug_conductance_loss": 0.9491668386540488,
+      "drug_k_loss": 0.012931643776393602,
+      "drug_slow_fraction": 0.6877586772529098,
+      "drug_slow_min": 59.38133163206466,
+      "adapt_rate": 0.14823895767296064,
+      "adapt_evoked": 0.9464138966839404,
+      "trauma_vasoconstriction": 0.20000000007897736
+    },
+    "parameter_shift_physical": {
+      "guinea_pig_proxy_per_mg_kg": -3.325862450026529e-07,
+      "chinchilla_exposure_multiplier": 3.4928637008269092e-06,
+      "drug_conductance_loss": 1.9060690309435913e-06,
+      "drug_k_loss": 4.7158725361567955e-07,
+      "drug_slow_fraction": 1.7054266332472423e-06,
+      "drug_slow_min": 0.0010145074512308838,
+      "adapt_rate": -7.944440838514311e-07,
+      "adapt_evoked": 1.9652082183796438e-09,
+      "trauma_vasoconstriction": 7.897724141336937e-11
+    },
+    "parameter_shift_unit_box": {
+      "guinea_pig_proxy_per_mg_kg": -1.750453921066594e-06,
+      "chinchilla_exposure_multiplier": 2.3285758005512727e-06,
+      "drug_conductance_loss": 2.0495365924124637e-06,
+      "drug_k_loss": 5.969458906527589e-06,
+      "drug_slow_fraction": 2.0063842744085205e-06,
+      "drug_slow_min": 5.339512901215178e-06,
+      "adapt_rate": -1.6903065613860235e-06,
+      "adapt_evoked": 2.4565102729745547e-09,
+      "trauma_vasoconstriction": 9.997119166249287e-11
+    },
+    "components_under_unmodified_objective": {
+      "pike_bosher": {
+        "residual_slice": [
+          0,
+          37
+        ],
+        "residual_count": 37,
+        "weighted_sum_squares": 1.957719230501548,
+        "weighting": "Baseline-relative EP error / (10 mV * sqrt(anchors per dose curve)).",
+        "predictions": {
+          "pike_40": {
+            "change_rmse_mV": 6.281167073301586,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          },
+          "pike_60": {
+            "change_rmse_mV": 7.022262894630822,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          },
+          "pike_80": {
+            "change_rmse_mV": 10.344403660246345,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          }
+        }
+      },
+      "asakuma": {
+        "residual_slice": [
+          37,
+          39
+        ],
+        "residual_count": 2,
+        "weighted_sum_squares": 0.5812395765415292,
+        "weighting": "Resistance ratio error / 0.2; baseline-minus-nadir EP error / 10 mV.",
+        "predictions": {
+          "ep_reduction_mV": 110.8835077526073,
+          "ep_nadir_mV_model_reference": -30.883507752607294,
+          "resistance_ratio_at_ep_nadir": 2.155426568694116,
+          "ep_nadir_time_min": 0.8,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        }
+      },
+      "rybak": {
+        "residual_slice": [
+          39,
+          45
+        ],
+        "residual_count": 6,
+        "weighted_sum_squares": 8.94629245576064,
+        "weighting": "EP and K group-mean reduction errors / reported SE; covariance unknown.",
+        "predictions": {
+          "rybak_25": {
+            "ep_reduction_mV": 28.150306330678184,
+            "k_reduction_mM": 4.093825756382586,
+            "n": 3,
+            "ep_nadir_time_min": 0.6000000000000001,
+            "k_nadir_time_min": 37.6,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9818209299435647,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07017398438253374,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0180965032718767,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.06721067772993,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.034762811921256076,
+                "sampled_maximum": 0.03598884298447113,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 135.48492378673757,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.4481387270614998,
+                "sampled_maximum": 2.563681961142872,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 136.2877536993808,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 51.849693669321816,
+                "sampled_maximum": 80.21622398149569,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0073998366336494375,
+                "sampled_maximum": 0.0074014509790548055,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0002071455755287574,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_50": {
+            "ep_reduction_mV": 82.95180900197575,
+            "k_reduction_mM": 15.912458714638746,
+            "n": 5,
+            "ep_nadir_time_min": 0.7000000000000001,
+            "k_nadir_time_min": 46.900000000000006,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9238139919962217,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07068557038962854,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0726261752751445,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.280892194414058,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.034095539507742,
+                "sampled_maximum": 0.04170693117150806,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 121.94807506018087,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3027786716165346,
+                "sampled_maximum": 8.506698692900684,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 110.15333127484105,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -2.951809001975743,
+                "sampled_maximum": 80.80195557862527,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007398979684216111,
+                "sampled_maximum": 0.007410706447870823,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0014145558840889503,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_100": {
+            "ep_reduction_mV": 121.34377478498642,
+            "k_reduction_mM": 37.93797092086339,
+            "n": 7,
+            "ep_nadir_time_min": 1.0,
+            "k_nadir_time_min": 64.4,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.781347598287485,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07148712384972829,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9974298721875612,
+                "sampled_maximum": 1.1831203944153665,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.8022365511677254,
+                "outside_sample_count": 458,
+                "first_outside_time_min": 1.7000000000000002
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03296507699530708,
+                "sampled_maximum": 0.07676072745759174,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 96.8102927859202,
+                "sampled_maximum": 140.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0584862571129483,
+                "sampled_maximum": 24.340773983137456,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 55.734961050024424,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 54,
+                "first_outside_time_min": 3.5
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -41.34377478498642,
+                "sampled_maximum": 80.9260270194824,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0073936088193379945,
+                "sampled_maximum": 0.007442341178575999,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.008856791721682305,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        }
+      },
+      "wang_1992": {
+        "residual_slice": [
+          45,
+          90
+        ],
+        "residual_count": 45,
+        "weighted_sum_squares": 5.391995734145407,
+        "weighting": "Baseline-relative EP error / (3 mV * sqrt(anchors per sound level)).",
+        "predictions": [
+          {
+            "level_db_spl": 105,
+            "time_min": [
+              0.0,
+              0.26,
+              0.66,
+              1.98,
+              3.04,
+              4.98,
+              9.96,
+              14.98,
+              19.96,
+              20.22,
+              20.72,
+              21.05,
+              22.49,
+              25.09,
+              30.07
+            ],
+            "observed_change_mV": [
+              0.0,
+              -3.1499999999999915,
+              -3.0799999999999983,
+              -2.0999999999999943,
+              -1.539999999999992,
+              -0.769999999999996,
+              -0.4899999999999949,
+              0.4900000000000091,
+              1.25,
+              2.5800000000000125,
+              2.5800000000000125,
+              2.719999999999999,
+              2.3700000000000045,
+              2.230000000000004,
+              1.8800000000000097
+            ],
+            "model_change_mV": [
+              0.0,
+              -3.459002928266983,
+              -3.405862648881538,
+              -2.466470971803389,
+              -1.5835765159271205,
+              -0.1507479594393999,
+              2.359941993804597,
+              3.74454062722063,
+              4.472907043508599,
+              5.628052850617763,
+              5.862002119525357,
+              5.9306250862835554,
+              5.913970621147115,
+              5.626358747365927,
+              5.092219730848953
+            ],
+            "rmse_mV": 2.5113912447839755,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9883936626570202,
+                "sampled_maximum": 1.0012202861291941,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.06999125602726602,
+                "sampled_maximum": 0.07008573101995454,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9845702664730382,
+                "sampled_maximum": 1.001844374430721,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9929924964530987,
+                "sampled_maximum": 1.0614333368588798,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03459463732355176,
+                "sampled_maximum": 0.035042880948350376,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 130.35967763193588,
+                "sampled_maximum": 141.28988402509015,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3447070915105108,
+                "sampled_maximum": 1.521271693840112,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 137.01525934402343,
+                "sampled_maximum": 145.92124565324164,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 76.54099707173302,
+                "sampled_maximum": 85.93062508628356,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399840330290988,
+                "sampled_maximum": 0.01323809252000094,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.7697247137710452,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 4.3287321788756195e-07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          {
+            "level_db_spl": 115,
+            "time_min": [
+              0.0,
+              0.22,
+              0.59,
+              1.65,
+              2.64,
+              3.88,
+              4.91,
+              9.89,
+              14.98,
+              19.96,
+              20.22,
+              20.83,
+              22.35,
+              25.05,
+              30.0
+            ],
+            "observed_change_mV": [
+              0.0,
+              -5.670000000000002,
+              -4.200000000000003,
+              -3.990000000000009,
+              -3.5,
+              -2.940000000000012,
+              -1.8900000000000006,
+              0.6999999999999886,
+              2.299999999999997,
+              3.069999999999993,
+              10.489999999999995,
+              10.559999999999988,
+              10.349999999999994,
+              9.509999999999991,
+              8.599999999999994
+            ],
+            "model_change_mV": [
+              0.0,
+              -7.243671075600602,
+              -7.282331461034204,
+              -6.310679278033604,
+              -5.091116506201956,
+              -3.655951552529487,
+              -2.6141559608929725,
+              0.720506715868396,
+              2.2261471811521574,
+              2.7459502352479035,
+              4.610715059667726,
+              5.138570979579882,
+              5.348011853848632,
+              5.059074500415292,
+              4.486566398471908
+            ],
+            "rmse_mV": 3.127844057041624,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9929820810760767,
+                "sampled_maximum": 1.0056089521647729,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.06989531076493287,
+                "sampled_maximum": 0.07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9817818700411173,
+                "sampled_maximum": 1.0047656970974077,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9661418015728207,
+                "sampled_maximum": 1.0366464141914153,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03493659409370966,
+                "sampled_maximum": 0.03527686730046605,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 128.4520101499962,
+                "sampled_maximum": 143.12969288932305,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3922600353719459,
+                "sampled_maximum": 1.5901651124446268,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 140.1277760837301,
+                "sampled_maximum": 149.51356311599972,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 72.7176685389658,
+                "sampled_maximum": 85.34801185384863,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399791559052171,
+                "sampled_maximum": 0.01970591157048038,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.8429019293267678,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.019747344225687434,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          {
+            "level_db_spl": 125,
+            "time_min": [
+              0.0,
+              0.37,
+              0.7,
+              1.03,
+              2.56,
+              4.91,
+              9.89,
+              15.02,
+              20.0,
+              20.22,
+              20.76,
+              21.16,
+              22.53,
+              25.05,
+              30.0
+            ],
+            "observed_change_mV": [
+              0.0,
+              -7.819999999999993,
+              -7.75,
+              -7.75,
+              -7.75,
+              -7.75,
+              -8.870000000000005,
+              -12.11,
+              -13.689999999999998,
+              -7.969999999999999,
+              -7.3700000000000045,
+              -7.140000000000001,
+              -7.140000000000001,
+              -9.480000000000004,
+              -12.780000000000001
+            ],
+            "model_change_mV": [
+              0.0,
+              -10.228747209306079,
+              -10.629132024572286,
+              -10.806929339589075,
+              -10.772546722621954,
+              -10.91224794423266,
+              -13.346884275102482,
+              -16.602031670269575,
+              -19.348301621986984,
+              -17.432865064133054,
+              -16.761494319207458,
+              -16.432510823950004,
+              -15.753653439997322,
+              -15.061323230773255,
+              -14.299859939684168
+            ],
+            "rmse_mV": 5.695389993473711,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9992483229884851,
+                "sampled_maximum": 1.033238681175489,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.06794763952555243,
+                "sampled_maximum": 0.07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.920974106737891,
+                "sampled_maximum": 1.0039168547370108,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.6634063018402647,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.035,
+                "sampled_maximum": 0.040242292769457476,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 93.28608275809377,
+                "sampled_maximum": 142.0734293455149,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.5,
+                "sampled_maximum": 2.958360608380239,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 145.0,
+                "sampled_maximum": 194.6796262605712,
+                "outside_sample_count": 8,
+                "first_outside_time_min": 9.89
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 60.651698378013016,
+                "sampled_maximum": 80.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0073990408890624495,
+                "sampled_maximum": 0.02398928127307787,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.8577257431663029,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.3692521610708679,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        ]
+      },
+      "wang_1990": {
+        "residual_slice": [
+          90,
+          94
+        ],
+        "residual_count": 4,
+        "weighted_sum_squares": 0.4041251232949833,
+        "weighting": "Separate-cohort EP difference error / (5 mV * sqrt(number of cohorts)).",
+        "predictions": [
+          {
+            "exposure_min": 20,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -7.5,
+            "modeled_difference_mV": -10.838813592957507
+          },
+          {
+            "exposure_min": 40,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -13.5,
+            "modeled_difference_mV": -16.15112414460244
+          },
+          {
+            "exposure_min": 60,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -20.799999999999997,
+            "modeled_difference_mV": -18.545390380715205
+          },
+          {
+            "exposure_min": 80,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -23.799999999999997,
+            "modeled_difference_mV": -19.6583683945195
+          }
+        ]
+      },
+      "salt_table_iii": {
+        "residual_slice": [
+          94,
+          103
+        ],
+        "residual_count": 9,
+        "weighted_sum_squares": 1.9702523389479847,
+        "weighting": "Local-episode delta EP / (3 mV * sqrt(3 episodes)); no SD/n precision; timing window is hypothetical.",
+        "predictions": [
+          {
+            "noise_dba": 95,
+            "exposure_number": 1,
+            "mean_mV": 0.1,
+            "sd_mV": 1.1,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 84.14090726387445,
+            "predicted_overall_ep_change_mV": 4.140907263874453,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 4.040907263874454
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 2,
+            "mean_mV": -0.4,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 83.9331462988105,
+            "measurement_window_mean_ep_mV": 84.81191157240154,
+            "predicted_overall_ep_change_mV": 0.8787652735910427,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.2787652735910426
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 3,
+            "mean_mV": -0.8,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 84.58826000389347,
+            "measurement_window_mean_ep_mV": 84.89956258070995,
+            "predicted_overall_ep_change_mV": 0.31130257681648743,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.1113025768164875
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 1,
+            "mean_mV": 0.4,
+            "sd_mV": 2.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 85.92190900085927,
+            "predicted_overall_ep_change_mV": 5.921909000859273,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 5.521909000859273
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 0.5,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.63671394295262,
+            "measurement_window_mean_ep_mV": 86.00498923021021,
+            "predicted_overall_ep_change_mV": 0.36827528725758896,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.868275287257589
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 3,
+            "mean_mV": -1.4,
+            "sd_mV": 1.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 85.74499522953991,
+            "measurement_window_mean_ep_mV": 85.85927134234024,
+            "predicted_overall_ep_change_mV": 0.11427611280032579,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.5142761128003257
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 1,
+            "mean_mV": 5.1,
+            "sd_mV": 2.9,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 85.30684463421665,
+            "predicted_overall_ep_change_mV": 5.306844634216645,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.20684463421664567
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 1.0,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.0651941015361,
+            "measurement_window_mean_ep_mV": 84.05741160475584,
+            "predicted_overall_ep_change_mV": -1.0077824967802513,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -0.5077824967802513
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 3,
+            "mean_mV": -0.4,
+            "sd_mV": 1.1,
+            "n_observations": 7,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 83.88460654662146,
+            "measurement_window_mean_ep_mV": 83.08635198806655,
+            "predicted_overall_ep_change_mV": -0.7982545585549019,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -0.3982545585549019
+          }
+        ]
+      },
+      "salt_figure_3": {
+        "residual_slice": [
+          103,
+          178
+        ],
+        "residual_count": 75,
+        "weighted_sum_squares": 1.0593137802652137,
+        "weighting": "Each Figure 3 series uses baseline-relative errors divided by 3 mV or 3 mM times sqrt(points in that series); illustrative deterministic weights, not a likelihood. Fig. 3 is one paired EP/K animal.",
+        "predictions": {
+          "ep": {
+            "unit": "mV",
+            "time_min": [
+              1.3278424443423305,
+              2.5726543828291675,
+              3.4025290084870576,
+              4.751075275181126,
+              7.033230495740327,
+              9.315385716299524,
+              11.493806608651482,
+              13.77596182921068,
+              15.850648393355407,
+              18.029069285707365,
+              22.07470808578958,
+              24.1493946499343,
+              26.22408121407903,
+              28.402502106430987,
+              32.96681254754938,
+              36.07884239376647,
+              39.19087223998356,
+              42.821573727236824,
+              45.93360357345391,
+              48.83816476325653,
+              52.15766326588809,
+              55.26969311210517,
+              57.86305131728608,
+              61.70122146095382,
+              64.08711100972025,
+              67.19914085593734,
+              70.31117070215443,
+              73.42320054837151,
+              75.80909009713794,
+              78.09124531769714,
+              82.24061844598658,
+              84.31530501013131,
+              86.90866321531222,
+              90.02069306152931
+            ],
+            "source_pixel_xy": [
+              [
+                260,
+                530
+              ],
+              [
+                272,
+                426
+              ],
+              [
+                280,
+                405
+              ],
+              [
+                293,
+                386
+              ],
+              [
+                315,
+                370
+              ],
+              [
+                337,
+                340
+              ],
+              [
+                358,
+                330
+              ],
+              [
+                380,
+                312
+              ],
+              [
+                400,
+                296
+              ],
+              [
+                421,
+                282
+              ],
+              [
+                460,
+                146
+              ],
+              [
+                480,
+                149
+              ],
+              [
+                500,
+                159
+              ],
+              [
+                521,
+                170
+              ],
+              [
+                565,
+                326
+              ],
+              [
+                595,
+                326
+              ],
+              [
+                625,
+                327
+              ],
+              [
+                660,
+                329
+              ],
+              [
+                690,
+                327
+              ],
+              [
+                718,
+                326
+              ],
+              [
+                750,
+                213
+              ],
+              [
+                780,
+                212
+              ],
+              [
+                805,
+                219
+              ],
+              [
+                842,
+                363
+              ],
+              [
+                865,
+                366
+              ],
+              [
+                895,
+                360
+              ],
+              [
+                925,
+                358
+              ],
+              [
+                955,
+                360
+              ],
+              [
+                978,
+                363
+              ],
+              [
+                1000,
+                373
+              ],
+              [
+                1040,
+                228
+              ],
+              [
+                1060,
+                232
+              ],
+              [
+                1085,
+                236
+              ],
+              [
+                1115,
+                239
+              ]
+            ],
+            "observed_change": [
+              -3.992580878353536,
+              -1.2427238495537551,
+              -0.6874642571999487,
+              -0.18508653078460213,
+              0.2379683967230477,
+              1.031196385799916,
+              1.2956057154922007,
+              1.7715425089383103,
+              2.1945974364459744,
+              2.5647704980151786,
+              6.160737381830273,
+              6.081414582922591,
+              5.817005253230306,
+              5.526154990568784,
+              1.4013694473691203,
+              1.4013694473691203,
+              1.3749285143998833,
+              1.3220466484614377,
+              1.3749285143998833,
+              1.4013694473691203,
+              4.389194872891963,
+              4.415635805861186,
+              4.230549275076584,
+              0.42305492750764984,
+              0.34373212859996727,
+              0.5023777264153466,
+              0.5552595923537922,
+              0.5023777264153466,
+              0.42305492750764984,
+              0.15864559781536514,
+              3.9925808783535217,
+              3.8868171464766164,
+              3.781053414599697,
+              3.7017306156920142
+            ],
+            "modeled_change": [
+              -6.681835135731859,
+              -5.173689697620446,
+              -4.186719605412804,
+              -2.7657237960983565,
+              -0.8852782744711476,
+              0.45270557585200777,
+              1.3468378573796684,
+              1.9848015808724142,
+              2.367190995227503,
+              2.6188374451269567,
+              5.357603322500978,
+              5.16868464378328,
+              4.916261718971512,
+              4.661813347157647,
+              1.5671955111207154,
+              1.8986188488438955,
+              2.0714077027040076,
+              2.121191166024758,
+              2.0807068561967696,
+              2.0003186227697825,
+              4.087832393881641,
+              3.8514926787384383,
+              3.6185423394425698,
+              0.7228825864654169,
+              0.8820351203535637,
+              1.0931323209199775,
+              1.1943478048605272,
+              1.2163996103537755,
+              1.196807089624258,
+              1.15765950171442,
+              3.223838730730563,
+              3.109095478423413,
+              2.9114078152146305,
+              2.6923667538528235
+            ],
+            "observed_baseline": 89.50290067241907,
+            "scale": 3.0,
+            "rmse": 1.2782829838779188
+          },
+          "endolymph_k": {
+            "unit": "mM",
+            "time_min": [
+              0.49796781868444384,
+              1.431576772549569,
+              2.468920054621929,
+              4.024934977730474,
+              5.477215572631781,
+              8.589245418848868,
+              10.871400639408066,
+              12.738618547138316,
+              15.331976752319221,
+              17.925334957500127,
+              22.07470808578958,
+              24.1493946499343,
+              26.742752855115207,
+              28.29876777822375,
+              32.4481409065132,
+              33.900421501414506,
+              36.59751403480265,
+              39.19087223998356,
+              41.265558804128275,
+              43.340245368273,
+              45.41493193241773,
+              48.52696177863481,
+              51.12031998381572,
+              53.195006547960446,
+              55.26969311210517,
+              57.3443796762499,
+              59.41906624039461,
+              60.66387817888146,
+              62.53109608661171,
+              65.12445429179262,
+              67.71781249697352,
+              70.31117070215443,
+              72.90452890733533,
+              75.49788711251624,
+              77.05390203562477,
+              78.09124531769714,
+              82.24061844598658,
+              84.31530501013131,
+              86.38999157427604,
+              88.46467813842077,
+              90.02069306152931
+            ],
+            "source_pixel_xy": [
+              [
+                252,
+                523
+              ],
+              [
+                261,
+                529
+              ],
+              [
+                271,
+                519
+              ],
+              [
+                286,
+                510
+              ],
+              [
+                300,
+                505
+              ],
+              [
+                330,
+                503
+              ],
+              [
+                352,
+                477
+              ],
+              [
+                370,
+                457
+              ],
+              [
+                395,
+                456
+              ],
+              [
+                420,
+                455
+              ],
+              [
+                460,
+                470
+              ],
+              [
+                480,
+                472
+              ],
+              [
+                505,
+                473
+              ],
+              [
+                520,
+                469
+              ],
+              [
+                560,
+                456
+              ],
+              [
+                574,
+                437
+              ],
+              [
+                600,
+                435
+              ],
+              [
+                625,
+                424
+              ],
+              [
+                645,
+                417
+              ],
+              [
+                665,
+                410
+              ],
+              [
+                685,
+                396
+              ],
+              [
+                715,
+                389
+              ],
+              [
+                740,
+                388
+              ],
+              [
+                760,
+                396
+              ],
+              [
+                780,
+                401
+              ],
+              [
+                800,
+                397
+              ],
+              [
+                820,
+                395
+              ],
+              [
+                832,
+                420
+              ],
+              [
+                850,
+                417
+              ],
+              [
+                875,
+                407
+              ],
+              [
+                900,
+                396
+              ],
+              [
+                925,
+                393
+              ],
+              [
+                950,
+                396
+              ],
+              [
+                975,
+                394
+              ],
+              [
+                990,
+                389
+              ],
+              [
+                1000,
+                375
+              ],
+              [
+                1040,
+                376
+              ],
+              [
+                1060,
+                381
+              ],
+              [
+                1080,
+                389
+              ],
+              [
+                1100,
+                402
+              ],
+              [
+                1115,
+                404
+              ]
+            ],
+            "observed_change": [
+              -2.115274637538306,
+              -2.4325658331690647,
+              -1.903747173784467,
+              -1.4278103803383715,
+              -1.1634010506460868,
+              -1.0576373187691672,
+              0.31729119563073027,
+              1.374928514399869,
+              1.427810380338343,
+              1.4806922462767886,
+              0.6874642571999345,
+              0.581700525323015,
+              0.5288186593845694,
+              0.7403461231383801,
+              1.427810380338343,
+              2.4325658331690363,
+              2.538329565045956,
+              3.120030090368971,
+              3.490203151938175,
+              3.8603762135073794,
+              4.600722336645788,
+              4.970895398214964,
+              5.023777264153438,
+              4.600722336645788,
+              4.336313006953503,
+              4.547840470707314,
+              4.6536042025842335,
+              3.33155755412281,
+              3.490203151938175,
+              4.0190218113227445,
+              4.600722336645788,
+              4.759367934461153,
+              4.600722336645788,
+              4.706486068522679,
+              4.970895398214964,
+              5.711241521353372,
+              5.658359655414927,
+              5.393950325722642,
+              4.970895398214964,
+              4.283431141015029,
+              4.17766740913811
+            ],
+            "modeled_change": [
+              -0.22619143451896662,
+              -0.6161493454284823,
+              -0.957768628462901,
+              -1.2770563061423275,
+              -1.3927810480723224,
+              -1.2037404373231766,
+              -0.8120521322052525,
+              -0.3958651660636576,
+              0.2635299599895973,
+              0.965377959299218,
+              2.3708916383479846,
+              3.1573075015071765,
+              3.98978198384998,
+              4.413387049123571,
+              4.901220264402241,
+              4.955998852016421,
+              5.118553384882546,
+              5.330726135760415,
+              5.524566002036892,
+              5.730005128395277,
+              5.9403751538232825,
+              6.255041026409003,
+              6.632137728254548,
+              7.081464380476376,
+              7.468190575855402,
+              7.784482247826901,
+              8.036404422155414,
+              8.06546991132737,
+              7.932086696709661,
+              7.800113494211331,
+              7.746343515642678,
+              7.751948793318718,
+              7.799028390662357,
+              7.873872198507968,
+              7.927844143477529,
+              7.96655224480844,
+              8.395555195762,
+              8.70974554835837,
+              8.963736547086626,
+              9.159638568491431,
+              9.272187059901256
+            ],
+            "observed_baseline": 163.50608728723859,
+            "scale": 3.0,
+            "rmse": 2.810661245243739
+          }
+        }
+      }
+    },
+    "interpretation": "A single, deliberately simple weight perturbation; it is not a likelihood, confidence interval, or comprehensive robustness analysis."
+  },
+  "fine_grid_refit": {
+    "solver": {
+      "step": 0.025,
+      "method": "Radau",
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "success": true,
+    "termination": "`ftol` termination condition is satisfied.",
+    "function_evaluations": 3,
+    "optimality_unit_box": 0.029816150281193048,
+    "fine_grid_weighted_sum_squares": 20.340812581571818,
+    "coarse_grid_weighted_sum_squares_at_fine_refit": 20.311629004662933,
+    "parameter_values": {
+      "guinea_pig_proxy_per_mg_kg": 0.04884231026818133,
+      "chinchilla_exposure_multiplier": 0.7846706261155896,
+      "drug_conductance_loss": 0.9495569703409668,
+      "drug_k_loss": 0.012968324994538243,
+      "drug_slow_fraction": 0.6876100822845717,
+      "drug_slow_min": 59.34729041621378,
+      "adapt_rate": 0.14823205868761286,
+      "adapt_evoked": 0.9464476354832503,
+      "trauma_vasoconstriction": 0.2
+    },
+    "parameter_shift_physical": {
+      "guinea_pig_proxy_per_mg_kg": 1.3878176153822586e-05,
+      "chinchilla_exposure_multiplier": -0.00156692759132393,
+      "drug_conductance_loss": 0.0003920377559488708,
+      "drug_k_loss": 3.715280539825713e-05,
+      "drug_slow_fraction": -0.00014688954170494206,
+      "drug_slow_min": -0.033026708399646054,
+      "adapt_rate": -7.693429431632204e-06,
+      "adapt_evoked": 3.3740764518119803e-05,
+      "trauma_vasoconstriction": -1.1102230246251565e-16
+    },
+    "parameter_shift_unit_box": {
+      "guinea_pig_proxy_per_mg_kg": 7.304303238853993e-05,
+      "chinchilla_exposure_multiplier": -0.0010446183942159533,
+      "drug_conductance_loss": 0.0004215459741385708,
+      "drug_k_loss": 0.00047028867592730547,
+      "drug_slow_fraction": -0.00017281122553522595,
+      "drug_slow_min": -0.0001738247810507687,
+      "adapt_rate": -1.6368998790706818e-05,
+      "adapt_evoked": 4.2175955647649754e-05,
+      "trauma_vasoconstriction": -1.4053456007913372e-16
+    },
+    "components": {
+      "pike_bosher": {
+        "residual_slice": [
+          0,
+          37
+        ],
+        "residual_count": 37,
+        "weighted_sum_squares": 1.9648617587773487,
+        "weighting": "Baseline-relative EP error / (10 mV * sqrt(anchors per dose curve)).",
+        "predictions": {
+          "pike_40": {
+            "change_rmse_mV": 6.287856931865143,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          },
+          "pike_60": {
+            "change_rmse_mV": 7.031502359308523,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          },
+          "pike_80": {
+            "change_rmse_mV": 10.368558513755369,
+            "modeled_baseline_mV": 80.0,
+            "observed_digitized_baseline_mV": 82.372881
+          }
+        }
+      },
+      "asakuma": {
+        "residual_slice": [
+          37,
+          39
+        ],
+        "residual_count": 2,
+        "weighted_sum_squares": 0.5647250631781872,
+        "weighting": "Resistance ratio error / 0.2; baseline-minus-nadir EP error / 10 mV.",
+        "predictions": {
+          "ep_reduction_mV": 110.97725817597686,
+          "ep_nadir_mV_model_reference": -30.97725817597686,
+          "resistance_ratio_at_ep_nadir": 2.1533768359958887,
+          "ep_nadir_time_min": 0.8250000000000001,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        }
+      },
+      "rybak": {
+        "residual_slice": [
+          39,
+          45
+        ],
+        "residual_count": 6,
+        "weighted_sum_squares": 8.98553905163128,
+        "weighting": "EP and K group-mean reduction errors / reported SE; covariance unknown.",
+        "predictions": {
+          "rybak_25": {
+            "ep_reduction_mV": 28.16729231580628,
+            "k_reduction_mM": 4.086939276535418,
+            "n": 3,
+            "ep_nadir_time_min": 0.5750000000000001,
+            "k_nadir_time_min": 37.5,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9818925832970254,
+                "sampled_maximum": 1.000000764242805,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07017343394614528,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0180646706993424,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0669352264154521,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03476318466168272,
+                "sampled_maximum": 0.03598375131852157,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 135.49657449045077,
+                "sampled_maximum": 140.00000396025712,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.448219214983719,
+                "sampled_maximum": 2.57162521738874,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 136.3231658879038,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 51.83270768419372,
+                "sampled_maximum": 80.21611018773073,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0073998373006144294,
+                "sampled_maximum": 0.007401444078502618,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.00020607827799626162,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_50": {
+            "ep_reduction_mV": 82.88760984640491,
+            "k_reduction_mM": 15.901375994620196,
+            "n": 5,
+            "ep_nadir_time_min": 0.675,
+            "k_nadir_time_min": 46.85,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9240520004107665,
+                "sampled_maximum": 1.0000004170182868,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07068415139601922,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.0725700914690166,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.27997111756959,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03409603598463458,
+                "sampled_maximum": 0.04166971051571396,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 121.97593691373952,
+                "sampled_maximum": 140.000005861356,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.30288205623359,
+                "sampled_maximum": 8.476455077190163,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 110.26027278713707,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -2.887609846404913,
+                "sampled_maximum": 80.80299839344539,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007398984498144253,
+                "sampled_maximum": 0.007410657995834952,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0014066781745997237,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          "rybak_100": {
+            "ep_reduction_mV": 121.3799610480421,
+            "k_reduction_mM": 37.94976269196316,
+            "n": 7,
+            "ep_nadir_time_min": 1.05,
+            "k_nadir_time_min": 64.275,
+            "declared_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.7818345292341289,
+                "sampled_maximum": 1.0000001592838264,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.07,
+                "sampled_maximum": 0.07148640945181983,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9974703050190686,
+                "sampled_maximum": 1.1831788363491962,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0,
+                "sampled_maximum": 1.8004238737332383,
+                "outside_sample_count": 1821,
+                "first_outside_time_min": 1.7000000000000002
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0329639891974336,
+                "sampled_maximum": 0.07659913486701737,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 96.8169936618672,
+                "sampled_maximum": 140.000027409152,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.0582385296760364,
+                "sampled_maximum": 24.305207076720603,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 55.89593560753607,
+                "sampled_maximum": 145.0,
+                "outside_sample_count": 210,
+                "first_outside_time_min": 3.45
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": -41.379961048042105,
+                "sampled_maximum": 80.94257844632033,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007393628486484531,
+                "sampled_maximum": 0.007442264570536521,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.008822696783548339,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        }
+      },
+      "wang_1992": {
+        "residual_slice": [
+          45,
+          90
+        ],
+        "residual_count": 45,
+        "weighted_sum_squares": 5.3920247413375835,
+        "weighting": "Baseline-relative EP error / (3 mV * sqrt(anchors per sound level)).",
+        "predictions": [
+          {
+            "level_db_spl": 105,
+            "time_min": [
+              0.0,
+              0.26,
+              0.66,
+              1.98,
+              3.04,
+              4.98,
+              9.96,
+              14.98,
+              19.96,
+              20.22,
+              20.72,
+              21.05,
+              22.49,
+              25.09,
+              30.07
+            ],
+            "observed_change_mV": [
+              0.0,
+              -3.1499999999999915,
+              -3.0799999999999983,
+              -2.0999999999999943,
+              -1.539999999999992,
+              -0.769999999999996,
+              -0.4899999999999949,
+              0.4900000000000091,
+              1.25,
+              2.5800000000000125,
+              2.5800000000000125,
+              2.719999999999999,
+              2.3700000000000045,
+              2.230000000000004,
+              1.8800000000000097
+            ],
+            "model_change_mV": [
+              0.0,
+              -3.4590071176942274,
+              -3.405878344543723,
+              -2.4665248842549374,
+              -1.5836543714713542,
+              -0.15085348031360013,
+              2.359825602871183,
+              3.744452243464991,
+              4.472851674460756,
+              5.627949746663219,
+              5.86190338465552,
+              5.930528266729425,
+              5.91387827556251,
+              5.626271213353903,
+              5.0921405845826655
+            ],
+            "rmse_mV": 2.511320592131996,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.988393975790341,
+                "sampled_maximum": 1.001220376785043,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.06999125547746106,
+                "sampled_maximum": 0.07008572835415118,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9845706349962847,
+                "sampled_maximum": 1.0018444146654655,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9929923434636324,
+                "sampled_maximum": 1.0614317897726222,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.034594650320792786,
+                "sampled_maximum": 0.035042883625495756,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 130.3598995716634,
+                "sampled_maximum": 141.28992699079785,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3447105661042429,
+                "sampled_maximum": 1.5212723615779196,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 137.01545673910724,
+                "sampled_maximum": 145.92126564983656,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 76.54099288230577,
+                "sampled_maximum": 85.93052826672943,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399840321451212,
+                "sampled_maximum": 0.013238107881947401,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.7697119803919803,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 4.3287321788724876e-07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          {
+            "level_db_spl": 115,
+            "time_min": [
+              0.0,
+              0.22,
+              0.59,
+              1.65,
+              2.64,
+              3.88,
+              4.91,
+              9.89,
+              14.98,
+              19.96,
+              20.22,
+              20.83,
+              22.35,
+              25.05,
+              30.0
+            ],
+            "observed_change_mV": [
+              0.0,
+              -5.670000000000002,
+              -4.200000000000003,
+              -3.990000000000009,
+              -3.5,
+              -2.940000000000012,
+              -1.8900000000000006,
+              0.6999999999999886,
+              2.299999999999997,
+              3.069999999999993,
+              10.489999999999995,
+              10.559999999999988,
+              10.349999999999994,
+              9.509999999999991,
+              8.599999999999994
+            ],
+            "model_change_mV": [
+              0.0,
+              -7.24367700152132,
+              -7.282352241349457,
+              -6.310740089268691,
+              -5.091204611985987,
+              -3.656060894139074,
+              -2.614273285490725,
+              0.7204205254292901,
+              2.2261320084509038,
+              2.745996173549756,
+              4.610622712119948,
+              5.138486610610016,
+              5.347933919997189,
+              5.059001179701539,
+              4.486500412933353
+            ],
+            "rmse_mV": 3.127897136226165,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9929822723991631,
+                "sampled_maximum": 1.0056090504575572,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0698953094884492,
+                "sampled_maximum": 0.07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9817820980282422,
+                "sampled_maximum": 1.004765858236894,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9661411980692325,
+                "sampled_maximum": 1.0366454412877908,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.03493660291494614,
+                "sampled_maximum": 0.03527687318655673,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 128.4521526176384,
+                "sampled_maximum": 143.12974426446735,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.3922624020562524,
+                "sampled_maximum": 1.59016706586357,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 140.12790233734387,
+                "sampled_maximum": 149.51364396615472,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 72.71764775865054,
+                "sampled_maximum": 85.34793391999719,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399791540151903,
+                "sampled_maximum": 0.019705972481263326,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.8428916065924352,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.019747344225690383,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          },
+          {
+            "level_db_spl": 125,
+            "time_min": [
+              0.0,
+              0.37,
+              0.7,
+              1.03,
+              2.56,
+              4.91,
+              9.89,
+              15.02,
+              20.0,
+              20.22,
+              20.76,
+              21.16,
+              22.53,
+              25.05,
+              30.0
+            ],
+            "observed_change_mV": [
+              0.0,
+              -7.819999999999993,
+              -7.75,
+              -7.75,
+              -7.75,
+              -7.75,
+              -8.870000000000005,
+              -12.11,
+              -13.689999999999998,
+              -7.969999999999999,
+              -7.3700000000000045,
+              -7.140000000000001,
+              -7.140000000000001,
+              -9.480000000000004,
+              -12.780000000000001
+            ],
+            "model_change_mV": [
+              0.0,
+              -10.22876036290397,
+              -10.629159451850938,
+              -10.80697036282507,
+              -10.77263133271363,
+              -10.91234857220482,
+              -13.346925094795282,
+              -16.60198735125355,
+              -19.348190935109457,
+              -17.432914384412165,
+              -16.761539537087657,
+              -16.4325543488999,
+              -15.753695726239187,
+              -15.061366126817319,
+              -14.299900894351836
+            ],
+            "rmse_mV": 5.695414915593088,
+            "sampled_state_ranges": {
+              "flow": {
+                "declared_lower": 0.15,
+                "declared_upper": 2.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9992483230575427,
+                "sampled_maximum": 1.033238769930452,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "oxygen": {
+                "declared_lower": 0.005,
+                "declared_upper": 0.13,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.0679476390737197,
+                "sampled_maximum": 0.07,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_sync": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.9209741532847503,
+                "sampled_maximum": 1.0039168999205332,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "atp_marginal": {
+                "declared_lower": 0.1,
+                "declared_upper": 1.5,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.6634063252261394,
+                "sampled_maximum": 1.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "strial_volume": {
+                "declared_lower": 0.01,
+                "declared_upper": 0.25,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.035,
+                "sampled_maximum": 0.04024229797526389,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_sync": {
+                "declared_lower": 40.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 93.28612042182151,
+                "sampled_maximum": 142.07344726438416,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_intrastrial": {
+                "declared_lower": 0.5,
+                "declared_upper": 60.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 1.5,
+                "sampled_maximum": 2.9583633481293927,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "k_marginal": {
+                "declared_lower": 60.0,
+                "declared_upper": 180.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 145.0,
+                "sampled_maximum": 194.67963059272572,
+                "outside_sample_count": 8,
+                "first_outside_time_min": 9.89
+              },
+              "ep": {
+                "declared_lower": -50.0,
+                "declared_upper": 130.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 60.65180906489054,
+                "sampled_maximum": 80.0,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "endolymph_atp": {
+                "declared_lower": 0.001,
+                "declared_upper": 5.0,
+                "upper_inclusive": true,
+                "sampled_minimum": 0.007399040881324665,
+                "sampled_maximum": 0.023989367084215674,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "met_adaptation": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.8577160443712962,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              },
+              "trauma": {
+                "declared_lower": 0.0,
+                "declared_upper": 1.0,
+                "upper_inclusive": false,
+                "sampled_minimum": 0.0,
+                "sampled_maximum": 0.369252161071438,
+                "outside_sample_count": 0,
+                "first_outside_time_min": null
+              }
+            }
+          }
+        ]
+      },
+      "wang_1990": {
+        "residual_slice": [
+          90,
+          94
+        ],
+        "residual_count": 4,
+        "weighted_sum_squares": 0.4041265713516829,
+        "weighting": "Separate-cohort EP difference error / (5 mV * sqrt(number of cohorts)).",
+        "predictions": [
+          {
+            "exposure_min": 20,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -7.5,
+            "modeled_difference_mV": -10.838842346969884
+          },
+          {
+            "exposure_min": 40,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -13.5,
+            "modeled_difference_mV": -16.151135623671678
+          },
+          {
+            "exposure_min": 60,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -20.799999999999997,
+            "modeled_difference_mV": -18.545399126283833
+          },
+          {
+            "exposure_min": 80,
+            "assumed_delay_min": 45.0,
+            "observed_difference_mV": -23.799999999999997,
+            "modeled_difference_mV": -19.658376680287518
+          }
+        ]
+      },
+      "salt_table_iii": {
+        "residual_slice": [
+          94,
+          103
+        ],
+        "residual_count": 9,
+        "weighted_sum_squares": 1.970185592657245,
+        "weighting": "Local-episode delta EP / (3 mV * sqrt(3 episodes)); no SD/n precision; timing window is hypothetical.",
+        "predictions": [
+          {
+            "noise_dba": 95,
+            "exposure_number": 1,
+            "mean_mV": 0.1,
+            "sd_mV": 1.1,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 84.14080146424939,
+            "predicted_overall_ep_change_mV": 4.140801464249392,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 4.040801464249393
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 2,
+            "mean_mV": -0.4,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 83.9330468039947,
+            "measurement_window_mean_ep_mV": 84.8118320200621,
+            "predicted_overall_ep_change_mV": 0.8787852160673992,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.2787852160673991
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 3,
+            "mean_mV": -0.8,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 84.5881845794338,
+            "measurement_window_mean_ep_mV": 84.89949870865325,
+            "predicted_overall_ep_change_mV": 0.3113141292194541,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.1113141292194542
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 1,
+            "mean_mV": 0.4,
+            "sd_mV": 2.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 85.92181499260055,
+            "predicted_overall_ep_change_mV": 5.921814992600545,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 5.521814992600545
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 0.5,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.6366264319919,
+            "measurement_window_mean_ep_mV": 86.00493608009741,
+            "predicted_overall_ep_change_mV": 0.3683096481055088,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.8683096481055088
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 3,
+            "mean_mV": -1.4,
+            "sd_mV": 1.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 85.7449454285667,
+            "measurement_window_mean_ep_mV": 85.85922201400298,
+            "predicted_overall_ep_change_mV": 0.11427658543628638,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.5142765854362863
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 1,
+            "mean_mV": 5.1,
+            "sd_mV": 2.9,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 85.30676530173557,
+            "predicted_overall_ep_change_mV": 5.306765301735567,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.20676530173556706
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 1.0,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.06512072944197,
+            "measurement_window_mean_ep_mV": 84.05735816961428,
+            "predicted_overall_ep_change_mV": -1.0077625598276967,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -0.5077625598276967
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 3,
+            "mean_mV": -0.4,
+            "sd_mV": 1.1,
+            "n_observations": 7,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 83.8845570982574,
+            "measurement_window_mean_ep_mV": 83.08629454194082,
+            "predicted_overall_ep_change_mV": -0.7982625563165868,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -0.3982625563165868
+          }
+        ]
+      },
+      "salt_figure_3": {
+        "residual_slice": [
+          103,
+          178
+        ],
+        "residual_count": 75,
+        "weighted_sum_squares": 1.0593498026384889,
+        "weighting": "Each Figure 3 series uses baseline-relative errors divided by 3 mV or 3 mM times sqrt(points in that series); illustrative deterministic weights, not a likelihood. Fig. 3 is one paired EP/K animal.",
+        "predictions": {
+          "ep": {
+            "unit": "mV",
+            "time_min": [
+              1.3278424443423305,
+              2.5726543828291675,
+              3.4025290084870576,
+              4.751075275181126,
+              7.033230495740327,
+              9.315385716299524,
+              11.493806608651482,
+              13.77596182921068,
+              15.850648393355407,
+              18.029069285707365,
+              22.07470808578958,
+              24.1493946499343,
+              26.22408121407903,
+              28.402502106430987,
+              32.96681254754938,
+              36.07884239376647,
+              39.19087223998356,
+              42.821573727236824,
+              45.93360357345391,
+              48.83816476325653,
+              52.15766326588809,
+              55.26969311210517,
+              57.86305131728608,
+              61.70122146095382,
+              64.08711100972025,
+              67.19914085593734,
+              70.31117070215443,
+              73.42320054837151,
+              75.80909009713794,
+              78.09124531769714,
+              82.24061844598658,
+              84.31530501013131,
+              86.90866321531222,
+              90.02069306152931
+            ],
+            "source_pixel_xy": [
+              [
+                260,
+                530
+              ],
+              [
+                272,
+                426
+              ],
+              [
+                280,
+                405
+              ],
+              [
+                293,
+                386
+              ],
+              [
+                315,
+                370
+              ],
+              [
+                337,
+                340
+              ],
+              [
+                358,
+                330
+              ],
+              [
+                380,
+                312
+              ],
+              [
+                400,
+                296
+              ],
+              [
+                421,
+                282
+              ],
+              [
+                460,
+                146
+              ],
+              [
+                480,
+                149
+              ],
+              [
+                500,
+                159
+              ],
+              [
+                521,
+                170
+              ],
+              [
+                565,
+                326
+              ],
+              [
+                595,
+                326
+              ],
+              [
+                625,
+                327
+              ],
+              [
+                660,
+                329
+              ],
+              [
+                690,
+                327
+              ],
+              [
+                718,
+                326
+              ],
+              [
+                750,
+                213
+              ],
+              [
+                780,
+                212
+              ],
+              [
+                805,
+                219
+              ],
+              [
+                842,
+                363
+              ],
+              [
+                865,
+                366
+              ],
+              [
+                895,
+                360
+              ],
+              [
+                925,
+                358
+              ],
+              [
+                955,
+                360
+              ],
+              [
+                978,
+                363
+              ],
+              [
+                1000,
+                373
+              ],
+              [
+                1040,
+                228
+              ],
+              [
+                1060,
+                232
+              ],
+              [
+                1085,
+                236
+              ],
+              [
+                1115,
+                239
+              ]
+            ],
+            "observed_change": [
+              -3.992580878353536,
+              -1.2427238495537551,
+              -0.6874642571999487,
+              -0.18508653078460213,
+              0.2379683967230477,
+              1.031196385799916,
+              1.2956057154922007,
+              1.7715425089383103,
+              2.1945974364459744,
+              2.5647704980151786,
+              6.160737381830273,
+              6.081414582922591,
+              5.817005253230306,
+              5.526154990568784,
+              1.4013694473691203,
+              1.4013694473691203,
+              1.3749285143998833,
+              1.3220466484614377,
+              1.3749285143998833,
+              1.4013694473691203,
+              4.389194872891963,
+              4.415635805861186,
+              4.230549275076584,
+              0.42305492750764984,
+              0.34373212859996727,
+              0.5023777264153466,
+              0.5552595923537922,
+              0.5023777264153466,
+              0.42305492750764984,
+              0.15864559781536514,
+              3.9925808783535217,
+              3.8868171464766164,
+              3.781053414599697,
+              3.7017306156920142
+            ],
+            "modeled_change": [
+              -6.681885012491108,
+              -5.173776550675612,
+              -4.186822431358593,
+              -2.765840485366226,
+              -0.885392746803106,
+              0.45261190040051247,
+              1.3467730900649428,
+              1.9847700821607077,
+              2.367188158679596,
+              2.6188620918003807,
+              5.357525040315707,
+              5.16860996029861,
+              4.916190010386842,
+              4.661745422323804,
+              1.5672637227956727,
+              1.8987024109449493,
+              2.071505735141173,
+              2.1213041731066653,
+              2.0808293022018347,
+              2.000447818809164,
+              4.087778405626011,
+              3.8514430045638335,
+              3.6184963718944374,
+              0.7230037673923988,
+              0.8821536998320454,
+              1.093251824465014,
+              1.1944705575765653,
+              1.2165259283465986,
+              1.1969372773958327,
+              1.1577918352348036,
+              3.223781699037346,
+              3.109041770051604,
+              2.911358330666289,
+              2.6923223825584017
+            ],
+            "observed_baseline": 89.50290067241907,
+            "scale": 3.0,
+            "rmse": 1.2783464406190563
+          },
+          "endolymph_k": {
+            "unit": "mM",
+            "time_min": [
+              0.49796781868444384,
+              1.431576772549569,
+              2.468920054621929,
+              4.024934977730474,
+              5.477215572631781,
+              8.589245418848868,
+              10.871400639408066,
+              12.738618547138316,
+              15.331976752319221,
+              17.925334957500127,
+              22.07470808578958,
+              24.1493946499343,
+              26.742752855115207,
+              28.29876777822375,
+              32.4481409065132,
+              33.900421501414506,
+              36.59751403480265,
+              39.19087223998356,
+              41.265558804128275,
+              43.340245368273,
+              45.41493193241773,
+              48.52696177863481,
+              51.12031998381572,
+              53.195006547960446,
+              55.26969311210517,
+              57.3443796762499,
+              59.41906624039461,
+              60.66387817888146,
+              62.53109608661171,
+              65.12445429179262,
+              67.71781249697352,
+              70.31117070215443,
+              72.90452890733533,
+              75.49788711251624,
+              77.05390203562477,
+              78.09124531769714,
+              82.24061844598658,
+              84.31530501013131,
+              86.38999157427604,
+              88.46467813842077,
+              90.02069306152931
+            ],
+            "source_pixel_xy": [
+              [
+                252,
+                523
+              ],
+              [
+                261,
+                529
+              ],
+              [
+                271,
+                519
+              ],
+              [
+                286,
+                510
+              ],
+              [
+                300,
+                505
+              ],
+              [
+                330,
+                503
+              ],
+              [
+                352,
+                477
+              ],
+              [
+                370,
+                457
+              ],
+              [
+                395,
+                456
+              ],
+              [
+                420,
+                455
+              ],
+              [
+                460,
+                470
+              ],
+              [
+                480,
+                472
+              ],
+              [
+                505,
+                473
+              ],
+              [
+                520,
+                469
+              ],
+              [
+                560,
+                456
+              ],
+              [
+                574,
+                437
+              ],
+              [
+                600,
+                435
+              ],
+              [
+                625,
+                424
+              ],
+              [
+                645,
+                417
+              ],
+              [
+                665,
+                410
+              ],
+              [
+                685,
+                396
+              ],
+              [
+                715,
+                389
+              ],
+              [
+                740,
+                388
+              ],
+              [
+                760,
+                396
+              ],
+              [
+                780,
+                401
+              ],
+              [
+                800,
+                397
+              ],
+              [
+                820,
+                395
+              ],
+              [
+                832,
+                420
+              ],
+              [
+                850,
+                417
+              ],
+              [
+                875,
+                407
+              ],
+              [
+                900,
+                396
+              ],
+              [
+                925,
+                393
+              ],
+              [
+                950,
+                396
+              ],
+              [
+                975,
+                394
+              ],
+              [
+                990,
+                389
+              ],
+              [
+                1000,
+                375
+              ],
+              [
+                1040,
+                376
+              ],
+              [
+                1060,
+                381
+              ],
+              [
+                1080,
+                389
+              ],
+              [
+                1100,
+                402
+              ],
+              [
+                1115,
+                404
+              ]
+            ],
+            "observed_change": [
+              -2.115274637538306,
+              -2.4325658331690647,
+              -1.903747173784467,
+              -1.4278103803383715,
+              -1.1634010506460868,
+              -1.0576373187691672,
+              0.31729119563073027,
+              1.374928514399869,
+              1.427810380338343,
+              1.4806922462767886,
+              0.6874642571999345,
+              0.581700525323015,
+              0.5288186593845694,
+              0.7403461231383801,
+              1.427810380338343,
+              2.4325658331690363,
+              2.538329565045956,
+              3.120030090368971,
+              3.490203151938175,
+              3.8603762135073794,
+              4.600722336645788,
+              4.970895398214964,
+              5.023777264153438,
+              4.600722336645788,
+              4.336313006953503,
+              4.547840470707314,
+              4.6536042025842335,
+              3.33155755412281,
+              3.490203151938175,
+              4.0190218113227445,
+              4.600722336645788,
+              4.759367934461153,
+              4.600722336645788,
+              4.706486068522679,
+              4.970895398214964,
+              5.711241521353372,
+              5.658359655414927,
+              5.393950325722642,
+              4.970895398214964,
+              4.283431141015029,
+              4.17766740913811
+            ],
+            "modeled_change": [
+              -0.22619168927960231,
+              -0.6161516988478581,
+              -0.9577754081906278,
+              -1.2770721347112044,
+              -1.3928061997256407,
+              -1.2037828443151284,
+              -0.8121023360091044,
+              -0.3959181581389828,
+              0.2634789130165416,
+              0.965333535850391,
+              2.3708491502790707,
+              3.1572590266234783,
+              3.9897271815337945,
+              4.413329116725436,
+              4.901175434566682,
+              4.9559635145078005,
+              5.118535877063863,
+              5.330726217929168,
+              5.524579472130597,
+              5.730032847968744,
+              5.9404154212354285,
+              6.255100667985602,
+              6.632198284294759,
+              7.081512252298154,
+              7.468227021634874,
+              7.784508663345974,
+              8.036422140258225,
+              8.065490452033629,
+              7.932120105614018,
+              7.800162881364798,
+              7.746407214428302,
+              7.752025596394617,
+              7.799116579453681,
+              7.873971879103067,
+              7.927950320065747,
+              7.966661588802737,
+              8.395651819654262,
+              8.70982558748048,
+              8.963801899095728,
+              9.159691123142409,
+              9.27223106430364
+            ],
+            "observed_baseline": 163.50608728723859,
+            "scale": 3.0,
+            "rmse": 2.810690057886673
+          }
+        }
+      }
+    },
+    "interpretation": "The 0.025-min refit tests endpoint-grid sensitivity locally from the frozen candidate; it is not an event-based extremum calculation or a new primary fit."
+  },
+  "source_sha256": {
+    "fit": "d934d50febbb40d864ab09702f7fe8cea561d98914de96018b93ae0c0d96959f",
+    "fit_code": "6d2fba8573cea27cb500e8d85feb0b8a34135fd22c020d63d8756a66d8f6579c",
+    "diagnostic_code": "7af090c4c93dc7a0fafde4701ac82beb49e7ab000d909e21be251a8c1bc26050",
+    "evidence": "fb15639027589148e93af421401b34a3c8cd5ae55978d9a6a14a938ac1dad7f2"
+  },
+  "limitations": [
+    "Historical traces are digitized and serially correlated; target count is not independent information.",
+    "The alternative weight is one analyst-selected sensitivity perturbation, not a probability model.",
+    "The endpoint-grid comparisons use requested output samples, not continuous-time events.",
+    "Neither refit establishes parameter identifiability, uncertainty, global optimality, or predictive validity."
+  ]
+}
