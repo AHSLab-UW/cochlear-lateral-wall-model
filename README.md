@@ -46,7 +46,7 @@ the audit output for scope and limitations.
 
 ## Release status
 
-The public GitHub repository is being established under AHSLab-UW. No
+The public GitHub repository is available under AHSLab-UW. No
 archival DOI or software license has been configured. The source-publication
 PDFs and raster page images are not included; users must obtain source
 publications lawfully. The digitized observation data are provided with
