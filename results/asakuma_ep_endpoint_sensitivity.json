@@ -1,0 +1,608 @@
+{
+  "status": "completed exploratory endpoint sensitivity",
+  "inputs_sha256": {
+    "results/asakuma_nadir_refit.json": "eb587b9f079eeaa0b0a8bfa84b551986d756e9d7c04c7d2bbd095730e48c0670",
+    "results/low_dose_assumption_sensitivity.json": "6c000fd0163d6f01c4dd4b7a3e3a89efb1094900f8687ee445c7ed286ec3e7cd",
+    "refs/research_evidence/joint_calibration_evidence.json": "3a1efe5337873f5673ab17f08ca22ba169b668182ba812195709faed79c9e23b"
+  },
+  "asakuma_ep": {
+    "mean_mV": -33.4,
+    "sd_mV": 9.41,
+    "n": 6,
+    "reported_sd_over_sqrt_n_mV": 3.8416164132649513
+  },
+  "bounds": {
+    "potassium_flux": [
+      0.05,
+      2.0
+    ],
+    "effective_dose_scale_mg_kg": [
+      30.0,
+      400.0
+    ],
+    "exposure_decay_min": [
+      3.0,
+      80.0
+    ],
+    "rybak_exposure_multiplier": [
+      0.5,
+      2.0
+    ],
+    "met_conductance": [
+      0.01,
+      0.6
+    ],
+    "drug_loss_fraction": [
+      0.01,
+      0.98
+    ],
+    "exchange": [
+      0.0,
+      10.0
+    ]
+  },
+  "limitations": [
+    "Exploratory outcome-informed sensitivity, not independent evaluation or model selection.",
+    "The endpoint scales are an illustrative 10 mV and reported SD/sqrt(n); neither includes model discrepancy or EP-resistance covariance.",
+    "A modeled trajectory minimum is not generally the mean of individual minima; both EP and resistance are correlated group-level endpoints.",
+    "Absolute EP is compared despite differing baseline means and shared cross-study parameter/exposure assumptions.",
+    "Parameter bounds, series fraction, 0\u2013120 minute window and 1-minute optimization grid are assumed; finer grids are post-fit only.",
+    "Two outcome-informed local starts do not establish global optimality, parameter identifiability or physical closure."
+  ],
+  "cases": [
+    {
+      "hill": 2.6,
+      "ep_scale_mV": 10.0,
+      "attempts": [
+        {
+          "start": "resistance_only_refit",
+          "initial_parameters": {
+            "potassium_flux": 1.9293354938111411,
+            "effective_dose_scale_mg_kg": 33.337902989268365,
+            "exposure_decay_min": 38.64264549601684,
+            "rybak_exposure_multiplier": 1.107329402562808,
+            "met_conductance": 0.09474438560038656,
+            "drug_loss_fraction": 0.9525278545526868
+          },
+          "initial_exchange": 0.3754949748606953,
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 13,
+          "initial_sum_squares": 24.62897734676648,
+          "sum_squares_optimization_grid": 21.85556440857567,
+          "parameters": {
+            "potassium_flux": 1.999999999999602,
+            "effective_dose_scale_mg_kg": 30.000000104415452,
+            "exposure_decay_min": 34.49801470455902,
+            "rybak_exposure_multiplier": 0.9865022272156434,
+            "met_conductance": 0.14274712200132328,
+            "drug_loss_fraction": 0.9512351379107656
+          },
+          "exchange": 0.23406236621222587,
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 0,
+            "exchange": 0
+          }
+        },
+        {
+          "start": "historical_fixed_time",
+          "initial_parameters": {
+            "potassium_flux": 1.9539492576215867,
+            "effective_dose_scale_mg_kg": 32.49471942667276,
+            "exposure_decay_min": 37.60874261133371,
+            "rybak_exposure_multiplier": 1.0871110483714133,
+            "met_conductance": 0.07624039889301332,
+            "drug_loss_fraction": 0.9694589894196275
+          },
+          "initial_exchange": 0.3936532636468366,
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 11,
+          "initial_sum_squares": 24.484120344450798,
+          "sum_squares_optimization_grid": 21.878197427343967,
+          "parameters": {
+            "potassium_flux": 1.9999999999999536,
+            "effective_dose_scale_mg_kg": 30.00000000183071,
+            "exposure_decay_min": 34.571973184334745,
+            "rybak_exposure_multiplier": 0.9910197646351002,
+            "met_conductance": 0.12374494028779964,
+            "drug_loss_fraction": 0.9490218606051544
+          },
+          "exchange": 0.13349465520073805,
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 0,
+            "exchange": 0
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 1.999999999999602,
+        "effective_dose_scale_mg_kg": 30.000000104415452,
+        "exposure_decay_min": 34.49801470455902,
+        "rybak_exposure_multiplier": 0.9865022272156434,
+        "met_conductance": 0.14274712200132328,
+        "drug_loss_fraction": 0.9512351379107656
+      },
+      "exchange": 0.23406236621222587,
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": -1,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 0,
+        "exchange": 0
+      },
+      "checks": [
+        {
+          "status": "ok",
+          "method": "Radau",
+          "grid_step_min": 0.25,
+          "sum_squares": 21.953169538007035,
+          "components": {
+            "pike_ep": 4.018466476718579,
+            "asakuma_resistance": 0.04261270817117986,
+            "rybak_ep": 2.6568517516943775,
+            "rybak_k": 13.237690583861154,
+            "rybak_timing": 0.028478883440237905,
+            "asakuma_ep": 1.9690691341215063
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 9.540431978243284,
+              "minimum_at_anchor_times_mV": 9.42681909643213
+            },
+            "pike_60": {
+              "rmse_mV": 11.526025923019718,
+              "minimum_at_anchor_times_mV": -18.842529034156293
+            },
+            "pike_80": {
+              "rmse_mV": 13.340822004743497,
+              "minimum_at_anchor_times_mV": -34.88052952122894
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.975099398910016,
+            "rybak_25_sampled_ep_reduction_mV": 26.87450648706676,
+            "rybak_25_sampled_k_reduction_mM": 0.06831417043463262,
+            "rybak_25_sampled_ep_minimum_time_min": 1.75,
+            "rybak_25_sampled_k_minimum_time_min": 4.5,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 86.2474876837029,
+            "rybak_50_sampled_k_reduction_mM": 8.955042280475595,
+            "rybak_50_sampled_ep_minimum_time_min": 3.0,
+            "rybak_50_sampled_k_minimum_time_min": 17.0,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 123.83765895978001,
+            "rybak_100_sampled_k_reduction_mM": 35.037027344786665,
+            "rybak_100_sampled_ep_minimum_time_min": 4.5,
+            "rybak_100_sampled_k_minimum_time_min": 35.5,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 86.2474876837029,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 3.0,
+            "rybak_100_early_ep_reduction_mV": 122.15009019258153,
+            "rybak_100_late_lower_ep_gap_mV": 1.6875687671984778,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "Radau",
+              "grid_step_min": 0.25,
+              "sampled_nadir_time_min": 3.5,
+              "sampled_nadir_ep_mV": -19.367647616591483,
+              "resistance_ratio_at_sampled_nadir": 2.088635568291485,
+              "resistance_ratio_at_assumed_6_min": 1.975099398910016,
+              "nadir_at_window_boundary": false
+            }
+          }
+        },
+        {
+          "status": "ok",
+          "method": "BDF",
+          "grid_step_min": 0.25,
+          "sum_squares": 21.953169656472923,
+          "components": {
+            "pike_ep": 4.018466461509536,
+            "asakuma_resistance": 0.04261270817117986,
+            "rybak_ep": 2.6568516019076918,
+            "rybak_k": 13.237690577983793,
+            "rybak_timing": 0.028478921660794798,
+            "asakuma_ep": 1.9690693852399281
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 9.540431979046701,
+              "minimum_at_anchor_times_mV": 9.42681907722488
+            },
+            "pike_60": {
+              "rmse_mV": 11.526025762677573,
+              "minimum_at_anchor_times_mV": -18.842528026546326
+            },
+            "pike_80": {
+              "rmse_mV": 13.34082208569732,
+              "minimum_at_anchor_times_mV": -34.8805285595106
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.975099398910016,
+            "rybak_25_sampled_ep_reduction_mV": 26.874506961405856,
+            "rybak_25_sampled_k_reduction_mM": 0.06831416673469448,
+            "rybak_25_sampled_ep_minimum_time_min": 1.75,
+            "rybak_25_sampled_k_minimum_time_min": 4.5,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 86.24748742150638,
+            "rybak_50_sampled_k_reduction_mM": 8.955042135253677,
+            "rybak_50_sampled_ep_minimum_time_min": 3.0,
+            "rybak_50_sampled_k_minimum_time_min": 17.0,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 123.83765774795452,
+            "rybak_100_sampled_k_reduction_mM": 35.037026249244065,
+            "rybak_100_sampled_ep_minimum_time_min": 4.5,
+            "rybak_100_sampled_k_minimum_time_min": 35.5,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 86.24748742150638,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 3.0,
+            "rybak_100_early_ep_reduction_mV": 122.15008784834163,
+            "rybak_100_late_lower_ep_gap_mV": 1.687569899612896,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "BDF",
+              "grid_step_min": 0.25,
+              "sampled_nadir_time_min": 3.5,
+              "sampled_nadir_ep_mV": -19.36764672180775,
+              "resistance_ratio_at_sampled_nadir": 2.088635568291485,
+              "resistance_ratio_at_assumed_6_min": 1.975099398910016,
+              "nadir_at_window_boundary": false
+            }
+          }
+        },
+        {
+          "status": "ok",
+          "method": "Radau",
+          "grid_step_min": 0.05,
+          "sum_squares": 21.948309487455273,
+          "components": {
+            "pike_ep": 4.018466476718579,
+            "asakuma_resistance": 0.029545406898764115,
+            "rybak_ep": 2.6686997518435858,
+            "rybak_k": 13.237672944447223,
+            "rybak_timing": 0.02849724037667875,
+            "asakuma_ep": 1.9654276671704418
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 9.540431978243284,
+              "minimum_at_anchor_times_mV": 9.42681909643213
+            },
+            "pike_60": {
+              "rmse_mV": 11.526025923019718,
+              "minimum_at_anchor_times_mV": -18.842529034156293
+            },
+            "pike_80": {
+              "rmse_mV": 13.340822004743497,
+              "minimum_at_anchor_times_mV": -34.88052952122894
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.975099398910016,
+            "rybak_25_sampled_ep_reduction_mV": 26.912382273736085,
+            "rybak_25_sampled_k_reduction_mM": 0.06831483596525345,
+            "rybak_25_sampled_ep_minimum_time_min": 1.6500000000000001,
+            "rybak_25_sampled_k_minimum_time_min": 4.55,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 86.2474876837029,
+            "rybak_50_sampled_k_reduction_mM": 8.95507744266618,
+            "rybak_50_sampled_ep_minimum_time_min": 3.0,
+            "rybak_50_sampled_k_minimum_time_min": 16.95,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 123.83820275922746,
+            "rybak_100_sampled_k_reduction_mM": 35.037027344786665,
+            "rybak_100_sampled_ep_minimum_time_min": 4.55,
+            "rybak_100_sampled_k_minimum_time_min": 35.5,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 86.2474876837029,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 3.0,
+            "rybak_100_early_ep_reduction_mV": 122.15009019258153,
+            "rybak_100_late_lower_ep_gap_mV": 1.6881125666459198,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "Radau",
+              "grid_step_min": 0.05,
+              "sampled_nadir_time_min": 3.35,
+              "sampled_nadir_ep_mV": -19.38062887583597,
+              "resistance_ratio_at_sampled_nadir": 2.095543705014543,
+              "resistance_ratio_at_assumed_6_min": 1.975099398910016,
+              "nadir_at_window_boundary": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hill": 2.6,
+      "ep_scale_mV": 3.8416164132649513,
+      "attempts": [
+        {
+          "start": "resistance_only_refit",
+          "initial_parameters": {
+            "potassium_flux": 1.9293354938111411,
+            "effective_dose_scale_mg_kg": 33.337902989268365,
+            "exposure_decay_min": 38.64264549601684,
+            "rybak_exposure_multiplier": 1.107329402562808,
+            "met_conductance": 0.09474438560038656,
+            "drug_loss_fraction": 0.9525278545526868
+          },
+          "initial_exchange": 0.3754949748606953,
+          "success": true,
+          "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
+          "evaluations": 9,
+          "initial_sum_squares": 59.51948998709833,
+          "sum_squares_optimization_grid": 26.25630680972079,
+          "parameters": {
+            "potassium_flux": 1.9999999999999996,
+            "effective_dose_scale_mg_kg": 30.000000000000135,
+            "exposure_decay_min": 34.64983019005349,
+            "rybak_exposure_multiplier": 0.9492216600740513,
+            "met_conductance": 0.2178281961468231,
+            "drug_loss_fraction": 0.9799999999999841
+          },
+          "exchange": 3.382997221592313e-13,
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1,
+            "exchange": -1
+          }
+        },
+        {
+          "start": "historical_fixed_time",
+          "initial_parameters": {
+            "potassium_flux": 1.9539492576215867,
+            "effective_dose_scale_mg_kg": 32.49471942667276,
+            "exposure_decay_min": 37.60874261133371,
+            "rybak_exposure_multiplier": 1.0871110483714133,
+            "met_conductance": 0.07624039889301332,
+            "drug_loss_fraction": 0.9694589894196275
+          },
+          "initial_exchange": 0.3936532636468366,
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 8,
+          "initial_sum_squares": 56.44913583122592,
+          "sum_squares_optimization_grid": 26.256306486859273,
+          "parameters": {
+            "potassium_flux": 1.9999999999985336,
+            "effective_dose_scale_mg_kg": 30.000000000510166,
+            "exposure_decay_min": 34.64995541414921,
+            "rybak_exposure_multiplier": 0.9492220199534662,
+            "met_conductance": 0.21782805944320613,
+            "drug_loss_fraction": 0.9799999999918589
+          },
+          "exchange": 2.0076159656932967e-09,
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1,
+            "exchange": -1
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 1.9999999999985336,
+        "effective_dose_scale_mg_kg": 30.000000000510166,
+        "exposure_decay_min": 34.64995541414921,
+        "rybak_exposure_multiplier": 0.9492220199534662,
+        "met_conductance": 0.21782805944320613,
+        "drug_loss_fraction": 0.9799999999918589
+      },
+      "exchange": 2.0076159656932967e-09,
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": -1,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 1,
+        "exchange": -1
+      },
+      "checks": [
+        {
+          "status": "ok",
+          "method": "Radau",
+          "grid_step_min": 0.25,
+          "sum_squares": 26.362439353759456,
+          "components": {
+            "pike_ep": 5.544554593376814,
+            "asakuma_resistance": 0.47875636200207283,
+            "rybak_ep": 3.944828481027761,
+            "rybak_k": 13.749708205991084,
+            "rybak_timing": 0.023439682650332354,
+            "asakuma_ep": 2.6211520287113936
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 10.506468567506438,
+              "minimum_at_anchor_times_mV": 5.086902852248554
+            },
+            "pike_60": {
+              "rmse_mV": 13.105502870176721,
+              "minimum_at_anchor_times_mV": -26.806913563070495
+            },
+            "pike_80": {
+              "rmse_mV": 16.50198085374814,
+              "minimum_at_anchor_times_mV": -44.5734126272485
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.8862070985358153,
+            "rybak_25_sampled_ep_reduction_mV": 26.418743990475107,
+            "rybak_25_sampled_k_reduction_mM": 0.05477179448692482,
+            "rybak_25_sampled_ep_minimum_time_min": 1.5,
+            "rybak_25_sampled_k_minimum_time_min": 4.75,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 89.2047127034353,
+            "rybak_50_sampled_k_reduction_mM": 7.840216622574985,
+            "rybak_50_sampled_ep_minimum_time_min": 2.75,
+            "rybak_50_sampled_k_minimum_time_min": 16.0,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 132.94896485567264,
+            "rybak_100_sampled_k_reduction_mM": 33.64825846882765,
+            "rybak_100_sampled_ep_minimum_time_min": 4.5,
+            "rybak_100_sampled_k_minimum_time_min": 34.75,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 89.2047127034353,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 2.75,
+            "rybak_100_early_ep_reduction_mV": 131.41796248303135,
+            "rybak_100_late_lower_ep_gap_mV": 1.5310023726412822,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "Radau",
+              "grid_step_min": 0.25,
+              "sampled_nadir_time_min": 3.25,
+              "sampled_nadir_ep_mV": -27.180433670617386,
+              "resistance_ratio_at_sampled_nadir": 1.9915368153406796,
+              "resistance_ratio_at_assumed_6_min": 1.8862070985358153,
+              "nadir_at_window_boundary": false
+            }
+          }
+        },
+        {
+          "status": "ok",
+          "method": "BDF",
+          "grid_step_min": 0.25,
+          "sum_squares": 26.362439595893708,
+          "components": {
+            "pike_ep": 5.544554466340626,
+            "asakuma_resistance": 0.47875636200207283,
+            "rybak_ep": 3.9448280923206682,
+            "rybak_k": 13.749708190545688,
+            "rybak_timing": 0.023439724892300062,
+            "asakuma_ep": 2.621152759792355
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 10.506468579046112,
+              "minimum_at_anchor_times_mV": 5.08690274596043
+            },
+            "pike_60": {
+              "rmse_mV": 13.105502657781084,
+              "minimum_at_anchor_times_mV": -26.806912506474227
+            },
+            "pike_80": {
+              "rmse_mV": 16.50198063016898,
+              "minimum_at_anchor_times_mV": -44.57341207605336
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.8862070985358153,
+            "rybak_25_sampled_ep_reduction_mV": 26.41874441489952,
+            "rybak_25_sampled_k_reduction_mM": 0.05477180507932644,
+            "rybak_25_sampled_ep_minimum_time_min": 1.5,
+            "rybak_25_sampled_k_minimum_time_min": 4.75,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 89.20471236633837,
+            "rybak_50_sampled_k_reduction_mM": 7.840216544748927,
+            "rybak_50_sampled_ep_minimum_time_min": 2.75,
+            "rybak_50_sampled_k_minimum_time_min": 16.0,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 132.94896415753425,
+            "rybak_100_sampled_k_reduction_mM": 33.64825740319229,
+            "rybak_100_sampled_ep_minimum_time_min": 4.5,
+            "rybak_100_sampled_k_minimum_time_min": 34.75,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 89.20471236633837,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 2.75,
+            "rybak_100_early_ep_reduction_mV": 131.41796040534092,
+            "rybak_100_late_lower_ep_gap_mV": 1.531003752193314,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "BDF",
+              "grid_step_min": 0.25,
+              "sampled_nadir_time_min": 3.25,
+              "sampled_nadir_ep_mV": -27.180432803249495,
+              "resistance_ratio_at_sampled_nadir": 1.9915368153406796,
+              "resistance_ratio_at_assumed_6_min": 1.8862070985358153,
+              "nadir_at_window_boundary": false
+            }
+          }
+        },
+        {
+          "status": "ok",
+          "method": "Radau",
+          "grid_step_min": 0.05,
+          "sum_squares": 26.372159931363317,
+          "components": {
+            "pike_ep": 5.544554593376814,
+            "asakuma_resistance": 0.47875636200207283,
+            "rybak_ep": 3.9546829310784264,
+            "rybak_k": 13.74957433354428,
+            "rybak_timing": 0.023439682650332354,
+            "asakuma_ep": 2.6211520287113936
+          },
+          "predictions": {
+            "pike_40": {
+              "rmse_mV": 10.506468567506438,
+              "minimum_at_anchor_times_mV": 5.086902852248554
+            },
+            "pike_60": {
+              "rmse_mV": 13.105502870176721,
+              "minimum_at_anchor_times_mV": -26.806913563070495
+            },
+            "pike_80": {
+              "rmse_mV": 16.50198085374814,
+              "minimum_at_anchor_times_mV": -44.5734126272485
+            },
+            "asakuma_60_resistance_ratio_at_6min": 1.8862070985358153,
+            "rybak_25_sampled_ep_reduction_mV": 26.455338610287704,
+            "rybak_25_sampled_k_reduction_mM": 0.05477353382676142,
+            "rybak_25_sampled_ep_minimum_time_min": 1.6,
+            "rybak_25_sampled_k_minimum_time_min": 4.800000000000001,
+            "rybak_25_n": 3,
+            "rybak_50_sampled_ep_reduction_mV": 89.20748001867949,
+            "rybak_50_sampled_k_reduction_mM": 7.84046058080304,
+            "rybak_50_sampled_ep_minimum_time_min": 2.8000000000000003,
+            "rybak_50_sampled_k_minimum_time_min": 16.1,
+            "rybak_50_n": 5,
+            "rybak_100_sampled_ep_reduction_mV": 132.94896485567264,
+            "rybak_100_sampled_k_reduction_mM": 33.64829538376203,
+            "rybak_100_sampled_ep_minimum_time_min": 4.5,
+            "rybak_100_sampled_k_minimum_time_min": 34.7,
+            "rybak_100_n": 7,
+            "conditional_series_fraction": 0.5,
+            "rybak_50_early_ep_reduction_mV": 89.20748001867949,
+            "rybak_50_late_lower_ep_gap_mV": 0.0,
+            "rybak_50_early_minimum_time_min": 2.8000000000000003,
+            "rybak_100_early_ep_reduction_mV": 131.41796248303135,
+            "rybak_100_late_lower_ep_gap_mV": 1.5310023726412822,
+            "rybak_100_early_minimum_time_min": 3.0,
+            "asakuma_sampled_nadir": {
+              "solver": "Radau",
+              "grid_step_min": 0.05,
+              "sampled_nadir_time_min": 3.25,
+              "sampled_nadir_ep_mV": -27.180433670617386,
+              "resistance_ratio_at_sampled_nadir": 1.9915368153406796,
+              "resistance_ratio_at_assumed_6_min": 1.8862070985358153,
+              "nadir_at_window_boundary": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

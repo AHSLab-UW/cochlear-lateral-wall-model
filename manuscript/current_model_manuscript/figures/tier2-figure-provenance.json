@@ -1,0 +1,17 @@
+{
+  "report_sha256": "ac3d5b6e781c845673e4f3e5ba4264a40bb486575dddd14e21e6bda16234a7c9",
+  "script_sha256": "f6d335a747ba7670a83a78f64a0cc3a702362e4bcaf61ba2bd1cf3eec17407bf",
+  "evidence_provenance": {
+    "freeze_sha256": "ca8ef7fe46139b55a9402429ef710e692a3016e40bf7fc64f20087989e9646c4",
+    "script_sha256": "ef58bf2742bf7720a7adffaaefd0248b6386dbe5cfc719636bc7f36012eccf58",
+    "evidence_sha256": "3e678a9498439d947ebd0c448f07d3438834a8cf007769ce9b10e9e880b9a52d",
+    "papers_sha256": {
+      "zhang": "d0b3b136c6d14e08809e4e2cb815959a7f90b18ef4f18826f220620d19476a12",
+      "hou": "09cd5de85896edd89377c2970f031798caacc54b2af9da7e9ce990e682603dbd"
+    }
+  },
+  "figures": [
+    "figure5-hou-vascular-trauma-exploration"
+  ],
+  "contract": "183 mm, 7-pt axis labels; SD, not SEM/CI; model sensitivity not uncertainty"
+}

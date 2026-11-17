@@ -1,0 +1,1074 @@
+{
+  "status": "outcome-informed timing and resistance sensitivity, not model selection",
+  "model": "combined 14-state circuit, closed K boundary, fixed endolymph volume",
+  "data": "same Pike, Asakuma and Rybak endpoints as joint_calibration_screen; no Tier 2 data",
+  "observation_changes": [
+    "For 50 and 100 mg/kg Rybak EP, compare group mean reduction to modeled minimum in 0-3 min, scaled by reported SE, instead of modeled 0-120 min minimum.",
+    "Add one-sided penalty for each 50 and 100 mg/kg trajectory whose 0-120 min EP minimum is lower than its 0-3 min minimum; scale 10 mV is illustrative.",
+    "Compare Asakuma resistance ratio at 2 or 6 min and with series fraction 0 or 0.5. Two minutes comes from a distinct figure, not a measured table-cohort nadir time."
+  ],
+  "limitations": [
+    "Source reports EP nadir under 3 min after 50 and 100 mg/kg; interval endpoint inclusion and mean-trajectory mapping are approximations.",
+    "The 0-120 min observation window is assumed, not a source-reported common follow-up for all animals.",
+    "Time-grid minima are approximations; optimization uses 1-min grid and reporting uses 0.25-min grid.",
+    "The two resistance times and series fractions are sensitivity hypotheses, not direct measurements of separate circuit parameters.",
+    "Reported SE scaling and illustrative penalties do not account for covariance or model discrepancy; objective is not a likelihood.",
+    "One candidate family with two starting points per condition cannot establish global optimization or generalize to other model structures.",
+    "Model, observation assumptions, bounds and timing constraints are outcome-informed. Numerical bounds are not physiological limits.",
+    "Sampled Radau/BDF domain checks do not prove global stability, continuous positivity or physical completeness."
+  ],
+  "scenarios": [
+    {
+      "series_fraction": 0.0,
+      "resistance_time_min": 2.0,
+      "bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "rybak_exposure_multiplier": [
+          0.5,
+          2.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.49999999999999994,
+            30.000000000000348,
+            68.90449367241216,
+            1.316991633315669,
+            0.45259565767570215,
+            0.7999999999999993
+          ],
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 7,
+          "cost": 19.32021937667942,
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000023340338,
+            "exposure_decay_min": 64.58705707239345,
+            "rybak_exposure_multiplier": 1.2524855640855128,
+            "met_conductance": 0.5459535111956184,
+            "drug_loss_fraction": 0.8
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            1.5,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 10,
+          "cost": 19.32021933565684,
+          "parameters": {
+            "potassium_flux": 0.4999999999999984,
+            "effective_dose_scale_mg_kg": 30.000000725162195,
+            "exposure_decay_min": 64.58476080779948,
+            "rybak_exposure_multiplier": 1.2525049513154891,
+            "met_conductance": 0.54592071082456,
+            "drug_loss_fraction": 0.7999999999975551
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 0.4999999999999984,
+        "effective_dose_scale_mg_kg": 30.000000725162195,
+        "exposure_decay_min": 64.58476080779948,
+        "rybak_exposure_multiplier": 1.2525049513154891,
+        "met_conductance": 0.54592071082456,
+        "drug_loss_fraction": 0.7999999999975551
+      },
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": -1,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 1
+      },
+      "weighted_sum_squares": 38.67043899894198,
+      "predictions": {
+        "pike_40": {
+          "rmse_mV": 6.380045087918942,
+          "minimum_at_anchor_times_mV": 32.306057453070125
+        },
+        "pike_60": {
+          "rmse_mV": 14.97390199970509,
+          "minimum_at_anchor_times_mV": 10.587448062345048
+        },
+        "pike_80": {
+          "rmse_mV": 18.891836422571227,
+          "minimum_at_anchor_times_mV": -0.20201541495886569
+        },
+        "asakuma_60_resistance_ratio_at_6min": 1.3736338822008674,
+        "rybak_25_sampled_ep_reduction_mV": 33.94647332184872,
+        "rybak_25_sampled_k_reduction_mM": 0.8124155755001254,
+        "rybak_25_sampled_ep_minimum_time_min": 3.5,
+        "rybak_25_sampled_k_minimum_time_min": 51.25,
+        "rybak_25_n": 3,
+        "rybak_50_sampled_ep_reduction_mV": 71.44056139584524,
+        "rybak_50_sampled_k_reduction_mM": 6.729919059792309,
+        "rybak_50_sampled_ep_minimum_time_min": 3.75,
+        "rybak_50_sampled_k_minimum_time_min": 87.75,
+        "rybak_50_n": 5,
+        "rybak_100_sampled_ep_reduction_mV": 89.71945038053927,
+        "rybak_100_sampled_k_reduction_mM": 18.82068207715571,
+        "rybak_100_sampled_ep_minimum_time_min": 16.0,
+        "rybak_100_sampled_k_minimum_time_min": 120.0,
+        "rybak_100_n": 7,
+        "conditional_resistance_ratio": 1.7818624439667856,
+        "conditional_resistance_time_min": 2.0,
+        "conditional_series_fraction": 0.0,
+        "rybak_50_early_ep_reduction_mV": 71.36396267850205,
+        "rybak_50_late_lower_ep_gap_mV": 0.07659871734318813,
+        "rybak_50_early_minimum_time_min": 3.0,
+        "rybak_100_early_ep_reduction_mV": 88.37670767044597,
+        "rybak_100_late_lower_ep_gap_mV": 1.3427427100932974,
+        "rybak_100_early_minimum_time_min": 3.0
+      },
+      "sampled_domain": {
+        "Radau": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.03163250639096,
+            "minimum_ep_mV": 32.08171553980098
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.87144917525814,
+            "minimum_ep_mV": 10.432706207495674
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.37341225122682,
+            "minimum_ep_mV": -0.2115835168237622
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18758442449987,
+            "minimum_ep_mV": 46.05352667815128
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.2700809402077,
+            "minimum_ep_mV": 8.559438604154764
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.1793179228443,
+            "minimum_ep_mV": -9.719450380539266
+          }
+        ],
+        "BDF": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.0316322811289,
+            "minimum_ep_mV": 32.08171547426365
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.8714507255574,
+            "minimum_ep_mV": 10.43270624320358
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.37341437275762,
+            "minimum_ep_mV": -0.21158353613957562
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18758480109958,
+            "minimum_ep_mV": 46.05352649034927
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.27008264920147,
+            "minimum_ep_mV": 8.559438641390013
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.17931978576974,
+            "minimum_ep_mV": -9.719450271805968
+          }
+        ]
+      }
+    },
+    {
+      "series_fraction": 0.0,
+      "resistance_time_min": 6.0,
+      "bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "rybak_exposure_multiplier": [
+          0.5,
+          2.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.49999999999999994,
+            30.000000000000348,
+            68.90449367241216,
+            1.316991633315669,
+            0.45259565767570215,
+            0.7999999999999993
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 16,
+          "cost": 19.63418476690624,
+          "parameters": {
+            "potassium_flux": 0.4999999999999999,
+            "effective_dose_scale_mg_kg": 30.001751262775915,
+            "exposure_decay_min": 64.95014268458006,
+            "rybak_exposure_multiplier": 1.2525904879951284,
+            "met_conductance": 0.5437105122007493,
+            "drug_loss_fraction": 0.7999999999999944
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": 0,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            1.5,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 17,
+          "cost": 19.634658352018374,
+          "parameters": {
+            "potassium_flux": 0.49999999934551825,
+            "effective_dose_scale_mg_kg": 30.005392609690585,
+            "exposure_decay_min": 64.9089132968298,
+            "rybak_exposure_multiplier": 1.253362687431626,
+            "met_conductance": 0.543263201237388,
+            "drug_loss_fraction": 0.799996486845048
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": 0,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 0
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 0.4999999999999999,
+        "effective_dose_scale_mg_kg": 30.001751262775915,
+        "exposure_decay_min": 64.95014268458006,
+        "rybak_exposure_multiplier": 1.2525904879951284,
+        "met_conductance": 0.5437105122007493,
+        "drug_loss_fraction": 0.7999999999999944
+      },
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": 0,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 1
+      },
+      "weighted_sum_squares": 39.30144791349462,
+      "predictions": {
+        "pike_40": {
+          "rmse_mV": 6.441441296368022,
+          "minimum_at_anchor_times_mV": 32.34514749304058
+        },
+        "pike_60": {
+          "rmse_mV": 15.07338824648086,
+          "minimum_at_anchor_times_mV": 10.659146423344962
+        },
+        "pike_80": {
+          "rmse_mV": 19.0226823703489,
+          "minimum_at_anchor_times_mV": -0.13676630763025815
+        },
+        "asakuma_60_resistance_ratio_at_6min": 1.3747068072965538,
+        "rybak_25_sampled_ep_reduction_mV": 33.916494479819235,
+        "rybak_25_sampled_k_reduction_mM": 0.8173808810614389,
+        "rybak_25_sampled_ep_minimum_time_min": 3.5,
+        "rybak_25_sampled_k_minimum_time_min": 51.5,
+        "rybak_25_n": 3,
+        "rybak_50_sampled_ep_reduction_mV": 71.37796428133109,
+        "rybak_50_sampled_k_reduction_mM": 6.777025309216043,
+        "rybak_50_sampled_ep_minimum_time_min": 3.75,
+        "rybak_50_sampled_k_minimum_time_min": 88.25,
+        "rybak_50_n": 5,
+        "rybak_100_sampled_ep_reduction_mV": 89.67551236511612,
+        "rybak_100_sampled_k_reduction_mM": 18.91815235481465,
+        "rybak_100_sampled_ep_minimum_time_min": 16.25,
+        "rybak_100_sampled_k_minimum_time_min": 120.0,
+        "rybak_100_n": 7,
+        "conditional_resistance_ratio": 1.7494136145931078,
+        "conditional_resistance_time_min": 6.0,
+        "conditional_series_fraction": 0.0,
+        "rybak_50_early_ep_reduction_mV": 71.29635268379891,
+        "rybak_50_late_lower_ep_gap_mV": 0.08161159753217362,
+        "rybak_50_early_minimum_time_min": 3.0,
+        "rybak_100_early_ep_reduction_mV": 88.29996156397912,
+        "rybak_100_late_lower_ep_gap_mV": 1.375550801136992,
+        "rybak_100_early_minimum_time_min": 3.0
+      },
+      "sampled_domain": {
+        "Radau": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.01868273983968,
+            "minimum_ep_mV": 32.131609856730016
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.82933883244908,
+            "minimum_ep_mV": 10.496931795920085
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.30203240231327,
+            "minimum_ep_mV": -0.14413660623729377
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18261911893856,
+            "minimum_ep_mV": 46.083505520180765
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.22297469078396,
+            "minimum_ep_mV": 8.622035718668911
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.08184764518535,
+            "minimum_ep_mV": -9.675512365116118
+          }
+        ],
+        "BDF": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.01868252238393,
+            "minimum_ep_mV": 32.13160980813665
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.82934042143953,
+            "minimum_ep_mV": 10.496931808014375
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.30203458207592,
+            "minimum_ep_mV": -0.14413662624253687
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18261950384152,
+            "minimum_ep_mV": 46.083505364713375
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.22297629794204,
+            "minimum_ep_mV": 8.622035771084537
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.08184954067752,
+            "minimum_ep_mV": -9.675512258784156
+          }
+        ]
+      }
+    },
+    {
+      "series_fraction": 0.5,
+      "resistance_time_min": 2.0,
+      "bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "rybak_exposure_multiplier": [
+          0.5,
+          2.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.49999999999999994,
+            30.000000000000348,
+            68.90449367241216,
+            1.316991633315669,
+            0.45259565767570215,
+            0.7999999999999993
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 14,
+          "cost": 24.630551803776292,
+          "parameters": {
+            "potassium_flux": 0.4999999999999999,
+            "effective_dose_scale_mg_kg": 30.0000000154854,
+            "exposure_decay_min": 63.9955826160122,
+            "rybak_exposure_multiplier": 1.259693796500979,
+            "met_conductance": 0.5351323425757087,
+            "drug_loss_fraction": 0.7999999999999557
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            1.5,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 18,
+          "cost": 24.63023797973611,
+          "parameters": {
+            "potassium_flux": 0.4999999998877779,
+            "effective_dose_scale_mg_kg": 30.00013740255895,
+            "exposure_decay_min": 64.11639187126703,
+            "rybak_exposure_multiplier": 1.2584975564485854,
+            "met_conductance": 0.5362876386344355,
+            "drug_loss_fraction": 0.7999986683651042
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": 0,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 0
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 0.4999999998877779,
+        "effective_dose_scale_mg_kg": 30.00013740255895,
+        "exposure_decay_min": 64.11639187126703,
+        "rybak_exposure_multiplier": 1.2584975564485854,
+        "met_conductance": 0.5362876386344355,
+        "drug_loss_fraction": 0.7999986683651042
+      },
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": 0,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 0
+      },
+      "weighted_sum_squares": 49.294128883804625,
+      "predictions": {
+        "pike_40": {
+          "rmse_mV": 6.358531933150803,
+          "minimum_at_anchor_times_mV": 32.58885092791508
+        },
+        "pike_60": {
+          "rmse_mV": 14.973611791085034,
+          "minimum_at_anchor_times_mV": 10.947307149220913
+        },
+        "pike_80": {
+          "rmse_mV": 18.8223356182106,
+          "minimum_at_anchor_times_mV": 0.14834417610300363
+        },
+        "asakuma_60_resistance_ratio_at_6min": 1.3775410742233665,
+        "rybak_25_sampled_ep_reduction_mV": 33.982516044524154,
+        "rybak_25_sampled_k_reduction_mM": 0.8206690750470216,
+        "rybak_25_sampled_ep_minimum_time_min": 3.5,
+        "rybak_25_sampled_k_minimum_time_min": 51.25,
+        "rybak_25_n": 3,
+        "rybak_50_sampled_ep_reduction_mV": 71.29015125558224,
+        "rybak_50_sampled_k_reduction_mM": 6.737719734224129,
+        "rybak_50_sampled_ep_minimum_time_min": 3.75,
+        "rybak_50_sampled_k_minimum_time_min": 87.75,
+        "rybak_50_n": 5,
+        "rybak_100_sampled_ep_reduction_mV": 89.47639423191195,
+        "rybak_100_sampled_k_reduction_mM": 18.775176863968795,
+        "rybak_100_sampled_ep_minimum_time_min": 16.25,
+        "rybak_100_sampled_k_minimum_time_min": 120.0,
+        "rybak_100_n": 7,
+        "conditional_resistance_ratio": 1.3952548014102963,
+        "conditional_resistance_time_min": 2.0,
+        "conditional_series_fraction": 0.5,
+        "rybak_50_early_ep_reduction_mV": 71.20581376918892,
+        "rybak_50_late_lower_ep_gap_mV": 0.0843374863933235,
+        "rybak_50_early_minimum_time_min": 3.0,
+        "rybak_100_early_ep_reduction_mV": 88.07502774910608,
+        "rybak_100_late_lower_ep_gap_mV": 1.4013664828058712,
+        "rybak_100_early_minimum_time_min": 3.0
+      },
+      "sampled_domain": {
+        "Radau": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.04875745026632,
+            "minimum_ep_mV": 32.374258867506974
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.92647485674053,
+            "minimum_ep_mV": 10.783133940083564
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.46630387382115,
+            "minimum_ep_mV": 0.1406024392468442
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.17933092495298,
+            "minimum_ep_mV": 46.017483955475846
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.26228026577587,
+            "minimum_ep_mV": 8.70984874441776
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.2248231360312,
+            "minimum_ep_mV": -9.476394231911955
+          }
+        ],
+        "BDF": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.04875746279006,
+            "minimum_ep_mV": 32.374258903747965
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.9264765543432,
+            "minimum_ep_mV": 10.78313397094209
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.46630556907328,
+            "minimum_ep_mV": 0.14060241756297598
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.17933131073897,
+            "minimum_ep_mV": 46.017483818123445
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.26228188085864,
+            "minimum_ep_mV": 8.709848778408494
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.2248249456883,
+            "minimum_ep_mV": -9.476394128559926
+          }
+        ]
+      }
+    },
+    {
+      "series_fraction": 0.5,
+      "resistance_time_min": 6.0,
+      "bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "rybak_exposure_multiplier": [
+          0.5,
+          2.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.49999999999999994,
+            30.000000000000348,
+            68.90449367241216,
+            1.316991633315669,
+            0.45259565767570215,
+            0.7999999999999993
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 14,
+          "cost": 24.95408155064754,
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000008,
+            "exposure_decay_min": 64.80534607324498,
+            "rybak_exposure_multiplier": 1.2546421523059876,
+            "met_conductance": 0.5423610404638305,
+            "drug_loss_fraction": 0.7999999999999972
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": -1,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 1
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            1.5,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 16,
+          "cost": 24.9536725747162,
+          "parameters": {
+            "potassium_flux": 0.4999999885598703,
+            "effective_dose_scale_mg_kg": 30.0001075145545,
+            "exposure_decay_min": 65.02618941829401,
+            "rybak_exposure_multiplier": 1.2524476181991513,
+            "met_conductance": 0.5443636700202067,
+            "drug_loss_fraction": 0.7999970774640046
+          },
+          "active_bounds": {
+            "potassium_flux": 1,
+            "effective_dose_scale_mg_kg": 0,
+            "exposure_decay_min": 0,
+            "rybak_exposure_multiplier": 0,
+            "met_conductance": 0,
+            "drug_loss_fraction": 0
+          }
+        }
+      ],
+      "status": "converged",
+      "parameters": {
+        "potassium_flux": 0.4999999885598703,
+        "effective_dose_scale_mg_kg": 30.0001075145545,
+        "exposure_decay_min": 65.02618941829401,
+        "rybak_exposure_multiplier": 1.2524476181991513,
+        "met_conductance": 0.5443636700202067,
+        "drug_loss_fraction": 0.7999970774640046
+      },
+      "active_bounds": {
+        "potassium_flux": 1,
+        "effective_dose_scale_mg_kg": 0,
+        "exposure_decay_min": 0,
+        "rybak_exposure_multiplier": 0,
+        "met_conductance": 0,
+        "drug_loss_fraction": 0
+      },
+      "weighted_sum_squares": 49.940367339068096,
+      "predictions": {
+        "pike_40": {
+          "rmse_mV": 6.450098999438064,
+          "minimum_at_anchor_times_mV": 32.32046527001504
+        },
+        "pike_60": {
+          "rmse_mV": 15.083700033727604,
+          "minimum_at_anchor_times_mV": 10.631720121677937
+        },
+        "pike_80": {
+          "rmse_mV": 19.04250853803184,
+          "minimum_at_anchor_times_mV": -0.16296387358385397
+        },
+        "asakuma_60_resistance_ratio_at_6min": 1.3744753248409267,
+        "rybak_25_sampled_ep_reduction_mV": 33.92989416511651,
+        "rybak_25_sampled_k_reduction_mM": 0.8182284130383266,
+        "rybak_25_sampled_ep_minimum_time_min": 3.5,
+        "rybak_25_sampled_k_minimum_time_min": 51.5,
+        "rybak_25_n": 3,
+        "rybak_50_sampled_ep_reduction_mV": 71.4003533843932,
+        "rybak_50_sampled_k_reduction_mM": 6.785965994515436,
+        "rybak_50_sampled_ep_minimum_time_min": 3.75,
+        "rybak_50_sampled_k_minimum_time_min": 88.25,
+        "rybak_50_n": 5,
+        "rybak_100_sampled_ep_reduction_mV": 89.69830809887404,
+        "rybak_100_sampled_k_reduction_mM": 18.93723876974198,
+        "rybak_100_sampled_ep_minimum_time_min": 16.25,
+        "rybak_100_sampled_k_minimum_time_min": 120.0,
+        "rybak_100_n": 7,
+        "conditional_resistance_ratio": 1.3744753248409267,
+        "conditional_resistance_time_min": 6.0,
+        "conditional_series_fraction": 0.5,
+        "rybak_50_early_ep_reduction_mV": 71.31882034633428,
+        "rybak_50_late_lower_ep_gap_mV": 0.08153303805892875,
+        "rybak_50_early_minimum_time_min": 3.0,
+        "rybak_100_early_ep_reduction_mV": 88.3228645742852,
+        "rybak_100_late_lower_ep_gap_mV": 1.3754435245888335,
+        "rybak_100_early_minimum_time_min": 3.0
+      },
+      "sampled_domain": {
+        "Radau": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.01553871669108,
+            "minimum_ep_mV": 32.10706793633574
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.81965235918852,
+            "minimum_ep_mV": 10.46960946751671
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.2860372138445,
+            "minimum_ep_mV": -0.17026976397205978
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18177158696167,
+            "minimum_ep_mV": 46.07010583488349
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.21403400548456,
+            "minimum_ep_mV": 8.5996466156068
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "Radau",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.06276123025802,
+            "minimum_ep_mV": -9.698308098874042
+          }
+        ],
+        "BDF": [
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 40,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 148.01553850123287,
+            "minimum_ep_mV": 32.10706789651907
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 60,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.81965398731325,
+            "minimum_ep_mV": 10.469609509301588
+          },
+          {
+            "study": "guinea_pig",
+            "dose_mg_kg": 80,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 139.28603935768737,
+            "minimum_ep_mV": -0.1702697835867251
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 25,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 149.18177197080414,
+            "minimum_ep_mV": 46.0701056750151
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 50,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 143.21403563523876,
+            "minimum_ep_mV": 8.599646677521525
+          },
+          {
+            "study": "chinchilla",
+            "dose_mg_kg": 100,
+            "method": "BDF",
+            "sampled_domain_pass": true,
+            "minimum_strial_volume": 0.1,
+            "minimum_endolymph_k_mM": 131.06276299721233,
+            "minimum_ep_mV": -9.698307990911413
+          }
+        ]
+      }
+    }
+  ]
+}

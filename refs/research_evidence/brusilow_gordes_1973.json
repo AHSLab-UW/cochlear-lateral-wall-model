@@ -1,0 +1,93 @@
+{
+  "status": "Tier 1 source transcription and protocol-specific structural constraints; not used in numerical fitting",
+  "study": {
+    "authors": "Brusilow and Gordes",
+    "year": 1973,
+    "title": "The Mutual Independence of the Endolymphatic Potential and the Concentrations of Sodium and Potassium in Endolymph",
+    "journal": "Journal of Clinical Investigation",
+    "volume": 52,
+    "pages": "2517-2521",
+    "source": "refs/JCI73107442.pdf",
+    "source_sha256": "df913690b122b1df729a6a187d93535cd36d26af237407c6778e2d5e60b3ba0a",
+    "role": "calibration-first structural evidence, previously inspected, not blinded evaluation",
+    "limitations": [
+      "Approximately 1.5 microlitres of endolymph was aspirated; sampling may alter the preparation and contamination uncertainty remains.",
+      "The 1973 ethacrynic-acid paper is distinct from the Brusilow 1976 furosemide paper.",
+      "Species, treatment, exposure, sampling and intervention differ from furosemide experiments; no transfer is assumed.",
+      "The article's interpretation of independence is not evidence for universal electrochemical independence or an identified mechanism."
+    ]
+  },
+  "table_ii": {
+    "pdf_page": 3,
+    "species": "dog",
+    "intervention": {"drug": "ethacrynic acid", "route": "intravenous", "dose_mg_kg_range": [1, 2]},
+    "time_after_min_values": [10, 40],
+    "dogs": 13,
+    "post_endolymph_analyses": 28,
+    "sampling_note": "The paper reports multiple post-drug samples in several dogs; the 28 analyses are not independent animals.",
+    "units": "mEq/L",
+    "perilymph_na": {"before": 150, "after": 149, "after_range": [137, 158]},
+    "perilymph_k": {"before": 5.8, "after": 5.7, "after_range": [5.0, 6.4]},
+    "endolymph_na": {"before": 5.8, "after": 134, "after_range": [107, 153]},
+    "endolymph_k": {"before": 148, "after": 24.3, "after_range": [13, 55]},
+    "limitations": "Table does not label the summary values as means or specify whether summaries weight dogs equally. Overlap with other tables is not resolved."
+  },
+  "table_iii": {
+    "pdf_page": 3,
+    "species": "dog",
+    "intervention": {"drug": "ethacrynic acid", "route": "intravenous", "dose_mg_kg_range": [1, 2]},
+    "concentration_units": "mEq/L",
+    "potential_units": "mV",
+    "sampling_note": "Five control and six post-drug records are printed in aligned rows. The paper describes same or contralateral ears; row-to-row individual pairing is not established and must not be inferred.",
+    "control_records": [
+      {"na": 5.8, "k": 136, "ep": 70},
+      {"na": 6.4, "k": 166, "ep": 75},
+      {"na": 5.8, "k": 149, "ep": 61},
+      {"na": 5.8, "k": 156, "ep": 48},
+      {"na": 5.8, "k": 145, "ep": 85}
+    ],
+    "post_records": [
+      {"time_min": 40, "na": 140, "k": 19.4, "ep": 65, "double_barrelled": false},
+      {"time_min": 40, "na": 114, "k": 55.0, "ep": 75, "double_barrelled": false},
+      {"time_min": 10, "na": 122, "k": 22.4, "ep": 56, "double_barrelled": true},
+      {"time_min": 40, "na": 122, "k": 23.2, "ep": 54, "double_barrelled": true},
+      {"time_min": 10, "na": 126, "k": 22.3, "ep": 75, "double_barrelled": true},
+      {"time_min": 40, "na": 107, "k": 27.2, "ep": 50, "double_barrelled": true}
+    ],
+    "printed_control_mean": {"na": 5.9, "k": 150, "ep": 68},
+    "printed_post_mean": {"na": 122, "k": 28.2, "ep": 63},
+    "limitations": "The four asterisked post-drug records used double-barrelled pipette electrodes; post-treatment measurement timing and same-ear versus opposite-ear status are not resolved individually."
+  },
+  "table_iv": {
+    "pdf_page": 3,
+    "species": "guinea pig",
+    "intervention": {"drug": "ethacrynic acid", "route": "intravenous"},
+    "concentration_units": "mEq/L",
+    "potential_units": "mV",
+    "records": [
+      {"ep_before": 90, "dose_mg_kg": 2, "time_min": 45, "ep_after": 90, "na_after": 4.8, "k_after": 146},
+      {"ep_before": 75, "dose_mg_kg": 2, "time_min": 40, "ep_after": 75, "na_after": 4.5, "k_after": 145},
+      {"ep_before": 80, "dose_mg_kg": 20, "time_min": 45, "ep_after": 55, "na_after": 4.1, "k_after": 147},
+      {"ep_before": 60, "dose_mg_kg": 20, "time_min": 30, "ep_after": 60, "na_after": 5.2, "k_after": 147},
+      {"ep_before": 65, "dose_mg_kg": 50, "time_min": 35, "ep_after": 70, "na_after": 4.5, "k_after": 144},
+      {"ep_before": 55, "dose_mg_kg": 50, "time_min": 40, "ep_after": 50, "na_after": 4.5, "k_after": 146}
+    ],
+    "limitations": "Control endolymph aspiration was omitted in these guinea-pig experiments; no paired pretreatment Na/K values are reported. One record has a 25 mV EP decrease despite the text's broad no-change description."
+  },
+  "table_v": {
+    "pdf_page": 4,
+    "species": "guinea pig",
+    "intervention": {"gas": "5-10% oxygen and 90-95% nitrogen", "control_gas": "room air"},
+    "concentration_units": "mEq/L",
+    "potential_units": "mV",
+    "records": [
+      {"ep_before": 70, "hypoxia_duration_min": 30, "ep_during": 44, "na_during": 4.7, "k_during": 148, "ep_after": 59},
+      {"ep_before": 85, "hypoxia_duration_min": 14, "ep_during": 24, "na_during": 5.2, "k_during": 144, "ep_after": 85},
+      {"ep_before": 67, "hypoxia_duration_min": 30, "ep_during": 25, "na_during": 5.2, "k_during": 141, "ep_after": 75},
+      {"ep_before": 55, "hypoxia_duration_min": 7, "ep_during": 10, "na_during": 5.2, "k_during": 144, "ep_after": 62},
+      {"ep_before": 85, "hypoxia_duration_min": 27, "ep_during": 50, "na_during": 5.2, "k_during": 148, "ep_after": 70}
+    ],
+    "printed_mean": {"ep_before": 72, "hypoxia_duration_min": 20, "ep_during": 31, "na_during": 5.1, "k_during": 145, "ep_after": 71},
+    "limitations": "EP recovery values average 70.2 mV from the five printed rows, versus the paper's printed mean of 71 mV. The table footnote says drug although the protocol is hypoxia. No paired baseline Na/K measurements are listed; the gas fraction varies between 5% and 10% and the exact recovery time is not tabulated."
+  }
+}

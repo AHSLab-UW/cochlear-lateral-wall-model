@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "study": {
+    "authors": [
+      "Alec N. Salt",
+      "Teruzo Konishi"
+    ],
+    "year": 1979,
+    "title": "Effects of noise on cochlear potentials and endolymph potassium concentration recorded with potassium-selective electrodes",
+    "journal": "Hearing Research",
+    "volume": 1,
+    "pages": "343-363",
+    "doi": "10.1016/0378-5955(79)90005-4"
+  },
+  "source": {
+    "file": "refs/target_source/salt_1979_hear_res.pdf",
+    "sha256": "2cdf859ed18c715e464a261c2fa81d28cac8543bcf0c4fc067536879ba2d9d55",
+    "rendering": {
+      "engine": "Apple PDFKit / CoreGraphics",
+      "scale_px_per_pdf_point": 3.0,
+      "orientation": "upright; pixel origin at upper-left",
+      "page_media_box_pdf_points": [
+        612.0,
+        792.0
+      ],
+      "page_raster_size_px": [
+        1836,
+        2376
+      ],
+      "images": {
+        "fig3_page": {
+          "file": "refs/research_evidence/salt_1979_pages/pdf_page_7.png",
+          "pdf_page": 7,
+          "printed_page": 349,
+          "sha256": "90ed723d465b8a0d319efd0dcc4c85322397048d941dab477a4ff1b3a6bf1ab0"
+        },
+        "fig5_page": {
+          "file": "refs/research_evidence/salt_1979_pages/pdf_page_9.png",
+          "pdf_page": 9,
+          "printed_page": 351,
+          "sha256": "880185ce13fabc4cce7e53c770f716391bd35ef526c926f157ec7c18501c20f8"
+        },
+        "fig3_crop": {
+          "file": "refs/research_evidence/salt_1979_pages/fig3_crop.png",
+          "size_px": [
+            1450,
+            1050
+          ],
+          "upper_left_in_page_raster_px": [
+            180,
+            100
+          ],
+          "sha256": "b33096c8dc00d1d7aa198b3fff83d8a5faa2f7323de33b2f2174d917fefbfa2f"
+        },
+        "fig5_crop": {
+          "file": "refs/research_evidence/salt_1979_pages/fig5_crop.png",
+          "size_px": [
+            1250,
+            1150
+          ],
+          "upper_left_in_page_raster_px": [
+            180,
+            80
+          ],
+          "sha256": "9b5326b267f4774e91a5aa7ef400ce5d00594e9835a036fd7f8e961b73a79964"
+        }
+      }
+    },
+    "caption_transcriptions": {
+      "fig3": "Endolymph potassium concentration and EP changes recorded simultaneously from the basal cochlear turn of a normal guinea pig during 115 dBA noise exposure. Broad-band noise was presented for three 20-min periods as indicated by horizontal bars.",
+      "fig5": "EP changes recorded from the basal turn of three different guinea pigs during the first 20 min period of exposure to 95, 105 or 115 dBA broad-band noise. Subsequent exposure to the same intensity of noise did not generate similar changes. The terms ΔEPon, ΔEPoff, ΔEPe, ΔEPo are explained in the text."
+    },
+    "method_context": {
+      "animal": "Guinea pig; the illustrated Fig. 3 animal is described as normal. Fig. 5 shows three different guinea pigs, one representative trace at each sound level.",
+      "measurement_location": "Basal cochlear turn; potassium-sensitive double-barrel microelectrode inserted into scala media through the spiral ligament.",
+      "ep_measurement": "The potential barrel records scala-media DC potential relative to an Ag-AgCl ground electrode in the neck muscle. In Fig. 3, EP and potassium are recorded simultaneously.",
+      "potassium_measurement": "The potassium-dependent potential is recorded differentially between the ion barrel and potential barrel. Electrodes were calibrated in 50-200 mM KCl at 39 ± 2 °C; mean sensitivity 58.5 mV per tenfold K change and K/Na selectivity ratio >40. The electrode responds to ionic activity; the article reports concentration assuming the activity coefficient is unchanged.",
+      "sound": "Broad-band noise, levels stated in dBA, delivered to the open bulla by a horn speaker; the condenser earphone remained in the earbar throughout. A speaker replaced it for the separate closed-system octave-band protocol.",
+      "fig3_schedule": "Three 20-min exposures at 115 dBA; the plotted bars and labeled time axis place them at approximately 0-20, 30-50, and 60-80 min. The two plotted quiet intervals are therefore 10 min each. Preserve the chart-derived schedule for this record; do not substitute the article's usual 5-min interval or its occasional 10-min intervals from other experiments.",
+      "fig5_schedule": "The three records are the first 20-min exposure at 95, 105, or 115 dBA. Only the exposure-duration bar and 5 mV vertical scale bar are printed; there are no numbered time or absolute EP axes."
+    },
+    "article_context": {
+      "fig3_replication": "The text identifies Fig. 3 as one guinea pig. Similar potassium changes were observed in six experiments and summarized separately in Table I; the plotted trajectory is not a group mean.",
+      "fig5_sample_unit": "Three different guinea pigs are illustrated, one at each intensity. These are example records, not a group-average curve. The caption says subsequent exposure at the same intensity did not generate similar changes.",
+      "pre_exposure_ep": {
+        "mean_mV": 85.0,
+        "reported_plus_minus_mV": 3.5,
+        "n": 27,
+        "note": "The article gives this overall basal-turn pre-exposure statistic near the Fig. 5 discussion; it is not the baseline of any individually digitized Fig. 5 trace."
+      },
+      "fig5_textual_group_summaries": [
+        {
+          "level_dba": 95,
+          "mean_delta_ep_on_mV": -1.9,
+          "mean_delta_ep_post_exposure_mV": 0.8,
+          "mean_delta_ep_on_minus_off_mV": -0.7,
+          "n_reported_in_adjacent_text": null
+        },
+        {
+          "level_dba": 105,
+          "mean_delta_ep_on_mV": -3.7,
+          "mean_delta_ep_during_exposure_mV": 3.3,
+          "n_reported_in_adjacent_text": null,
+          "note": "The text says the onset-off difference became more negative, resulting in very little rise in post-exposure EP; it does not give a numeric mean for that difference here."
+        },
+        {
+          "level_dba": 115,
+          "mean_delta_ep_on_mV": -5.8,
+          "mean_delta_ep_during_exposure_mV": 8.6,
+          "mean_delta_ep_post_exposure_mV": 5.1,
+          "n_reported_in_adjacent_text": null
+        }
+      ],
+      "aep_definitions": {
+        "delta_ep_on": "Rapid EP fall associated with noise onset.",
+        "delta_ep_off": "Rapid EP increase associated with noise termination.",
+        "delta_ep_e": "Slower EP change during exposure, excluding onset and offset components.",
+        "delta_ep_o": "Post-exposure EP change with noise off relative to the pre-exposure value.",
+        "delta_ep_q": "EP change during the quiet period between successive exposures."
+      }
+    },
+    "digitization_method": {
+      "description": "Manual centerline/marker digitization from the unmodified source PDF rendered at 3 px per PDF point. The page renders and figure crops are retained and checksummed above. Coordinates refer to the upper-left origin of the named crop PNG; add the listed crop origin to obtain full-page raster coordinates.",
+      "pixel_coordinate_units": "integer raster pixels",
+      "point_localization_uncertainty_px": 3,
+      "calibration_anchor_uncertainty_px": 3,
+      "uncertainty_note": "These are conservative digitization/localization bounds, not biological error bars or confidence intervals. Figure 3 approximate propagated uncertainty is ±0.4 min, ±0.3 mV EP, and ±0.5 mM K. Figure 5 approximate uncertainty is ±0.3 min within the exposure and ±0.25 mV relative EP. Original trace thickness, print quality, axis-anchor selection, and line overlap limit precision.",
+      "correlation_warning": "Adjacent digitized points along a plotted line are highly correlated and do not increase the animal/sample size. Do not treat them as independent observations or as measured raw recordings.",
+      "event_handling": "Abrupt onset/offset steps are retained as event annotations and adjacent pre/post samples. Do not interpolate a smooth curve through these discontinuities. Fig. 3's repeated exposure and quiet segments are retained; Fig. 5's post-offset horizontal spacing is not assigned time."
+    }
+  },
+  "figures": {
+    "fig3": {
+      "source_image": "fig3_crop",
+      "coordinate_space": "fig3_crop",
+      "horizontal_axis": {
+        "quantity": "time",
+        "unit": "min",
+        "anchors": [
+          {
+            "pixel": 247,
+            "value": 0
+          },
+          {
+            "pixel": 440,
+            "value": 20
+          },
+          {
+            "pixel": 633,
+            "value": 40
+          },
+          {
+            "pixel": 826,
+            "value": 60
+          },
+          {
+            "pixel": 1018,
+            "value": 80
+          }
+        ],
+        "mapping": "Least-squares linear calibration through the printed 0, 20, 40, 60, and 80 min tick centers. The plotted trace extends to the left and right of labeled ticks; coordinates outside labeled ticks are extrapolations along the visibly linear axis."
+      },
+      "noise_intervals": [
+        {
+          "start_min": 0,
+          "end_min": 20,
+          "start_pixel": 247,
+          "end_pixel": 440
+        },
+        {
+          "start_min": 30,
+          "end_min": 50,
+          "start_pixel": 536,
+          "end_pixel": 729
+        },
+        {
+          "start_min": 60,
+          "end_min": 80,
+          "start_pixel": 826,
+          "end_pixel": 1018
+        }
+      ],
+      "events": [
+        {
+          "time_min": 0,
+          "kind": "noise_onset",
+          "level_dba": 115
+        },
+        {
+          "time_min": 20,
+          "kind": "noise_offset",
+          "level_dba": 115
+        },
+        {
+          "time_min": 30,
+          "kind": "noise_onset",
+          "level_dba": 115
+        },
+        {
+          "time_min": 50,
+          "kind": "noise_offset",
+          "level_dba": 115
+        },
+        {
+          "time_min": 60,
+          "kind": "noise_onset",
+          "level_dba": 115
+        },
+        {
+          "time_min": 80,
+          "kind": "noise_offset",
+          "level_dba": 115
+        }
+      ],
+      "series": {
+        "ep": {
+          "quantity": "endocochlear_potential",
+          "unit": "mV",
+          "sample_unit": "one illustrated individual guinea pig; basal turn; simultaneous with K+ trace",
+          "vertical_axis": {
+            "anchors": [
+              {
+                "pixel": 738,
+                "value": 80
+              },
+              {
+                "pixel": 550,
+                "value": 85
+              },
+              {
+                "pixel": 360,
+                "value": 90
+              },
+              {
+                "pixel": 171,
+                "value": 95
+              }
+            ],
+            "mapping": "Least-squares linear calibration through printed left-axis ticks."
+          },
+          "points": [
+            [181, 379],
+            [208, 379],
+            [235, 379],
+            [247, 379],
+            [250, 671],
+            [260, 530],
+            [272, 426],
+            [280, 405],
+            [293, 386],
+            [315, 370],
+            [337, 340],
+            [358, 330],
+            [380, 312],
+            [400, 296],
+            [421, 282],
+            [438, 281],
+            [442, 146],
+            [460, 146],
+            [480, 149],
+            [500, 159],
+            [521, 170],
+            [535, 172],
+            [537, 326],
+            [565, 326],
+            [595, 326],
+            [625, 327],
+            [660, 329],
+            [690, 327],
+            [718, 326],
+            [729, 326],
+            [732, 215],
+            [750, 213],
+            [780, 212],
+            [805, 219],
+            [823, 225],
+            [826, 363],
+            [842, 363],
+            [865, 366],
+            [895, 360],
+            [925, 358],
+            [955, 360],
+            [978, 363],
+            [1000, 373],
+            [1017, 373],
+            [1020, 229],
+            [1040, 228],
+            [1060, 232],
+            [1085, 236],
+            [1115, 239]
+          ],
+          "point_fields": [
+            "x_pixel",
+            "y_pixel"
+          ],
+          "break_before_point_indices_zero_based": [
+            4,
+            16,
+            22,
+            30,
+            35,
+            45
+          ]
+        },
+        "endolymph_k": {
+          "quantity": "endolymph_potassium_concentration_as_reported",
+          "unit": "mM",
+          "sample_unit": "same illustrated individual as Fig. 3 EP; basal turn; simultaneous measurement",
+          "vertical_axis": {
+            "anchors": [
+              {
+                "pixel": 738,
+                "value": 150
+              },
+              {
+                "pixel": 550,
+                "value": 160
+              },
+              {
+                "pixel": 360,
+                "value": 170
+              },
+              {
+                "pixel": 171,
+                "value": 180
+              }
+            ],
+            "mapping": "Least-squares linear calibration through printed right-axis ticks."
+          },
+          "points": [
+            [181, 483],
+            [205, 483],
+            [230, 483],
+            [245, 483],
+            [252, 523],
+            [261, 529],
+            [271, 519],
+            [286, 510],
+            [300, 505],
+            [330, 503],
+            [352, 477],
+            [370, 457],
+            [395, 456],
+            [420, 455],
+            [440, 456],
+            [460, 470],
+            [480, 472],
+            [505, 473],
+            [520, 469],
+            [536, 461],
+            [560, 456],
+            [574, 437],
+            [600, 435],
+            [625, 424],
+            [645, 417],
+            [665, 410],
+            [685, 396],
+            [715, 389],
+            [740, 388],
+            [760, 396],
+            [780, 401],
+            [800, 397],
+            [820, 395],
+            [832, 420],
+            [850, 417],
+            [875, 407],
+            [900, 396],
+            [925, 393],
+            [950, 396],
+            [975, 394],
+            [990, 389],
+            [1000, 375],
+            [1018, 373],
+            [1040, 376],
+            [1060, 381],
+            [1080, 389],
+            [1100, 402],
+            [1115, 404]
+          ],
+          "point_fields": [
+            "x_pixel",
+            "y_pixel"
+          ],
+          "break_before_point_indices_zero_based": [
+            4,
+            33
+          ]
+        }
+      }
+    },
+    "fig5": {
+      "source_image": "fig5_crop",
+      "coordinate_space": "fig5_crop",
+      "horizontal_axis": {
+        "quantity": "time_since_noise_onset",
+        "unit": "min",
+        "anchors": [
+          {
+            "pixel": 232,
+            "value": 0
+          },
+          {
+            "pixel": 660,
+            "value": 20
+          }
+        ],
+        "mapping": "Linear mapping of the printed 20-min exposure-duration bar. This supports relative time only within the exposure. Do not assign numerical times to the pre-exposure lead-in or post-offset tail, whose horizontal spacing is not separately calibrated."
+      },
+      "vertical_scale": {
+        "quantity": "relative_ep_change",
+        "unit": "mV",
+        "scale_bar_value": 5,
+        "scale_bar_top_pixel": 703,
+        "scale_bar_bottom_pixel": 844,
+        "mapping": "Relative EP change = (individual trace baseline y pixel - sampled y pixel) * 5 / (bottom_pixel - top_pixel). Smaller y pixel means higher EP."
+      },
+      "events": [
+        {
+          "kind": "noise_onset",
+          "level_dba": 95,
+          "x_pixel": 228,
+          "time_min": 0,
+          "note": "Onset step is co-located with the exposure-bar start to within raster localization uncertainty."
+        },
+        {
+          "kind": "noise_offset",
+          "level_dba": 95,
+          "x_pixel": 660,
+          "time_min": 20
+        },
+        {
+          "kind": "noise_onset",
+          "level_dba": 105,
+          "x_pixel": 228,
+          "time_min": 0
+        },
+        {
+          "kind": "noise_offset",
+          "level_dba": 105,
+          "x_pixel": 660,
+          "time_min": 20
+        },
+        {
+          "kind": "noise_onset",
+          "level_dba": 115,
+          "x_pixel": 229,
+          "time_min": 0
+        },
+        {
+          "kind": "noise_offset",
+          "level_dba": 115,
+          "x_pixel": 660,
+          "time_min": 20
+        }
+      ],
+      "series": {
+        "95_dba": {
+          "quantity": "endocochlear_potential_change",
+          "unit": "mV",
+          "level_dba": 95,
+          "sample_unit": "one illustrated individual guinea pig; basal turn; not a group mean",
+          "baseline_y_pixel": 148,
+          "points": [
+            [177, 148, "pre_exposure"],
+            [200, 148, "pre_exposure"],
+            [220, 148, "pre_exposure"],
+            [228, 187, "onset"],
+            [250, 188, "exposure"],
+            [300, 190, "exposure"],
+            [400, 190, "exposure"],
+            [500, 190, "exposure"],
+            [600, 190, "exposure"],
+            [650, 190, "exposure"],
+            [659, 190, "pre_offset"],
+            [661, 166, "post_offset_unscaled_time"],
+            [680, 158, "post_offset_unscaled_time"],
+            [700, 151, "post_offset_unscaled_time"],
+            [738, 146, "post_offset_unscaled_time"]
+          ],
+          "point_fields": [
+            "x_pixel",
+            "y_pixel",
+            "phase"
+          ],
+          "break_before_point_indices_zero_based": [
+            3,
+            11
+          ]
+        },
+        "105_dba": {
+          "quantity": "endocochlear_potential_change",
+          "unit": "mV",
+          "level_dba": 105,
+          "sample_unit": "one illustrated individual guinea pig; basal turn; not a group mean",
+          "baseline_y_pixel": 331,
+          "points": [
+            [177, 331, "pre_exposure"],
+            [200, 331, "pre_exposure"],
+            [220, 331, "pre_exposure"],
+            [228, 427, "onset"],
+            [250, 424, "exposure"],
+            [280, 419, "exposure"],
+            [320, 404, "exposure"],
+            [360, 389, "exposure"],
+            [400, 379, "exposure"],
+            [440, 369, "exposure"],
+            [480, 365, "exposure"],
+            [520, 361, "exposure"],
+            [560, 356, "exposure"],
+            [600, 353, "exposure"],
+            [650, 351, "exposure"],
+            [659, 351, "pre_offset"],
+            [661, 303, "post_offset_unscaled_time"],
+            [680, 295, "post_offset_unscaled_time"],
+            [710, 290, "post_offset_unscaled_time"],
+            [738, 286, "post_offset_unscaled_time"]
+          ],
+          "point_fields": [
+            "x_pixel",
+            "y_pixel",
+            "phase"
+          ],
+          "break_before_point_indices_zero_based": [
+            3,
+            16
+          ]
+        },
+        "115_dba": {
+          "quantity": "endocochlear_potential_change",
+          "unit": "mV",
+          "level_dba": 115,
+          "sample_unit": "one illustrated individual guinea pig; basal turn; not a group mean",
+          "baseline_y_pixel": 607,
+          "points": [
+            [177, 607, "pre_exposure"],
+            [200, 607, "pre_exposure"],
+            [220, 607, "pre_exposure"],
+            [229, 770, "onset"],
+            [240, 715, "exposure"],
+            [250, 690, "exposure"],
+            [270, 657, "exposure"],
+            [300, 635, "exposure"],
+            [330, 618, "exposure"],
+            [360, 606, "exposure"],
+            [400, 588, "exposure"],
+            [440, 574, "exposure"],
+            [480, 564, "exposure"],
+            [520, 555, "exposure"],
+            [560, 550, "exposure"],
+            [600, 546, "exposure"],
+            [650, 543, "exposure"],
+            [659, 543, "pre_offset"],
+            [661, 472, "post_offset_unscaled_time"],
+            [680, 469, "post_offset_unscaled_time"],
+            [710, 463, "post_offset_unscaled_time"],
+            [738, 461, "post_offset_unscaled_time"]
+          ],
+          "point_fields": [
+            "x_pixel",
+            "y_pixel",
+            "phase"
+          ],
+          "break_before_point_indices_zero_based": [
+            3,
+            18
+          ]
+        }
+      }
+    }
+  },
+  "fit_use": {
+    "status": "source extraction only; no model fitting performed",
+    "recommendation": "These records can be included as individual-trajectory fitting targets only if the model comparison preserves the individual-trace nature and source uncertainty. Fig. 3 is one individual with simultaneous absolute EP and K; Fig. 5 contributes one example EP trajectory at each level, relative to each trace's own pre-exposure baseline. Keep the separately reported group means as distinct targets; do not substitute them for digitized examples.",
+    "consumer": "Run `python src/salt_1979_digitize.py --points` from the project root, or import `calibrated_points` from `src.salt_1979_digitize.py`. Output rows retain crop pixel x/y, calibrated time where the source permits it, calibrated measurement, units, uncertainty, phase, and discontinuity flags. Fig. 5 post-offset time remains null by design.",
+    "not_supported": [
+      "Treating the dense digitized points as independent biological replicates.",
+      "Assigning an absolute EP baseline to Fig. 5 from the overall 85.0 ± 3.5 mV group statistic.",
+      "Assigning numerical post-offset times to Fig. 5.",
+      "Treating Fig. 3's single-animal trace as a group mean or extracting a group-level K trajectory.",
+      "Using the three Fig. 5 traces as repeated measurements from the same animal."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "post-hoc alternate readout; not a new calibrated ODE or prediction",
+  "source": "Nin et al. 2008, PNAS 105:1751-1756, doi:10.1073/pnas.0711463105, p.1755",
+  "temperature_K": 310.15,
+  "assumptions": [
+    "concentrations used as activity proxies; syncytial reference and offsets held constant",
+    "baseline additive offset selected to reproduce the prototype's 80 mV reference",
+    "readout uses trajectories from the original fitted model and does not feed back",
+    "ATP and sound-dependent shunts are not represented in this alternate readout",
+    "drug exposure model and underlying fitted ODE parameters remain hypothetical and bound-limited"
+  ],
+  "minimum_original_ep_mV_by_curve": {
+    "pike_40": 68.48640626240145,
+    "pike_60": 65.17401631951269,
+    "pike_80": 62.65991647176244
+  },
+  "minimum_alternate_ep_mV_by_curve": {
+    "pike_40": 59.55093350944574,
+    "pike_60": 53.41483256367375,
+    "pike_80": 48.37871953122589
+  },
+  "limitation": "does not establish the true circuit, measured ion activities, or solve the drug fit"
+}

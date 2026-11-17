@@ -1,0 +1,56 @@
+{
+  "status": "Candidate Tier 1 source transcription; not used in numerical fitting",
+  "study": {
+    "authors": "Rybak, Whitworth and Scott",
+    "year": 1993,
+    "title": "Furosemide Ototoxicity Is Enhanced in Analbuminemic Rats",
+    "journal": "Archives of Otolaryngology–Head & Neck Surgery",
+    "volume": 119,
+    "pages": "758-761",
+    "species": "rat",
+    "source": "refs/archotol_119_7_011.pdf",
+    "source_sha256": "db57d1399dea09f3b6d33179d5ab7d446de718220ef06cd72d64319e047a4eab",
+    "tier": "candidate Tier 1",
+    "blinded_validation": false
+  },
+  "protocol": {
+    "animals": "Young adult Sprague-Dawley and Nagase analbuminemic rats aged 50 to 80 days.",
+    "anesthesia": "Ketamine and xylazine cocktail 1.0 mL/kg intramuscularly; constituent concentrations are not stated in the paper.",
+    "furosemide_dose_mg_per_kg": 35,
+    "furosemide_route": "intravenous bolus, jugular vein",
+    "baseline_stabilization_min_range": [10, 15],
+    "monitoring_after_furosemide_h_range": [1, 2],
+    "albumin_intervention": "Bovine fraction V albumin infused at a stated ratio of one-half mole per mole of furosemide before the furosemide bolus.",
+    "albumin_timing_caveat": "The interval between albumin infusion and furosemide bolus and the infusion duration are not quantified in the described EP protocol.",
+    "measurement": "Basal-turn scala media EP relative to a chlorided silver wire in neck muscle; continuous strip-chart recording.",
+    "temperature_C": 38
+  },
+  "ep_table": {
+    "pdf_page": 2,
+    "groups": [
+      {"group": "normal Sprague-Dawley", "n": 8, "preinjection_ep_mean_mV": 84.75, "preinjection_ep_plus_minus_mV": 3.81, "maximum_drop_mean_mV": 8.5, "maximum_drop_plus_minus_mV": 2.66},
+      {"group": "Nagase analbuminemic", "n": 9, "preinjection_ep_mean_mV": 85.11, "preinjection_ep_plus_minus_mV": 3.19, "maximum_drop_mean_mV": 90.84, "maximum_drop_plus_minus_mV": 6.84},
+      {"group": "Nagase analbuminemic plus albumin", "n": 10, "preinjection_ep_mean_mV": 84.60, "preinjection_ep_plus_minus_mV": 3.69, "maximum_drop_mean_mV": 36.3, "maximum_drop_plus_minus_mV": 4.70}
+    ],
+    "uncertainty_notes": [
+      "The table does not label the plus-minus quantities as SD or SEM.",
+      "Page 3 explicitly labels the preinjection EP values mean plus or minus SEM, but does not separately label the maximum-drop plus-minus values.",
+      "Do not use the maximum-drop plus-minus values as SEM or SD in a weighted objective without additional evidence."
+    ],
+    "significance_note": "The table marks the two analbuminemic maximum drops with a dagger and P < 0.001; its footnote does not specify the comparator."
+  },
+  "figures_and_other_measurements": {
+    "pdf_page": 2,
+    "figure_3": "Representative percent-of-control EP curves; not group-average trajectories. The graph does not establish exact individual or group nadir times.",
+    "serum_albumin": "Page 3 gives normal rats 2.2 +/- 0.42 g/dL (mean +/- SD); analbuminemic values were below the assay detection limit of 0.8 g/dL. Figure 2 bars are labeled SD.",
+    "diuresis": "Page 3 describes 3.5 +/- 0.6 and 6.25 +/- 0.7 mL/h without and with albumin as mean +/- SEM, respectively; Figure 4 caption labels its vertical bars SD. The discrepancy is unresolved.",
+    "diuresis_caveat": "The relation between animals used for EP and diuresis is not established by the reported methods."
+  },
+  "interpretation_limits": [
+    "Genotype and albumin infusion are not a randomized manipulation of a single cochlear exposure parameter.",
+    "Blood albumin is not a measurement of free furosemide concentration at cochlear transporters.",
+    "Preinjection and maximum-drop group summaries are not individual paired observations; their covariance is not reported.",
+    "The maximum drop from a representative model trajectory is not generally the mean of individual maximum drops.",
+    "The rat study is not directly interchangeable with chinchilla or guinea-pig studies."
+  ]
+}

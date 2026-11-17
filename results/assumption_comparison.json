@@ -1,0 +1,40 @@
+{
+  "status": "outcome-informed fixed-parameter sensitivity; not model selection or validation",
+  "design": "2x2x2 circuit switches x 2 fluid closures x 2 K-boundary assumptions x 3 doses",
+  "shared_parameters_from": "pike_ode_fit.json, fitted only to original circuit",
+  "shared_parameters": {
+    "potassium_flux": 0.49999999999999994,
+    "effective_dose_scale_mg_kg": 30.000000000000014,
+    "exposure_decay_min": 79.9999999999989
+  },
+  "conditional_coefficients": {
+    "met_load_relative_conductance": 0.3,
+    "met_reversal_mV": -70.0,
+    "maximum_drug_conductance_loss_fraction": 0.44
+  },
+  "solver_comparison": {
+    "radau_tolerances": {
+      "rtol": 1e-07,
+      "atol": 1e-09
+    },
+    "bdf_tolerances": {
+      "rtol": 1e-09,
+      "atol": 1e-11
+    },
+    "max_rmse_difference_mV": 2.765089277545485e-07,
+    "max_anchor_minimum_difference_mV": 2.959044849148995e-07
+  },
+  "limitations": [
+    "These coefficients are illustrative reference-derived assumptions, not measured here.",
+    "The original circuit alone was previously fitted; alternatives were not refitted.",
+    "RMSEs are descriptive and cannot fairly rank or select the alternatives.",
+    "Apical term uses concentrations as activity proxies; syncytial term is unchanged.",
+    "The circuit is an adaptation, not a reconstruction of the reference model.",
+    "Fixed-endolymph closure leaves the source of strial water unspecified.",
+    "The drug sink is a hypothetical external K loss, not an observed flux.",
+    "Minima and positivity are checked at observation times, not over continuous paths.",
+    "All outcomes were already known; no held-out or blinded evaluation is performed.",
+    "No uncertainty, identifiability or stability analysis is established."
+  ],
+  "rows": 96
+}

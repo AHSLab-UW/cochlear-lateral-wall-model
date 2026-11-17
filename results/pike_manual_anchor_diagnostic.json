@@ -1,0 +1,35 @@
+{
+  "status": "empirical descriptive fit, not cochlear model calibration",
+  "source": "Pike and Bosher 1980, Fig. 1, DOI 10.1016/0378-5955(80)90009-x",
+  "data": "previously retained manual digitization anchors; overall shape compared visually with figure, individual coordinates not independently redigitized",
+  "weights": "each curve receives equal total squared-error weight; not inverse variance",
+  "limitations": [
+    "group mean traces, n=2,3,3; not independent individual recordings",
+    "anchor values and the shared baseline are approximate and correlated",
+    "no reported pointwise biological uncertainty; no confidence intervals",
+    "simple two-exponential shape and common time constants are assumptions",
+    "amplitudes are independent by dose, not an identified dose-response curve",
+    "numerical bounds are not evidence-based physiological bounds",
+    "time constants are empirical, not measured drug exposure or transport parameters"
+  ],
+  "parameters": {
+    "baseline_mV": 81.8806101393461,
+    "amplitude_40_mV": 62.731959791119344,
+    "amplitude_60_mV": 105.4570986311798,
+    "amplitude_80_mV": 125.96015882233225,
+    "rise_min": 0.6267078652072295,
+    "decay_minus_rise_min": 38.810803971325385
+  },
+  "decay_min": 39.437511836532614,
+  "rmse_mV_by_curve": {
+    "pike_40": 2.4909251516566115,
+    "pike_60": 3.5848855765949543,
+    "pike_80": 3.718066414774357
+  },
+  "cost_by_start": [
+    16.440065286553715,
+    16.440065286553942,
+    16.44006528655355
+  ],
+  "near_numerical_bound": []
+}

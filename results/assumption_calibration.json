@@ -1,0 +1,4019 @@
+{
+  "status": "outcome-informed conditional calibrations; not independent validation",
+  "data": "Pike and Bosher 1980 manual EP anchors, all three dose curves",
+  "objective": "equal total squared-error weight per dose; not inverse variance",
+  "protocol": "three starts per candidate with the same shared-parameter bounds and solver settings",
+  "limitations": [
+    "Candidates and bounds were designed after outcomes were known, not preregistered.",
+    "Bounds are numerical exploration bounds, not established physiological bounds.",
+    "MET conductance and drug loss are separately fitted only when present; both have positive numerical lower bounds.",
+    "MET reversal, volume couplings and external sink values are fixed assumptions, not estimated.",
+    "All non-EP subsystems and the dose proxy remain provisional; no other datasets were fitted.",
+    "Point correlations, digitization uncertainty, biological variance and parameter uncertainty are not estimated.",
+    "Multistart convergence does not establish a global optimum, identifiability or continuous-time admissibility.",
+    "Complexity and independent-data performance are not quantified; do not rank candidates by training RMSE alone.",
+    "Any failed start or tight-tolerance evaluation is explicitly recorded."
+  ],
+  "candidates": [
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.934587447409,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.934587448192,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000031,
+            "exposure_decay_min": 79.999999999399
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2770.9345875173362,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998799,
+            "effective_dose_scale_mg_kg": 30.000000002031392,
+            "exposure_decay_min": 79.99999997855771
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999999
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5541.868947985781,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.8013001714832,
+        "pike_60": 45.148401284070985,
+        "pike_80": 53.743709578724314
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.38080696550074,
+        "pike_60": 64.92550755993088,
+        "pike_80": 62.201720686562396
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.7342131583673,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.7342131591436,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000031,
+            "exposure_decay_min": 79.99999999939274
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2770.734213228934,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999988004,
+            "effective_dose_scale_mg_kg": 30.00000000204899,
+            "exposure_decay_min": 79.99999997834071
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999999
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5541.468199639424,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.800599071988238,
+        "pike_60": 45.14701691515041,
+        "pike_80": 53.74146768532697
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.3793038230998,
+        "pike_60": 64.9222279807703,
+        "pike_80": 62.19445325715698
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.3545093286716,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999996747,
+            "effective_dose_scale_mg_kg": 30.000000002879393,
+            "exposure_decay_min": 79.99999922087437
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.3545083241347,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999989
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.354508380087,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998886,
+            "effective_dose_scale_mg_kg": 30.000000001616844,
+            "exposure_decay_min": 79.99999998139299
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999989
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5568.70878605523,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.845102699128464,
+        "pike_60": 45.23285975966989,
+        "pike_80": 53.90192998295167
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.48640626240145,
+        "pike_60": 65.17401631951269,
+        "pike_80": 62.65991647176244
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.113454325786,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999996897,
+            "effective_dose_scale_mg_kg": 30.00000000292381,
+            "exposure_decay_min": 79.99999920771079
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.113453304296,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999989
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.1134533610034,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998887,
+            "effective_dose_scale_mg_kg": 30.00000000163688,
+            "exposure_decay_min": 79.9999999811205
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999989
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5568.226676138763,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.844319540334666,
+        "pike_60": 45.23122019497142,
+        "pike_80": 53.89919463582473
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.48478039580844,
+        "pike_60": 65.17029764164062,
+        "pike_80": 62.653133993740035
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.967153243687,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000096,
+            "exposure_decay_min": 79.99999999997773,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.9671532450957,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000682,
+            "exposure_decay_min": 79.99999999886033,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2770.9671533143533,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998777,
+            "effective_dose_scale_mg_kg": 30.000000002056503,
+            "exposure_decay_min": 79.99999997833893,
+            "drug_loss_fraction": 0.010000000000002784
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000096,
+        "exposure_decay_min": 79.99999999997773,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5541.934081765562,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.80150351133453,
+        "pike_60": 45.1486293712775,
+        "pike_80": 53.74403009858715
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.38081483113618,
+        "pike_60": 64.92552098192438,
+        "pike_80": 62.201711029974014
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.76678856183,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000096,
+            "exposure_decay_min": 79.99999999997752,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2770.766788563259,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000682,
+            "exposure_decay_min": 79.99999999884932,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2770.766788633181,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999987793,
+            "effective_dose_scale_mg_kg": 30.0000000020743,
+            "exposure_decay_min": 79.99999997812002,
+            "drug_loss_fraction": 0.010000000000002793
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000096,
+        "exposure_decay_min": 79.99999999997752,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5541.533352601555,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.800802453248135,
+        "pike_60": 45.14724507520441,
+        "pike_80": 53.74178832524971
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.37931176639046,
+        "pike_60": 64.92224154770078,
+        "pike_80": 62.194443795373545
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.386448089416,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000008,
+            "exposure_decay_min": 79.99999999997972,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.3864480906677,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000059,
+            "exposure_decay_min": 79.9999999989515,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.38644814598,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999988665,
+            "effective_dose_scale_mg_kg": 30.000000001636998,
+            "exposure_decay_min": 79.99999998119908,
+            "drug_loss_fraction": 0.010000000000002332
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000008,
+        "exposure_decay_min": 79.99999999997972,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5568.772667536367,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.845303720053327,
+        "pike_60": 45.233083268580685,
+        "pike_80": 53.9022423338057
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.48640945774757,
+        "pike_60": 65.17402111287247,
+        "pike_80": 62.6599179801244
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.1454045704304,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000008,
+            "exposure_decay_min": 79.99999999997937,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2784.1454045717046,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.0000000000006,
+            "exposure_decay_min": 79.99999999893672,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2784.1454046277627,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998867,
+            "effective_dose_scale_mg_kg": 30.00000000165729,
+            "exposure_decay_min": 79.99999998092375,
+            "drug_loss_fraction": 0.010000000000002349
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000008,
+        "exposure_decay_min": 79.99999999997937,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5568.290580668798,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.844520607878938,
+        "pike_60": 45.23144378918412,
+        "pike_80": 53.89950713299105
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.48478367880338,
+        "pike_60": 65.17030260966519,
+        "pike_80": 62.65313577538924
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2786.956524009686,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999969,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2786.9565240107204,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000483,
+            "exposure_decay_min": 79.99999999919166,
+            "met_conductance": 0.010000000000000803
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2786.9565244365936,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999905814,
+            "effective_dose_scale_mg_kg": 30.000000012953667,
+            "exposure_decay_min": 79.99999988330434,
+            "met_conductance": 0.010000000004842202
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999969,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5573.912830826678,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.893024521160875,
+        "pike_60": 45.27286353364658,
+        "pike_80": 53.89450796212332
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.53350490657724,
+        "pike_60": 65.11838690291133,
+        "pike_80": 62.42427448035118
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2786.756514850166,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999969,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2786.7565148512294,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000483,
+            "exposure_decay_min": 79.99999999918342,
+            "met_conductance": 0.010000000000000812
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2786.7565152807333,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999990594,
+            "effective_dose_scale_mg_kg": 30.000000013057186,
+            "exposure_decay_min": 79.99999988221039,
+            "met_conductance": 0.010000000004876797
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999969,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5573.5128127650805,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.89232347410782,
+        "pike_60": 45.27148551685365,
+        "pike_80": 53.89227814745606
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.53201650258174,
+        "pike_60": 65.11513956306686,
+        "pike_80": 62.41707871250791
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2800.311475438045,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999976,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2800.3114754380604,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999805,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2800.311475783857,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999991215,
+            "effective_dose_scale_mg_kg": 30.000000010479127,
+            "exposure_decay_min": 79.99999989747548,
+            "met_conductance": 0.010000000003901577
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999976,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5600.622731204911,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.93654534972985,
+        "pike_60": 45.356683266768364,
+        "pike_80": 54.05148212828053
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.63806734788213,
+        "pike_60": 65.36444897575285,
+        "pike_80": 62.87890334673177
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2800.070788007851,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999976,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2800.0707880078457,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999798,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2800.0707883578916,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999991221,
+            "effective_dose_scale_mg_kg": 30.00000001059831,
+            "exposure_decay_min": 79.99999989609042,
+            "met_conductance": 0.010000000003940196
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999798,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5600.14135653278,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.935761848509905,
+        "pike_60": 45.35505074905048,
+        "pike_80": 54.04876047716758
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 68.63645741623539,
+        "pike_60": 65.36076683718049,
+        "pike_80": 62.8721876196236
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.4101653752142,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999974526,
+            "effective_dose_scale_mg_kg": 30.000000019351404,
+            "exposure_decay_min": 54.43497894868495,
+            "met_conductance": 0.5999999997718727,
+            "drug_loss_fraction": 0.7999999998065662
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.4101739841863,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999999982,
+            "effective_dose_scale_mg_kg": 30.000000002523915,
+            "exposure_decay_min": 54.43232976991224,
+            "met_conductance": 0.5999999939827898,
+            "drug_loss_fraction": 0.7999999997114551
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.4101627900991,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999994776,
+            "effective_dose_scale_mg_kg": 30.00000000783992,
+            "exposure_decay_min": 54.43747322177487,
+            "met_conductance": 0.5999999999380927,
+            "drug_loss_fraction": 0.7999999999420082
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999994776,
+        "effective_dose_scale_mg_kg": 30.00000000783992,
+        "exposure_decay_min": 54.43747322177487,
+        "met_conductance": 0.5999999999380927,
+        "drug_loss_fraction": 0.7999999999420082
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1474.8202226619444,
+      "rmse_mV_by_curve": {
+        "pike_40": 10.049956946385537,
+        "pike_60": 23.953714052024935,
+        "pike_80": 28.284946016415947
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 41.13673561980138,
+        "pike_60": 31.69339268139341,
+        "pike_80": 25.13594759900769
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.3971363257015,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999979583,
+            "effective_dose_scale_mg_kg": 30.000000019358332,
+            "exposure_decay_min": 54.430232205117434,
+            "met_conductance": 0.599999999771843,
+            "drug_loss_fraction": 0.7999999998065124
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.3971449168117,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999998374,
+            "effective_dose_scale_mg_kg": 30.00000000252594,
+            "exposure_decay_min": 54.42759600268616,
+            "met_conductance": 0.5999999939775487,
+            "drug_loss_fraction": 0.7999999997110936
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 737.3971337395571,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999999606,
+            "effective_dose_scale_mg_kg": 30.000000007845845,
+            "exposure_decay_min": 54.43273195114701,
+            "met_conductance": 0.599999999938004,
+            "drug_loss_fraction": 0.7999999999419328
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.4999999999999606,
+        "effective_dose_scale_mg_kg": 30.000000007845845,
+        "exposure_decay_min": 54.43273195114701,
+        "met_conductance": 0.599999999938004,
+        "drug_loss_fraction": 0.7999999999419328
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1474.7941642683857,
+      "rmse_mV_by_curve": {
+        "pike_40": 10.049883355165562,
+        "pike_60": 23.953571520405053,
+        "pike_80": 28.284632227285396
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 41.1367873132921,
+        "pike_60": 31.69344644692832,
+        "pike_80": 25.135994161124252
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.279501598953,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999986777,
+            "effective_dose_scale_mg_kg": 30.000000019164524,
+            "exposure_decay_min": 54.48728056951257,
+            "met_conductance": 0.5999999997715584,
+            "drug_loss_fraction": 0.7999999998067141
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.2795103805354,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999999467,
+            "effective_dose_scale_mg_kg": 30.000000002453227,
+            "exposure_decay_min": 54.48438484549378,
+            "met_conductance": 0.599999994007828,
+            "drug_loss_fraction": 0.7999999997161785
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.2794992237854,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999999579,
+            "effective_dose_scale_mg_kg": 30.00000000785829,
+            "exposure_decay_min": 54.489812231092124,
+            "met_conductance": 0.5999999999370782,
+            "drug_loss_fraction": 0.7999999999414678
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.499999999999579,
+        "effective_dose_scale_mg_kg": 30.00000000785829,
+        "exposure_decay_min": 54.489812231092124,
+        "met_conductance": 0.5999999999370782,
+        "drug_loss_fraction": 0.7999999999414678
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1478.558895907543,
+      "rmse_mV_by_curve": {
+        "pike_40": 10.056988082681455,
+        "pike_60": 23.97537239141674,
+        "pike_80": 28.3301501108843
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 41.1369242998452,
+        "pike_60": 31.694256756679266,
+        "pike_80": 25.136434695510285
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": false,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.2654065577657,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999987644,
+            "effective_dose_scale_mg_kg": 30.00000001917027,
+            "exposure_decay_min": 54.4811803681028,
+            "met_conductance": 0.5999999997715616,
+            "drug_loss_fraction": 0.7999999998066778
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.2654153326188,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999999949,
+            "effective_dose_scale_mg_kg": 30.00000000245613,
+            "exposure_decay_min": 54.47830885825007,
+            "met_conductance": 0.5999999939996994,
+            "drug_loss_fraction": 0.7999999997156468
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 739.2654041495146,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999960804,
+            "effective_dose_scale_mg_kg": 30.000000007864646,
+            "exposure_decay_min": 54.483749839332006,
+            "met_conductance": 0.5999999999369655,
+            "drug_loss_fraction": 0.7999999999413746
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999960804,
+        "effective_dose_scale_mg_kg": 30.000000007864646,
+        "exposure_decay_min": 54.483749839332006,
+        "met_conductance": 0.5999999999369655,
+        "drug_loss_fraction": 0.7999999999413746
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1478.5307091466632,
+      "rmse_mV_by_curve": {
+        "pike_40": 10.05686566983107,
+        "pike_60": 23.9752275812337,
+        "pike_80": 28.32981864526646
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 41.13699741028642,
+        "pike_60": 31.69433625894082,
+        "pike_80": 25.136502599399993
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2677.032165065892,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000012,
+            "exposure_decay_min": 79.99999999997496
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2677.032165067186,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000615,
+            "exposure_decay_min": 79.99999999908522
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2677.0321652063253,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998588,
+            "effective_dose_scale_mg_kg": 30.000000004043248,
+            "exposure_decay_min": 79.99999996907445
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000012,
+        "exposure_decay_min": 79.99999999997496
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5354.064102243616,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.3741122355827,
+        "pike_60": 44.4736553274078,
+        "pike_80": 52.74524373618692
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.51918618243981,
+        "pike_60": 63.53470532588515,
+        "pike_80": 60.292867381174865
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2679.468121775494,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000011,
+            "exposure_decay_min": 79.99999999997823
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2679.468121776652,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000056,
+            "exposure_decay_min": 79.99999999918789
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2679.468121902822,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999985406,
+            "effective_dose_scale_mg_kg": 30.000000003691994,
+            "exposure_decay_min": 79.99999997266355
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000011,
+        "exposure_decay_min": 79.99999999997823
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5358.936015975671,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.385034534395928,
+        "pike_60": 44.49274647123101,
+        "pike_80": 52.770272106354994
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.54625192933307,
+        "pike_60": 63.57569730578437,
+        "pike_80": 60.34704597334697
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2526.9365688856597,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999983241,
+            "effective_dose_scale_mg_kg": 30.000000003221437,
+            "exposure_decay_min": 79.99999990451298
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2526.936574639606,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999999214,
+            "effective_dose_scale_mg_kg": 30.00000000976851,
+            "exposure_decay_min": 79.99999613192783
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2526.936568660698,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000127,
+            "exposure_decay_min": 79.9999999999891
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000127,
+        "exposure_decay_min": 79.9999999999891
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5053.872896432557,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.649696574646903,
+        "pike_60": 43.35556423833711,
+        "pike_80": 51.13569983812791
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.536949463951,
+        "pike_60": 60.76867574488857,
+        "pike_80": 56.56217605010426
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2529.339769050722,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999831546,
+            "effective_dose_scale_mg_kg": 30.00000000291414,
+            "exposure_decay_min": 79.99999991641862
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0
+          ],
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2529.3397740506202,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999999267,
+            "effective_dose_scale_mg_kg": 30.000000008625143,
+            "exposure_decay_min": 79.99999667415491
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2529.3397688497357,
+          "active_bounds": [
+            1,
+            -1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999999
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 5058.679296751229,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.65945100394681,
+        "pike_60": 43.37496012588465,
+        "pike_80": 51.161728948707214
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.57392759170381,
+        "pike_60": 60.81278037485478,
+        "pike_80": 56.63352435932702
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2677.0684903238807,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000135,
+            "exposure_decay_min": 79.99999999997475,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2677.0684903259344,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000963,
+            "exposure_decay_min": 79.99999999858386,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2677.0684904659784,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999985606,
+            "effective_dose_scale_mg_kg": 30.000000004093874,
+            "exposure_decay_min": 79.99999996875123,
+            "drug_loss_fraction": 0.010000000000006115
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000135,
+        "exposure_decay_min": 79.99999999997475,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5354.136754972919,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.37433658702862,
+        "pike_60": 44.473915839918114,
+        "pike_80": 52.745609113736066
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.51919797056333,
+        "pike_60": 63.53471942188074,
+        "pike_80": 60.29287492008836
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2679.5043289794744,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000012,
+            "exposure_decay_min": 79.99999999997802,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2679.50432898135,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000088,
+            "exposure_decay_min": 79.99999999872497,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2679.504329108312,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999998513,
+            "effective_dose_scale_mg_kg": 30.000000003738187,
+            "exposure_decay_min": 79.99999997237848,
+            "drug_loss_fraction": 0.010000000000005697
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000012,
+        "exposure_decay_min": 79.99999999997802,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5359.008432590375,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.385258113291044,
+        "pike_60": 44.49300593662943,
+        "pike_80": 52.770636172606515
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.54626285286955,
+        "pike_60": 63.575710312761146,
+        "pike_80": 60.3470523144262
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2526.980525149173,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999998277,
+            "effective_dose_scale_mg_kg": 30.000000003252495,
+            "exposure_decay_min": 79.99999990385771,
+            "drug_loss_fraction": 0.010000000000227485
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 7,
+          "cost": 2526.980524922397,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999976,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2526.980524922433,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000001293,
+            "exposure_decay_min": 79.99999999998903,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999976,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5053.960810182263,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.64996802740103,
+        "pike_60": 43.35589484621094,
+        "pike_80": 51.13615359576306
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.53695346135108,
+        "pike_60": 60.76872352171718,
+        "pike_80": 56.562159216783535
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": false,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.44
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2529.383599797113,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999827005,
+            "effective_dose_scale_mg_kg": 30.000000002941995,
+            "exposure_decay_min": 79.99999991585238,
+            "drug_loss_fraction": 0.010000000000209926
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.15
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 7,
+          "cost": 2529.3835995945688,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999983,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.7
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2529.3835995945824,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999,
+            "drug_loss_fraction": 0.010000000000000014
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999983,
+        "drug_loss_fraction": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5058.766959431975,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.659721638548337,
+        "pike_60": 43.375289574928935,
+        "pike_80": 51.16218120554913
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.57393071487907,
+        "pike_60": 60.81282688226728,
+        "pike_80": 56.63350610893051
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2693.617580800505,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000001148,
+            "exposure_decay_min": 79.99999999982155,
+            "met_conductance": 0.01000000000000076
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2693.6175808019625,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000088,
+            "exposure_decay_min": 79.99999999881727,
+            "met_conductance": 0.01000000000000179
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2693.617581628222,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999989145,
+            "effective_dose_scale_mg_kg": 30.00000002448018,
+            "exposure_decay_min": 79.99999983790627,
+            "met_conductance": 0.010000000010257408
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000001148,
+        "exposure_decay_min": 79.99999999982155,
+        "met_conductance": 0.01000000000000076
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5387.2349403609405,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.46943555918834,
+        "pike_60": 44.60418411089149,
+        "pike_80": 52.90508882496433
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.68040776872614,
+        "pike_60": 63.74135391275468,
+        "pike_80": 60.535281517862515
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2696.053162759004,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.00000000000104,
+            "exposure_decay_min": 79.99999999984422,
+            "met_conductance": 0.010000000000000689
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2696.05316276031,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000803,
+            "exposure_decay_min": 79.99999999895022,
+            "met_conductance": 0.01000000000000162
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 5,
+          "cost": 2696.0531635126986,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999888584,
+            "effective_dose_scale_mg_kg": 30.00000002242469,
+            "exposure_decay_min": 79.999999856086,
+            "met_conductance": 0.010000000009417706
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.00000000000104,
+        "exposure_decay_min": 79.99999999984422,
+        "met_conductance": 0.010000000000000689
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5392.10610462039,
+      "rmse_mV_by_curve": {
+        "pike_40": 24.480405775861158,
+        "pike_60": 44.6232090284313,
+        "pike_80": 52.93000145167672
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 67.70720714260182,
+        "pike_60": 63.781941772814896,
+        "pike_80": 60.58892545192056
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2544.100099941073,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999870529,
+            "effective_dose_scale_mg_kg": 30.000000018582497,
+            "exposure_decay_min": 79.99999947703625,
+            "met_conductance": 0.010000000018505015
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 7,
+          "cost": 2544.100098648511,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.99999999999976,
+            "met_conductance": 0.010000000000000014
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2544.10009864852,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999,
+            "met_conductance": 0.010000000000000014
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.99999999999976,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5088.199970602343,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.74888391186476,
+        "pike_60": 43.49405601173362,
+        "pike_80": 51.30748069425443
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.71677899203455,
+        "pike_60": 61.002656951500114,
+        "pike_80": 56.84057774065414
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": false,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2546.5096721646323,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999987431,
+            "effective_dose_scale_mg_kg": 30.00000001668487,
+            "exposure_decay_min": 79.99999954597624,
+            "met_conductance": 0.010000000016677765
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1
+          ],
+          "success": true,
+          "message": "`ftol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2546.509676888399,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999952477,
+            "effective_dose_scale_mg_kg": 30.000000010597258,
+            "exposure_decay_min": 79.99999631214783,
+            "met_conductance": 0.010000000029218668
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5
+          ],
+          "success": true,
+          "message": "`gtol` termination condition is satisfied.",
+          "evaluations": 6,
+          "cost": 2546.509671018716,
+          "active_bounds": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999999994,
+            "effective_dose_scale_mg_kg": 30.000000000000014,
+            "exposure_decay_min": 79.9999999999999,
+            "met_conductance": 0.010000000000000014
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999999999994,
+        "effective_dose_scale_mg_kg": 30.000000000000014,
+        "exposure_decay_min": 79.9999999999999,
+        "met_conductance": 0.010000000000000014
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "balanced_sum_squared_error_mV2": 5093.019115423518,
+      "rmse_mV_by_curve": {
+        "pike_40": 23.7587466574236,
+        "pike_60": 43.513428170065104,
+        "pike_80": 51.333445642976905
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 65.75339267233456,
+        "pike_60": 61.0463269317905,
+        "pike_80": 56.911221763461796
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.122145249555,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999998566642,
+            "effective_dose_scale_mg_kg": 30.000000102243696,
+            "exposure_decay_min": 54.31498797445229,
+            "met_conductance": 0.5999999984719788,
+            "drug_loss_fraction": 0.7999999983970552
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.1221830402034,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999999958299,
+            "effective_dose_scale_mg_kg": 30.000000014377836,
+            "exposure_decay_min": 54.313228991436716,
+            "met_conductance": 0.5999999582453115,
+            "drug_loss_fraction": 0.7999999973421166
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.1221394151457,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999983301174,
+            "effective_dose_scale_mg_kg": 30.000000038890267,
+            "exposure_decay_min": 54.31510425638399,
+            "met_conductance": 0.5999999996318799,
+            "drug_loss_fraction": 0.7999999995329767
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999983301174,
+        "effective_dose_scale_mg_kg": 30.000000038890267,
+        "exposure_decay_min": 54.31510425638399,
+        "met_conductance": 0.5999999996318799,
+        "drug_loss_fraction": 0.7999999995329767
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1440.2441693238188,
+      "rmse_mV_by_curve": {
+        "pike_40": 9.929446943332115,
+        "pike_60": 23.706625415238925,
+        "pike_80": 27.922144690996056
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 40.973379839202536,
+        "pike_60": 31.473603045941015,
+        "pike_80": 24.92424459829037
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 0.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.1240709366206,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.499999999840933,
+            "effective_dose_scale_mg_kg": 30.000000102048052,
+            "exposure_decay_min": 54.4175396051878,
+            "met_conductance": 0.599999998474812,
+            "drug_loss_fraction": 0.7999999984034946
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.124108901855,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999532424,
+            "effective_dose_scale_mg_kg": 30.000000014448364,
+            "exposure_decay_min": 54.41569510857472,
+            "met_conductance": 0.5999999582977359,
+            "drug_loss_fraction": 0.7999999973585554
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 720.1240650475185,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999983398064,
+            "effective_dose_scale_mg_kg": 30.000000042475307,
+            "exposure_decay_min": 54.417744663897885,
+            "met_conductance": 0.5999999996368143,
+            "drug_loss_fraction": 0.7999999995411288
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.49999999983398064,
+        "effective_dose_scale_mg_kg": 30.000000042475307,
+        "exposure_decay_min": 54.417744663897885,
+        "met_conductance": 0.5999999996368143,
+        "drug_loss_fraction": 0.7999999995411288
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1440.248021897207,
+      "rmse_mV_by_curve": {
+        "pike_40": 9.927015938833355,
+        "pike_60": 23.706746931874846,
+        "pike_80": 27.922974883693858
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 40.97363501435612,
+        "pike_60": 31.474073772009955,
+        "pike_80": 24.924748794701852
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.0
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 11,
+          "cost": 697.366814869174,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999973132486,
+            "effective_dose_scale_mg_kg": 30.00000014242775,
+            "exposure_decay_min": 52.9642113860809,
+            "met_conductance": 0.5999999979728677,
+            "drug_loss_fraction": 0.7999999977083601
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 697.3668544965433,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999791733,
+            "effective_dose_scale_mg_kg": 30.00000001888451,
+            "exposure_decay_min": 52.96309939264305,
+            "met_conductance": 0.5999999526362262,
+            "drug_loss_fraction": 0.7999999964733344
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 11,
+          "cost": 697.3668093767893,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999998266159,
+            "effective_dose_scale_mg_kg": 30.00000007134216,
+            "exposure_decay_min": 52.96358480436079,
+            "met_conductance": 0.5999999994944034,
+            "drug_loss_fraction": 0.7999999993269754
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.4999999998266159,
+        "effective_dose_scale_mg_kg": 30.00000007134216,
+        "exposure_decay_min": 52.96358480436079,
+        "met_conductance": 0.5999999994944034,
+        "drug_loss_fraction": 0.7999999993269754
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1394.7335199721074,
+      "rmse_mV_by_curve": {
+        "pike_40": 9.773642556955016,
+        "pike_60": 23.379529446046853,
+        "pike_80": 27.433684295449876
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 40.8996545652606,
+        "pike_60": 31.355262242170717,
+        "pike_80": 24.622460602934726
+      }
+    },
+    {
+      "configuration": {
+        "apical_battery": true,
+        "met_load": true,
+        "drug_conductance_loss": true,
+        "volume_coupling": 1.0,
+        "drug_sink": 0.02
+      },
+      "numerical_bounds": {
+        "potassium_flux": [
+          0.05,
+          0.5
+        ],
+        "effective_dose_scale_mg_kg": [
+          30.0,
+          400.0
+        ],
+        "exposure_decay_min": [
+          3.0,
+          80.0
+        ],
+        "met_conductance": [
+          0.01,
+          0.6
+        ],
+        "drug_loss_fraction": [
+          0.01,
+          0.8
+        ]
+      },
+      "attempts": [
+        {
+          "start": [
+            0.2,
+            60.0,
+            40.0,
+            0.3,
+            0.44
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 11,
+          "cost": 697.3359773866875,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999997329116,
+            "effective_dose_scale_mg_kg": 30.000000141403145,
+            "exposure_decay_min": 53.07932651941348,
+            "met_conductance": 0.5999999979895471,
+            "drug_loss_fraction": 0.7999999977339687
+          }
+        },
+        {
+          "start": [
+            0.45,
+            35.0,
+            20.0,
+            0.1,
+            0.15
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 12,
+          "cost": 697.3360167772187,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.49999999999787037,
+            "effective_dose_scale_mg_kg": 30.000000019013925,
+            "exposure_decay_min": 53.07825913695096,
+            "met_conductance": 0.5999999528107495,
+            "drug_loss_fraction": 0.7999999965064989
+          }
+        },
+        {
+          "start": [
+            0.3,
+            150.0,
+            70.0,
+            0.5,
+            0.7
+          ],
+          "success": true,
+          "message": "`xtol` termination condition is satisfied.",
+          "evaluations": 11,
+          "cost": 697.3359720304625,
+          "active_bounds": [
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "parameters": {
+            "potassium_flux": 0.4999999998267501,
+            "effective_dose_scale_mg_kg": 30.0000000759883,
+            "exposure_decay_min": 53.0787221907831,
+            "met_conductance": 0.5999999995010395,
+            "drug_loss_fraction": 0.7999999993361847
+          }
+        }
+      ],
+      "status": "converged",
+      "best_parameters": {
+        "potassium_flux": 0.4999999998267501,
+        "effective_dose_scale_mg_kg": 30.0000000759883,
+        "exposure_decay_min": 53.0787221907831,
+        "met_conductance": 0.5999999995010395,
+        "drug_loss_fraction": 0.7999999993361847
+      },
+      "best_active_bounds": [
+        1,
+        -1,
+        0,
+        1,
+        1
+      ],
+      "balanced_sum_squared_error_mV2": 1394.6718454577285,
+      "rmse_mV_by_curve": {
+        "pike_40": 9.771283366717958,
+        "pike_60": 23.379088176309157,
+        "pike_80": 27.433776678929767
+      },
+      "minimum_ep_at_anchor_times_mV_by_curve": {
+        "pike_40": 40.89961031990066,
+        "pike_60": 31.35537569180724,
+        "pike_80": 24.623045992415385
+      }
+    }
+  ]
+}

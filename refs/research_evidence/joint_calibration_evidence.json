@@ -1,0 +1,64 @@
+{
+  "status": "source-verified summaries and manual anchors for exploratory joint calibration; not a preregistration",
+  "studies": [
+    {
+      "id": "pike_bosher_1980",
+      "species": "guinea pig",
+      "source": "refs/target_source/pike_1980_hear_res.pdf",
+      "intervention": {"drug": "furosemide", "route": "IV", "doses_mg_kg": [40, 60, 80], "injection_seconds": "30-35"},
+      "observation": {
+        "kind": "manual group-mean EP curve anchors",
+        "file": "refs/research_evidence/research_evidence.json",
+        "experiment_ids": ["pike_40", "pike_60", "pike_80"],
+        "sample_sizes": [2, 3, 3],
+        "limitations": "Digitized points on each curve are correlated and are not additional animals."
+      }
+    },
+    {
+      "id": "asakuma_snow_1980",
+      "species": "guinea pig",
+      "source": "refs/target_source/asakuma_1980_otolaryngol_head_neck_surg.pdf",
+      "intervention": {"drug": "furosemide", "route": "IV", "dose_mg_kg": 60, "injection_seconds": 30},
+      "group_size": 6,
+      "observation": {
+        "kind": "effective cochlear partition resistance",
+        "baseline_mean_kohm": 2.54,
+        "baseline_sd_kohm": 0.479,
+        "post_mean_kohm": 5.41,
+        "post_sd_kohm": 1.184,
+        "baseline_ep_mean_mV": 85.0,
+        "baseline_ep_sd_mV": 4.10,
+        "nadir_ep_mean_mV": -33.4,
+        "nadir_ep_sd_mV": 9.41,
+        "post_time_min": null,
+        "timing_qualification": "The furosemide EP and resistance entries carry the greatest-EP-decrease footnote; the prose says resistance was measured at that time. The six-minute footnote applies to saline, not furosemide. The table-cohort nadir time is not numerically specified; the separate Figure 3 cohort has an approximately two-minute EP nadir.",
+        "derived_endpoint": "post_mean_kohm / baseline_mean_kohm",
+        "limitations": "Ratio of rounded means is not a reported individual-level ratio; uncertainty and baseline/post covariance of the ratio are unavailable. Effective partition resistance is not a directly measured strial conductance."
+      }
+    },
+    {
+      "id": "rybak_morizono_1982",
+      "species": "chinchilla",
+      "source": "refs/target_source/rybak_1982_hear_res.pdf",
+      "intervention": {"drug": "furosemide", "route": "IV", "injection_seconds": null},
+      "observation": {
+        "kind": "Table III group mean reductions plus standard errors",
+        "baseline_endolymph_k_mean_mM": 158.5,
+        "baseline_endolymph_k_reported_plus_minus_mM": 3.2,
+        "baseline_endolymph_k_n": 25,
+        "groups": [
+          {"dose_mg_kg": 25, "n": 3, "ep_reduction_mV": 22.5, "ep_se_mV": 5.3, "k_reduction_mM": 11.3, "k_se_mM": 3.3},
+          {"dose_mg_kg": 50, "n": 5, "ep_reduction_mV": 97.4, "ep_se_mV": 10.6, "k_reduction_mM": 15.7, "k_se_mM": 5.4},
+          {"dose_mg_kg": 100, "n": 7, "ep_reduction_mV": 110.5, "ep_se_mV": 12.5, "k_reduction_mM": 32.5, "k_se_mM": 8.3}
+        ],
+        "limitations": "Table III was visually checked on PDF page 4; 100 mg/kg n is 7. Group EP and K minimum times are not reported as synchronized; representative figure traces are individual animals, not group means. A mean of individual minima is not necessarily the minimum of a group trajectory."
+      }
+    }
+  ],
+  "not_used_in_numerical_objective": [
+    {"endpoint": "Asakuma EP nadir", "reason": "Not included in historical joint fits or resistance-only nadir refits. It is included in a separate outcome-informed endpoint-weight sensitivity; table-cohort time and paired covariance are not provided."},
+    {"endpoint": "Santi and Lakhani strial morphology", "reason": "Local intercellular-space fractions are not a measured model volume or water flux; a spatial and fixation observation model is needed."},
+    {"endpoint": "Rybak baseline endolymph K", "reason": "Reference 14-state baseline is fixed at 150 mM rather than a study-specific baseline; reductions avoid equating absolute baselines, but do not remove cross-species differences."},
+    {"endpoint": "Tier 2 studies", "reason": "Not used in calibration; previous exploratory inspection prevents claiming blinded evaluation."}
+  ]
+}

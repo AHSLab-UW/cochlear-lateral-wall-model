@@ -1,0 +1,342 @@
+{
+  "status": "exploratory hybrid manuscript reconstruction, not validated or fitted",
+  "manuscript": "text/reference draft/Cochlear_Biophysical_Model_draft/Cochlear_Biophysical_Model_13State_Manuscript_v4.tex",
+  "manuscript_sha256": "153222e9bcb9c9310d90e2a0b51f9decfcfb5f59c9274c0b4fc5bb7880325383",
+  "state_names": [
+    "flow",
+    "oxygen",
+    "atp_sync",
+    "atp_marginal",
+    "strial_volume",
+    "k_sync",
+    "k_intrastrial",
+    "k_marginal",
+    "ep",
+    "endolymph_atp",
+    "total_potassium",
+    "met_adaptation",
+    "trauma"
+  ],
+  "closure": "U_C, U_M, marginal K half-saturation (4 mM) and intact basal paracellular leak adapted from related 19-state C model commit 64ae8344e45dcb45b8b9d2bc9fb0528cd6876aac; not specified in manuscript.",
+  "protocol": {
+    "start_min": 5.0,
+    "stop_min": 5.542,
+    "dose_proxy": 4.2,
+    "furosemide_boundary_active_for_entire_run": true,
+    "sampling_step_min": 0.05,
+    "time_window_min": [
+      0.0,
+      125.0
+    ]
+  },
+  "limitations": [
+    "The draft leaves U_C/U_M undefined; the selected closure and basal paracellular leak come from related 19-state code, not verified manuscript source.",
+    "Delta P2X conductance is interpreted as max(0, current minus baseline); nkcc_avail in perilymph flux is interpreted as h(D).",
+    "The draft's 80 mg/kg 4.2 dose proxy is used without additional infusion scaling; start and stop times are explicit illustrative assumptions.",
+    "Displayed rounded parameters produce a baseline voltage derivative, not an exact equilibrium; no unstated recalibration was applied.",
+    "This is not a reproduction of the unavailable original draft-generating code, independent validation, or physical ion/water/charge closure.",
+    "The scenario uses the phenomenological treated boundary K loss and relaxation for the entire furosemide protocol.",
+    "The manuscript's declared ranges are compared at samples, not enforced as invariant physiological limits; solver agreement and sampled checks are not a global stability proof."
+  ],
+  "reference_state": {
+    "flow": 1.0,
+    "oxygen": 0.07,
+    "atp_sync": 1.0,
+    "atp_marginal": 1.0,
+    "strial_volume": 0.035,
+    "k_sync": 140.0,
+    "k_intrastrial": 1.5,
+    "k_marginal": 145.0,
+    "ep": 80.0,
+    "endolymph_atp": 0.0074,
+    "total_potassium": 212.1425,
+    "met_adaptation": 0.0,
+    "trauma": 0.0
+  },
+  "reference_derivatives": {
+    "flow": 1.893878255732062e-05,
+    "oxygen": 8.673617379884035e-19,
+    "atp_sync": 0.0,
+    "atp_marginal": 0.0,
+    "strial_volume": 0.0,
+    "k_sync": 1.1102230246251565e-15,
+    "k_intrastrial": 0.0,
+    "k_marginal": 0.0,
+    "ep": 0.12636136467459314,
+    "endolymph_atp": 0.0,
+    "total_potassium": 0.0,
+    "met_adaptation": 0.0,
+    "trauma": 0.0
+  },
+  "reference_observables": {
+    "endolymph_volume": 0.9999999999999999,
+    "endolymph_k": 150.00000000000003,
+    "nkcc_availability": 1.0,
+    "kir_voltage": 121.11593429718044,
+    "apical_voltage": -0.9051714297406979,
+    "strial_voltage": 125.05076286743974,
+    "circuit_current": 45.0469720264995,
+    "intrastrial_voltage": 71.19896227068094,
+    "effective_strial_conductance": 1.0,
+    "p2x_conductance": 0.0005871503312438249,
+    "baseline_p2x_conductance": 0.0005871503312438249,
+    "effective_met": 1.0,
+    "sync_workload": 1.0000000000000002,
+    "marginal_workload": 1.0,
+    "kir_flux": 2.8,
+    "marginal_uptake": 2.8,
+    "apical_flux": 2.8,
+    "met_flux": 2.8000000000000003,
+    "p2x_flux": 0.0,
+    "paracellular_flux": 0.0,
+    "blb_flux": 0.0,
+    "perilymph_flux": 0.0,
+    "resistance_ratio": 1.0
+  },
+  "sampled_declared_state_ranges": {
+    "Radau": {
+      "flow": {
+        "declared_lower": 0.15,
+        "declared_upper": 2.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.8787894760488844,
+        "sampled_maximum": 1.0000275622545756,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "oxygen": {
+        "declared_lower": 0.005,
+        "declared_upper": 0.13,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.07,
+        "sampled_maximum": 0.07069368541338747,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "atp_sync": {
+        "declared_lower": 0.1,
+        "declared_upper": 1.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 1.0,
+        "sampled_maximum": 1.0761155427530436,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "atp_marginal": {
+        "declared_lower": 0.1,
+        "declared_upper": 1.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.9999980428887709,
+        "sampled_maximum": 1.5391016360790333,
+        "outside_sample_count": 29,
+        "first_outside_time_min": 6.800000000000001
+      },
+      "strial_volume": {
+        "declared_lower": 0.01,
+        "declared_upper": 0.25,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.03425765200422753,
+        "sampled_maximum": 0.05528349019236065,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_sync": {
+        "declared_lower": 40.0,
+        "declared_upper": 180.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 127.64154787293128,
+        "sampled_maximum": 142.74920531205498,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_intrastrial": {
+        "declared_lower": 0.5,
+        "declared_upper": 60.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 1.335159553400167,
+        "sampled_maximum": 23.945289706795467,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_marginal": {
+        "declared_lower": 60.0,
+        "declared_upper": 180.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 79.00411785576082,
+        "sampled_maximum": 145.0003399096506,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "ep": {
+        "declared_lower": -50.0,
+        "declared_upper": 130.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 4.2325337255691275,
+        "sampled_maximum": 81.05517585829634,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "endolymph_atp": {
+        "declared_lower": 0.001,
+        "declared_upper": 5.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.007394519600163469,
+        "sampled_maximum": 0.007439739721131134,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "met_adaptation": {
+        "declared_lower": 0.0,
+        "declared_upper": 1.0,
+        "upper_inclusive": false,
+        "sampled_minimum": 0.0,
+        "sampled_maximum": 0.0042364585475470635,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "trauma": {
+        "declared_lower": 0.0,
+        "declared_upper": 1.0,
+        "upper_inclusive": false,
+        "sampled_minimum": 0.0,
+        "sampled_maximum": 0.0,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      }
+    },
+    "BDF": {
+      "flow": {
+        "declared_lower": 0.15,
+        "declared_upper": 2.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.8787894788926528,
+        "sampled_maximum": 1.0000276087124946,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "oxygen": {
+        "declared_lower": 0.005,
+        "declared_upper": 0.13,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.07,
+        "sampled_maximum": 0.07069368539574741,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "atp_sync": {
+        "declared_lower": 0.1,
+        "declared_upper": 1.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 1.0,
+        "sampled_maximum": 1.0761155421482425,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "atp_marginal": {
+        "declared_lower": 0.1,
+        "declared_upper": 1.5,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.9999980453459152,
+        "sampled_maximum": 1.5391016373054194,
+        "outside_sample_count": 29,
+        "first_outside_time_min": 6.800000000000001
+      },
+      "strial_volume": {
+        "declared_lower": 0.01,
+        "declared_upper": 0.25,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.034257652222175215,
+        "sampled_maximum": 0.05528349005876627,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_sync": {
+        "declared_lower": 40.0,
+        "declared_upper": 180.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 127.64154657256088,
+        "sampled_maximum": 142.7492052953085,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_intrastrial": {
+        "declared_lower": 0.5,
+        "declared_upper": 60.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 1.3351595325970576,
+        "sampled_maximum": 23.94528967519108,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "k_marginal": {
+        "declared_lower": 60.0,
+        "declared_upper": 180.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 79.00411769227993,
+        "sampled_maximum": 145.00033970967374,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "ep": {
+        "declared_lower": -50.0,
+        "declared_upper": 130.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 4.232533712129539,
+        "sampled_maximum": 81.05517573757129,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "endolymph_atp": {
+        "declared_lower": 0.001,
+        "declared_upper": 5.0,
+        "upper_inclusive": true,
+        "sampled_minimum": 0.007394519600982286,
+        "sampled_maximum": 0.007439739721463519,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "met_adaptation": {
+        "declared_lower": 0.0,
+        "declared_upper": 1.0,
+        "upper_inclusive": false,
+        "sampled_minimum": 0.0,
+        "sampled_maximum": 0.00423645853454846,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      },
+      "trauma": {
+        "declared_lower": 0.0,
+        "declared_upper": 1.0,
+        "upper_inclusive": false,
+        "sampled_minimum": 0.0,
+        "sampled_maximum": 0.0,
+        "outside_sample_count": 0,
+        "first_outside_time_min": null
+      }
+    }
+  },
+  "sampled_output": {
+    "ep_nadir_mV": 4.2325337255691275,
+    "ep_nadir_time_min": 6.550000000000001,
+    "ep_nadir_time_after_injection_min": 1.5500000000000007,
+    "endolymph_k_minimum_mM": 133.1300144614529,
+    "strial_volume_maximum": 0.05528349019236065,
+    "strial_volume_peak_time_after_injection_min": 3.6500000000000004,
+    "total_k_change": -8.671367253511221,
+    "max_abs_radau_bdf_by_state": {
+      "flow": 5.67136051454753e-08,
+      "oxygen": 2.340944660339517e-10,
+      "atp_sync": 3.417073068945342e-09,
+      "atp_marginal": 1.775259539371632e-08,
+      "strial_volume": 7.735081741788719e-10,
+      "k_sync": 1.5223261584651482e-06,
+      "k_intrastrial": 8.379281091208668e-07,
+      "k_marginal": 1.8724650487911276e-06,
+      "ep": 5.70130917054712e-06,
+      "endolymph_atp": 1.4382557644854188e-12,
+      "total_potassium": 7.92790842751856e-07,
+      "met_adaptation": 2.491950885658706e-09,
+      "trauma": 0.0
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "status": "user-authorized six-study nine-parameter exploratory candidate freeze",
+  "freeze_date": "2026-11-16",
+  "candidate": "reference 13-state reconstruction; six-study local joint calibration",
+  "fit_source": "results/fit_parameters.json",
+  "fit_sha256": "d934d50febbb40d864ab09702f7fe8cea561d98914de96018b93ae0c0d96959f",
+  "model_source": "src/model_equations.py",
+  "model_sha256": "c5b641501347b8bc0231d57d15f7018b9e2961bf756f3e2616e754b0f318dd34",
+  "archived_model_source": "results/frozen_model.py",
+  "closure": "U_C, U_M, marginal K half-saturation (4 mM) and intact basal paracellular leak adapted from related 19-state C model commit 64ae8344e45dcb45b8b9d2bc9fb0528cd6876aac; not specified in manuscript.",
+  "parameters": {
+    "flow_base": 1.0,
+    "flow_min": 0.12,
+    "flow_smoothing": 0.01,
+    "autoregulation": 0.55,
+    "flow_tau": 1.5,
+    "oxygen_permeability": 1.0,
+    "arterial_oxygen": 0.13,
+    "oxygen_base": 0.07,
+    "oxygen_km": 0.035,
+    "oxygen_transport": 0.081,
+    "oxygen_stoichiometry": 6.0,
+    "oxygen_scaling": 0.0045,
+    "metabolism_base": 0.18,
+    "demand_gain": 0.35,
+    "atp_base": 1.0,
+    "sync_atp_tau": 2.0,
+    "marginal_atp_tau": 1.5,
+    "sync_pump_fraction": 0.65,
+    "marginal_pump_fraction": 0.78,
+    "sync_atp_km": 0.4,
+    "marginal_atp_km": 0.45,
+    "marginal_k_km": 4.0,
+    "strial_volume_base": 0.035,
+    "sync_volume": 0.4,
+    "marginal_volume": 0.042,
+    "water_permeability": 0.00024,
+    "potassium_reflection": 0.95,
+    "volume_restoration": 0.095,
+    "volume_span": 0.07,
+    "k_sync_base": 140.0,
+    "k_strial_base": 1.5,
+    "k_marginal_base": 145.0,
+    "k_endolymph_base": 150.0,
+    "k_plasma": 4.2,
+    "k_flux": 2.8,
+    "kir_fraction": 1.0,
+    "blb_leak": 0.0,
+    "drug_k_loss": 0.012931172189139986,
+    "drug_k_relax": 0.022,
+    "thermal_voltage": 26.7,
+    "pump_voltage": 15.0,
+    "voltage_offset": 10.16,
+    "intrastrial_voltage_offset": 4.87,
+    "sync_resistance": 1.0,
+    "strial_conductance": 1.0,
+    "drug_conductance_loss": 0.9491649325850179,
+    "met_conductance": 0.3,
+    "met_reversal": -70.0,
+    "p2x_reversal": 0.0,
+    "capacitance": 0.03,
+    "ep_base": 80.0,
+    "resistance_series_fraction": 0.4220148,
+    "drug_onset": 0.22,
+    "drug_fast": 1.55,
+    "drug_slow": 59.38031712461343,
+    "drug_slow_fraction": 0.6877569718262766,
+    "drug_hill": 2.6,
+    "atp_endolymph_base": 0.0074,
+    "atp_release": 0.1,
+    "atp_degradation": 1.5,
+    "atp_cleft_factor": 30.0,
+    "p2x_max": 0.9797,
+    "p2x_half": 12.34,
+    "p2x_hill": 1.0,
+    "adapt_rate": 0.1482397521170445,
+    "adapt_recovery": 90.0,
+    "adapt_half": 0.105,
+    "adapt_hill": 2.2,
+    "adapt_rest": 0.23,
+    "adapt_evoked": 0.9464138947187322,
+    "adapt_p2x_fraction": 0.78,
+    "adapt_p2x_half": 0.006,
+    "trauma_half": 0.272,
+    "trauma_hill": 14.0,
+    "trauma_time": 26.0,
+    "repair_time": 95.0,
+    "trauma_vasoconstriction": 0.20000000000000012,
+    "trauma_k_leak": 0.052
+  },
+  "fitted_parameter_values": {
+    "guinea_pig_proxy_per_mg_kg": 0.04882843209202751,
+    "chinchilla_exposure_multiplier": 0.7862375537069135,
+    "drug_conductance_loss": 0.9491649325850179,
+    "drug_k_loss": 0.012931172189139986,
+    "drug_slow_fraction": 0.6877569718262766,
+    "drug_slow_min": 59.38031712461343,
+    "adapt_rate": 0.1482397521170445,
+    "adapt_evoked": 0.9464138947187322,
+    "trauma_vasoconstriction": 0.20000000000000012
+  },
+  "parameter_bounds": {
+    "guinea_pig_proxy_per_mg_kg": [
+      0.01,
+      0.2
+    ],
+    "chinchilla_exposure_multiplier": [
+      0.5,
+      2.0
+    ],
+    "drug_conductance_loss": [
+      0.05,
+      0.98
+    ],
+    "drug_k_loss": [
+      0.001,
+      0.08
+    ],
+    "drug_slow_fraction": [
+      0.05,
+      0.9
+    ],
+    "drug_slow_min": [
+      10.0,
+      200.0
+    ],
+    "adapt_rate": [
+      0.03,
+      0.5
+    ],
+    "adapt_evoked": [
+      0.2,
+      1.0
+    ],
+    "trauma_vasoconstriction": [
+      0.2,
+      0.99
+    ]
+  },
+  "initial_state": [
+    1.0,
+    0.07,
+    1.0,
+    1.0,
+    0.035,
+    140.0,
+    1.5,
+    145.0,
+    80.0,
+    0.0074,
+    212.1425,
+    0.0,
+    0.0
+  ],
+  "drug_exposure_proxy": {
+    "guinea_pig_proxy_per_mg_kg": 0.04882843209202751,
+    "chinchilla_exposure_multiplier": 0.7862375537069135
+  },
+  "optimizer": {
+    "method": "scipy.optimize.least_squares(method='trf') on unit-box coordinates",
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "function_evaluations": 9,
+    "jacobian_evaluations": 6,
+    "optimality_unit_box": 0.014378178847623423,
+    "best_start": "seed_perturbation_a",
+    "max_nfev_per_start": 15,
+    "unit_box_finite_difference_step": 0.001,
+    "finite_difference_units": "fraction of each declared parameter range",
+    "termination_tolerances": {
+      "ftol": 1e-05,
+      "xtol": 1e-05,
+      "gtol": 0.005
+    },
+    "initial_seed_score": 20.419679241962903,
+    "final_optimizer_score": 20.310938251760142,
+    "initial_candidate_score": 20.419679241958086,
+    "final_solver_check_score": 20.31093852643596,
+    "starts": [
+      {
+        "start": "pre_fig5_table3_fit",
+        "initial_parameters": {
+          "guinea_pig_proxy_per_mg_kg": 0.04883354272524996,
+          "chinchilla_exposure_multiplier": 0.7862462940316276,
+          "drug_conductance_loss": 0.9490358272257537,
+          "drug_k_loss": 0.01292381632330385,
+          "drug_slow_fraction": 0.687879903365263,
+          "drug_slow_min": 59.40463082006377,
+          "adapt_rate": 0.16635736128147113,
+          "adapt_evoked": 0.9999999990267543,
+          "trauma_vasoconstriction": 0.20000000000882287
+        },
+        "success": true,
+        "message": "`xtol` termination condition is satisfied.",
+        "function_evaluations": 8,
+        "jacobian_evaluations": 6,
+        "initial_score": 20.419679241962903,
+        "final_score": 20.31096885716266,
+        "optimality": 0.007876871358023212,
+        "unit_box_fd_step": 0.001,
+        "active_bounds": {
+          "guinea_pig_proxy_per_mg_kg": 0,
+          "chinchilla_exposure_multiplier": 0,
+          "drug_conductance_loss": 0,
+          "drug_k_loss": 0,
+          "drug_slow_fraction": 0,
+          "drug_slow_min": 0,
+          "adapt_rate": 0,
+          "adapt_evoked": 0,
+          "trauma_vasoconstriction": -1
+        },
+        "parameters": {
+          "guinea_pig_proxy_per_mg_kg": 0.04880918573319464,
+          "chinchilla_exposure_multiplier": 0.7864877922371742,
+          "drug_conductance_loss": 0.9492254130503747,
+          "drug_k_loss": 0.012927900248503543,
+          "drug_slow_fraction": 0.6880406793050771,
+          "drug_slow_min": 59.3779658779268,
+          "adapt_rate": 0.14878307346752284,
+          "adapt_evoked": 0.9453348406394388,
+          "trauma_vasoconstriction": 0.20000000000003781
+        }
+      },
+      {
+        "start": "seed_perturbation_a",
+        "initial_parameters": {
+          "guinea_pig_proxy_per_mg_kg": 0.055483542725249954,
+          "chinchilla_exposure_multiplier": 0.7337462940316276,
+          "drug_conductance_loss": 0.9707,
+          "drug_k_loss": 0.01015881632330385,
+          "drug_slow_fraction": 0.7176299033652629,
+          "drug_slow_min": 52.754630820063774,
+          "adapt_rate": 0.14990736128147114,
+          "adapt_evoked": 0.9719999990267543,
+          "trauma_vasoconstriction": 0.22765000000882288
+        },
+        "success": true,
+        "message": "`ftol` termination condition is satisfied.",
+        "function_evaluations": 9,
+        "jacobian_evaluations": 6,
+        "initial_score": 28.177366689601016,
+        "final_score": 20.310938251760142,
+        "optimality": 0.014378178847623423,
+        "unit_box_fd_step": 0.001,
+        "active_bounds": {
+          "guinea_pig_proxy_per_mg_kg": 0,
+          "chinchilla_exposure_multiplier": 0,
+          "drug_conductance_loss": 0,
+          "drug_k_loss": 0,
+          "drug_slow_fraction": 0,
+          "drug_slow_min": 0,
+          "adapt_rate": 0,
+          "adapt_evoked": 0,
+          "trauma_vasoconstriction": -1
+        },
+        "parameters": {
+          "guinea_pig_proxy_per_mg_kg": 0.04882843209202751,
+          "chinchilla_exposure_multiplier": 0.7862375537069135,
+          "drug_conductance_loss": 0.9491649325850179,
+          "drug_k_loss": 0.012931172189139986,
+          "drug_slow_fraction": 0.6877569718262766,
+          "drug_slow_min": 59.38031712461343,
+          "adapt_rate": 0.1482397521170445,
+          "adapt_evoked": 0.9464138947187322,
+          "trauma_vasoconstriction": 0.20000000000000012
+        }
+      }
+    ]
+  },
+  "objective_components": {
+    "pike_bosher": 1.9577231654127933,
+    "asakuma": 0.5812436063608335,
+    "rybak": 8.946284473981011,
+    "wang_1992": 5.391984497627563,
+    "wang_1990": 0.4041249585741561,
+    "salt_table_iii": 1.970259427043256,
+    "salt_figure_3": 1.0593181227605226
+  },
+  "fig3_provenance": {
+    "fig3_data_sha256": "f173940f32cf6a3a1c92fd22d0fd6a1e0c56c17fbf9dc2c80c4a965c64de14d8",
+    "fig3_source_image_sha256": {
+      "refs/research_evidence/salt_1979_pages/pdf_page_7.png": "90ed723d465b8a0d319efd0dcc4c85322397048d941dab477a4ff1b3a6bf1ab0",
+      "refs/research_evidence/salt_1979_pages/fig3_crop.png": "b33096c8dc00d1d7aa198b3fff83d8a5faa2f7323de33b2f2174d917fefbfa2f"
+    },
+    "fig3_source_path": "refs/research_evidence/salt_1979_fig3_fig5_digitized.json",
+    "salt_fig3": {
+      "figure_schedule_min": [
+        [
+          0.0,
+          20.0
+        ],
+        [
+          30.0,
+          50.0
+        ],
+        [
+          60.0,
+          80.0
+        ]
+      ],
+      "conditional_input": {
+        "noise_dba": 115,
+        "model_level_db_spl": 115,
+        "interpretation": "same-numeric-level scenario, not an acoustic conversion",
+        "sound_multiplier": 1.2115729633842405
+      },
+      "omissions": "Points within 0.4 min of stimulus switches are omitted; temporal localization is uncertain. Figure 5 is excluded from data selection, objective, and hashes."
+    }
+  },
+  "fit_code_sha256": {
+    "src/fit_parameters.py": "6d2fba8573cea27cb500e8d85feb0b8a34135fd22c020d63d8756a66d8f6579c",
+    "src/salt_trace_residuals.py": "60b3d8bb63d5800a212ddbf939e8d23caed5c285d954a74b52f6852c0b1c2799",
+    "src/parameter_freeze.py": "963786187f7adf632f3bdd8843741d240bfb7454b0b45e4383ab609684b03c8b"
+  },
+  "fit_provenance": {
+    "code_sha256": {
+      "src/model_equations.py": "c5b641501347b8bc0231d57d15f7018b9e2961bf756f3e2616e754b0f318dd34",
+      "src/manuscript_audit.py": "7178826f31933f5bc31d36876f3f4fb633a9f9864adad1b77eab32e8d24a6ee2",
+      "src/drug_calibration.py": "79457da01c4e28d6e9423377fa8d47f327b68d113d7700b94a8a4f3e41c78d24",
+      "src/kinetics_fit.py": "e5646beef7e194f8c73148894dae8ead84afea79863b08692e545d84df1fc9b9",
+      "src/parameter_schema.py": "af5f32b9b715d00582d94b6671fda393c9b8bd4df3b61d6a0874ba6874cb79f2",
+      "src/wang_noise_traces.py": "7d25214e0f29d55c322a084c5b7b87102db759ba196fe97f73abf60c56fc7d69",
+      "src/wang_noise_cohorts.py": "3765a626f5069f64aa1f78cef261019ec937ceebadb890af761d9e64c68768f6",
+      "src/salt_table3_fit.py": "36de7ac9f99f3764aa403c1946483b1d25397b85292fceea236af46f5bc839a6",
+      "src/pike_trace_diagnostic.py": "d85858be91816bcffa4af1dad3524ab0f12823fd24be92ea10ce14b71605b057",
+      "src/asakuma_ep_endpoint_sensitivity.py": "1bda964fe34c814b343b66b3c61d049d6209cc3a03ea1e5179a7acce055a12e3",
+      "src/joint_calibration_screen.py": "da2931d2c034f1afb16b547d6d331a4abb1b2c6318a0bc1154ce5d8c9e80f2d5",
+      "src/salt_1979_digitize.py": "f109a25affc1c74b41d5a1d160748a1e15531448012e514a1eecdec3b1000ab3",
+      "src/fit_parameters.py": "6d2fba8573cea27cb500e8d85feb0b8a34135fd22c020d63d8756a66d8f6579c",
+      "src/salt_trace_residuals.py": "60b3d8bb63d5800a212ddbf939e8d23caed5c285d954a74b52f6852c0b1c2799"
+    },
+    "sources": {
+      "selected_observation_sha256": {
+        "pike_bosher": "917a515ba7f0d651b857604dca495f80847e7fcce6fe3268f0c8b92de6446457",
+        "wang_1992": "835ee61cce71370e860cf3ddf2e01ef08aead98acbf8ef350060e294d9198a4d",
+        "wang_1990": "47c8a13c23637a25c920273d04ce60cf1de1c7c7cc274c348e9ded5f3f6bb626",
+        "salt_table_iii": "18d28455169e1fa03e18e8adcb489ed8684831e3ff4aa748b6132d4e16ca6966",
+        "salt_figure_3": "f173940f32cf6a3a1c92fd22d0fd6a1e0c56c17fbf9dc2c80c4a965c64de14d8"
+      },
+      "pike_anchor_file": "refs/research_evidence/research_evidence.json",
+      "wang_1992_paper": "refs/target_source/wang_1992_hear_res.pdf",
+      "wang_1990_paper": "refs/target_source/wang_1990_hear_res.pdf",
+      "salt_table_iii_paper_page": "refs/target_source/salt_1979_hear_res.pdf, printed p. 352, Table III (citation only; file hash omitted to avoid Figure 5 source content)",
+      "salt_fig3_source_data": "refs/research_evidence/salt_1979_fig3_fig5_digitized.json"
+    },
+    "excluded_fig5_hashes": true
+  },
+  "historical_freeze_preserved": {
+    "path": "results/initial_candidate.json",
+    "sha256": "898d2b213b2ee8ba8836fb5dcdb8483767eae70201d603a47fc568a2a3178184"
+  },
+  "environment_at_freeze": {
+    "python": "3.11.8",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4"
+  },
+  "limitations": [
+    "The fixed residual scales are illustrative deterministic weights, not a likelihood; correlated observations and unknown cross-study covariance are not modeled.",
+    "The Salt dBA-to-model input mapping is same-numeric-level and conditional, not a supported acoustic conversion.",
+    "Salt Table III uses an inherited hypothetical 1\u20133 minute EP observation window; the paper does not establish that EP timing.",
+    "Wang 1990 uses an assumed fixed 45-minute measurement delay; Wang 1992 group digitization and temporal points are correlated.",
+    "The six-study candidate is outcome-informed and nonblinded; it is not independent validation.",
+    "The reconstructed model retains its related-code hybrid closure, species/exposure proxy assumptions, and treated potassium boundary.",
+    "A successful bounded local least-squares termination and three seed-derived starts do not establish a global optimum, identifiability, physiological validity, or stability."
+  ]
+}

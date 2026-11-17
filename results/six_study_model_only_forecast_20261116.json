@@ -1,0 +1,98 @@
+{
+  "status": "prospective_model_only_not_validation",
+  "candidate_provenance": {
+    "status": "user-authorized six-study nine-parameter exploratory candidate freeze",
+    "freeze_date": "2026-11-16",
+    "model_source": "src/model_equations.py",
+    "model_sha256": "5577c883d228d2626e946001c4cd1527ef137814f28ef73f31c8f4274c92b2ba",
+    "fit_source": "results/fit_parameters.json",
+    "fit_sha256": "cbd723bf3f7345754ebc4fa35d17c70c7e55af5201fc482d763e9c92342385cc",
+    "closure": "U_C, U_M, marginal K half-saturation (4 mM) and intact basal paracellular leak adapted from related 19-state C model commit 64ae8344e45dcb45b8b9d2bc9fb0528cd6876aac; not specified in manuscript.",
+    "drug_exposure_proxy": {
+      "guinea_pig_proxy_per_mg_kg": 0.04882843209202751,
+      "chinchilla_exposure_multiplier": 0.7862375537069135
+    }
+  },
+  "protocol": {
+    "description": "20-minute broadband sound exposure, then 100-minute quiet recovery",
+    "sound_levels_db_spl": [
+      105,
+      115,
+      125
+    ],
+    "model_sound_mapping": "model_equations.broadband_sound_multiplier; empirical model input mapping, not independently validated SPL calibration",
+    "sample_interval_minutes": 1,
+    "observation_minutes": [
+      20,
+      40,
+      60,
+      120
+    ],
+    "recovery_threshold_fraction_of_frozen_initial_ep": 0.8,
+    "output_variables": [
+      "EP (mV) at each prespecified observation minute",
+      "maximum sampled EP drop (mV)",
+      "sampled nadir time (min)",
+      "80%-of-initial-EP recovery status and time (min)",
+      "right-censor time (min), when applicable"
+    ],
+    "limits": [
+      "generic model-level protocol; no matched study is selected or claimed",
+      "no Tier 2 outcomes, figures, literature searches, or holdout datasets are read",
+      "no direct comparison, test-set matching, or tuning is permitted",
+      "no claims beyond these model inputs, durations, outputs, and candidate",
+      "not independent validation"
+    ]
+  },
+  "frozen_initial_ep_mV": 80.0,
+  "predictions": [
+    {
+      "sound_level_db_spl": 105,
+      "model_sound_multiplier": 1.0980451209366557,
+      "exposure_minutes": 20,
+      "ep_at_minutes_mV": {
+        "20": 84.4770365172522,
+        "40": 84.25914345567145,
+        "60": 83.17441111725164,
+        "120": 81.57973538361223
+      },
+      "maximum_ep_drop_mV": 3.225543219767033,
+      "sampled_nadir_time_min": 1.0,
+      "recovery_status": "not_below_threshold",
+      "recovery_time_min": null,
+      "censor_time_min": null
+    },
+    {
+      "sound_level_db_spl": 115,
+      "model_sound_multiplier": 1.2115729633842405,
+      "exposure_minutes": 20,
+      "ep_at_minutes_mV": {
+        "20": 82.74782296369823,
+        "40": 83.60184704604364,
+        "60": 82.55506671978134,
+        "120": 81.22671682129854
+      },
+      "maximum_ep_drop_mV": 7.011238136593903,
+      "sampled_nadir_time_min": 1.0,
+      "recovery_status": "not_below_threshold",
+      "recovery_time_min": null,
+      "censor_time_min": null
+    },
+    {
+      "sound_level_db_spl": 125,
+      "model_sound_multiplier": 1.2867343610801805,
+      "exposure_minutes": 20,
+      "ep_at_minutes_mV": {
+        "20": 60.65171635174943,
+        "40": 66.72233384600975,
+        "60": 68.68718314497282,
+        "120": 73.3859084810153
+      },
+      "maximum_ep_drop_mV": 19.348283648250572,
+      "sampled_nadir_time_min": 20.0,
+      "recovery_status": "recovered",
+      "recovery_time_min": 21.943524269365625,
+      "censor_time_min": null
+    }
+  ]
+}

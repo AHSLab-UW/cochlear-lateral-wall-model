@@ -1,0 +1,64 @@
+{
+  "status": "Retrospective benchmark observations; no calibration targets",
+  "zhang": {
+    "doi": "10.1113/JP281981",
+    "paper": "refs/target_source/zhang_2021_j_physiol.pdf",
+    "species": "Male Hartley guinea pig; second cochlear turn, approximately 1-kHz best frequency",
+    "fig5": {
+      "pdf_page": 14,
+      "embedded_image_size_pixels": [1324, 1502],
+      "method": "Manual centers of the red measured markers in Fig. 5E; green K-derived predictions excluded. Approximate digitization, not raw recordings.",
+      "level_dB_SPL": [60, 70, 80, 90, 100],
+      "sequence_dB_SPL": [100, 90, 80, 70, 60],
+      "x_pixels": [198, 273, 349, 424, 500],
+      "zero_mV_y_pixel": 1191,
+      "minus_10_mV_y_pixel": 1418,
+      "animals_y_pixels": {
+        "GP419": [1198, 1210, 1223, 1236, 1255],
+        "GP221": [1219, 1233, 1248, 1279, 1311],
+        "GP226": [1226, 1248, 1273, 1309, 1355]
+      },
+      "estimated_reading_resolution_mV": 0.15,
+      "uncertainty": "Sample SD across three animals is calculated from digitized amplitudes; reading resolution is not an SD or confidence interval."
+    },
+    "fig4": {
+      "pdf_page": 10,
+      "embedded_image_size_pixels": [1215, 1615],
+      "method": "Red measured traces in Fig. 4E extracted by color within separate ISP and EP regions, sampled at 0.5 s. Each trace averages four pulses in one animal (GP267).",
+      "zero_y_pixel": 1294,
+      "three_mV_scale_pixels": 72,
+      "five_seconds_scale_pixels": 39,
+      "trace_y_bounds": [1280, 1370],
+      "isp_x_bounds": [107, 249],
+      "ep_x_bounds": [315, 456],
+      "isp_onset_x_pixel": 138,
+      "ep_onset_x_pixel": 340,
+      "cohort_mean_delta_isp_mV": -2.7,
+      "cohort_sd_delta_isp_mV": 0.6,
+      "cohort_mean_delta_ep_mV": -2.7,
+      "cohort_sd_delta_ep_mV": 0.5,
+      "n_animals": 3,
+      "reported_representative_delta_k_is_mM": 0.74,
+      "reported_representative_tau_seconds": 0.8,
+      "association_caveat": "ISP/IS-K and EP/endolymph-K were sequential electrode-position recordings, not simultaneous four-channel measurements. Cohort means/SD do not establish a correlation coefficient."
+    }
+  },
+  "hou": {
+    "doi": "10.1016/j.ajpath.2020.05.016",
+    "paper": "refs/target_source/hou_2020_am_j_pathol.pdf",
+    "species": "Approximately six-week-old male C57BL/6J and NG2DsRedBAC mice",
+    "noise": "120 dB SPL broadband, 3 h on each of two consecutive days",
+    "timing": "Results p.1955: EP at 2 weeks after transplantation, 5 weeks after noise; Fig.7 labels NE 2W. Timing conflict retained; no chronic model time is assigned.",
+    "ep_provenance": "Approximate means and error magnitudes transcribed directly from Results p.1955; n=3/group from Fig.7G caption. Values are not inferred from pixels.",
+    "flow_provenance": "Approximate bar/error readings from Fig.7E in the existing local extraction; n=6/group, mean +/- SD per caption. Volumetric flow, not velocity; spatial mapping to normalized model perfusion is assumed.",
+    "groups": ["Control", "Noise", "Noise + control PC", "Noise + conditioned PC"],
+    "ep_mean_mV": [101.0, 72.71, 85.98, 97.75],
+    "ep_sd_mV": [4.7, 6.1, 5.3, 5.5],
+    "ep_n_per_group": 3,
+    "flow_mean_um3_s": [3100, 1100, 2200, 2800],
+    "flow_sd_um3_s": [850, 350, 500, 600],
+    "flow_n_per_group": 6,
+    "uncertainty": "Normalize means and SD by the fixed reported control means (101 mV and 3100 um3/s). Denominator uncertainty and cross-endpoint covariance are not propagated; these are not ratio confidence intervals.",
+    "exclusions": "Flow velocity, ABR and cellular counts are not benchmarks because their observation operators are absent. All four EP/flow groups are retained without assigning model scenarios to treatments or ages."
+  }
+}

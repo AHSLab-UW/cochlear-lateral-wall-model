@@ -1,0 +1,143 @@
+{
+  "study": "Hou et al. (2020)",
+  "title": "Acoustic trauma causes cochlear pericyte-to-myofibroblast-like cell transformation and vascular degeneration, and transplantation of new pericytes prevents vascular atrophy",
+  "journal": "Am J Pathol",
+  "year": 2020,
+  "volume": 190,
+  "issue": 9,
+  "pages": "1943-1959",
+  "doi": "10.1016/j.ajpath.2020.05.016",
+  "pmid": "32562624",
+  "animal_model": "Male C57BL/6J and NG2DsRedBAC mice (aged ~6 weeks)",
+  "noise_exposure_regimen": "120 dB SPL broadband noise, 3 hours/day x 2 consecutive days in sound exposure booth",
+  "evaluation_time": "2 weeks post-noise exposure (permanent chronic outcome)",
+  "fig7g_endocochlear_potential": {
+    "units": "mV",
+    "n_per_group": 3,
+    "groups": [
+      {
+        "id": "Control",
+        "label": "Control",
+        "ep_mean_mV": 101.0,
+        "ep_sd_mV": 4.7,
+        "relative_ep_pct": 100.0,
+        "relative_ep_sd": 4.65
+      },
+      {
+        "id": "NE_2W",
+        "label": "Trauma (NE 2W)",
+        "ep_mean_mV": 72.71,
+        "ep_sd_mV": 6.1,
+        "relative_ep_pct": 71.99,
+        "relative_ep_sd": 6.04
+      },
+      {
+        "id": "NE_2W_PC_null",
+        "label": "NE + PC (null)",
+        "ep_mean_mV": 85.98,
+        "ep_sd_mV": 5.3,
+        "relative_ep_pct": 85.13,
+        "relative_ep_sd": 5.25
+      },
+      {
+        "id": "NE_2W_PC_VEGF",
+        "label": "NE + PC (VEGF)",
+        "ep_mean_mV": 97.75,
+        "ep_sd_mV": 5.5,
+        "relative_ep_pct": 96.78,
+        "relative_ep_sd": 5.45
+      }
+    ]
+  },
+  "fig7e_blood_flow_volume": {
+    "units": "um^3/s",
+    "n_per_group": 6,
+    "groups": [
+      {
+        "id": "Control",
+        "label": "Control",
+        "volume_mean": 3100.0,
+        "volume_sd": 850.0,
+        "relative_pct": 100.0,
+        "relative_sd": 27.4
+      },
+      {
+        "id": "NE_2W",
+        "label": "Trauma (NE 2W)",
+        "volume_mean": 1100.0,
+        "volume_sd": 350.0,
+        "relative_pct": 35.48,
+        "relative_sd": 11.29
+      },
+      {
+        "id": "NE_2W_PC_null",
+        "label": "NE + PC (null)",
+        "volume_mean": 2200.0,
+        "volume_sd": 500.0,
+        "relative_pct": 70.97,
+        "relative_sd": 16.13
+      },
+      {
+        "id": "NE_2W_PC_VEGF",
+        "label": "NE + PC (VEGF)",
+        "volume_mean": 2800.0,
+        "volume_sd": 600.0,
+        "relative_pct": 90.32,
+        "relative_sd": 19.35
+      }
+    ]
+  },
+  "fig7f_blood_flow_velocity": {
+    "units": "um/s",
+    "n_per_group": 6,
+    "groups": [
+      {
+        "id": "Control",
+        "velocity_mean": 26.0,
+        "velocity_sd": 6.0,
+        "relative_pct": 100.0,
+        "relative_sd": 23.1
+      },
+      {
+        "id": "NE_2W",
+        "velocity_mean": 5.0,
+        "velocity_sd": 1.5,
+        "relative_pct": 19.23,
+        "relative_sd": 5.77
+      },
+      {
+        "id": "NE_2W_PC_null",
+        "velocity_mean": 14.0,
+        "velocity_sd": 3.0,
+        "relative_pct": 53.85,
+        "relative_sd": 11.54
+      },
+      {
+        "id": "NE_2W_PC_VEGF",
+        "velocity_mean": 21.0,
+        "velocity_sd": 5.0,
+        "relative_pct": 80.77,
+        "relative_sd": 19.23
+      }
+    ]
+  },
+  "fig5b_capillary_diameter": {
+    "units": "um",
+    "n_total": 34,
+    "non_transition_mean": 12.8,
+    "non_transition_sd": 4.2,
+    "transition_mean": 10.1,
+    "transition_sd": 3.2,
+    "p_value": "< 0.05",
+    "diameter_reduction_pct": 21.09
+  },
+  "fig1f_pericyte_transformation": {
+    "units": "percent_of_total_pericytes",
+    "control_pct": 2.1,
+    "control_sd": 1.0,
+    "ne_1w_pct": 18.5,
+    "ne_1w_sd": 3.2,
+    "ne_2w_pct": 24.8,
+    "ne_2w_sd": 4.1
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "status": "fixed historical parameter re-evaluation; not a corrected refit",
+  "source_file": "results/low_dose_assumption_sensitivity.json",
+  "source_sha256": "6c000fd0163d6f01c4dd4b7a3e3a89efb1094900f8687ee445c7ed286ec3e7cd",
+  "observed_ratio_of_group_means": 2.12992125984252,
+  "dose_mg_kg": 60,
+  "cases": [
+    {
+      "source_case_index": 0,
+      "hill": 2.6,
+      "water_rate": 0.005,
+      "exchange": 0.45077480018339383,
+      "parameters": {
+        "potassium_flux": 0.49999999998058914,
+        "effective_dose_scale_mg_kg": 30.6433473495362,
+        "exposure_decay_min": 62.539742944082604,
+        "rybak_exposure_multiplier": 1.3072439862949432,
+        "met_conductance": 0.15461203014525154,
+        "drug_loss_fraction": 0.979999999957056
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": 6.1524162045232105,
+          "resistance_ratio_at_sampled_nadir": 2.2028137046428817,
+          "resistance_ratio_at_assumed_6_min": 2.1319885295232233,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.4000000000000004,
+          "sampled_nadir_ep_mV": 6.148946974745277,
+          "resistance_ratio_at_sampled_nadir": 2.2056656635538863,
+          "resistance_ratio_at_assumed_6_min": 2.1319885295232233,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": 6.15241656017188,
+          "resistance_ratio_at_sampled_nadir": 2.2028137046428817,
+          "resistance_ratio_at_assumed_6_min": 2.1319885295232233,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.4000000000000004,
+          "sampled_nadir_ep_mV": 6.148947318802831,
+          "resistance_ratio_at_sampled_nadir": 2.2056656635538863,
+          "resistance_ratio_at_assumed_6_min": 2.1319885295232233,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    },
+    {
+      "source_case_index": 1,
+      "hill": 1.0,
+      "water_rate": 0.005,
+      "exchange": 0.6058556760382339,
+      "parameters": {
+        "potassium_flux": 0.4999999999999992,
+        "effective_dose_scale_mg_kg": 30.000002703131045,
+        "exposure_decay_min": 69.72104139423998,
+        "rybak_exposure_multiplier": 1.9443683889512098,
+        "met_conductance": 0.1938532383721005,
+        "drug_loss_fraction": 0.98
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.75,
+          "sampled_nadir_ep_mV": 29.584602029494103,
+          "resistance_ratio_at_sampled_nadir": 1.5745339859475025,
+          "resistance_ratio_at_assumed_6_min": 1.5668508364786322,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.65,
+          "sampled_nadir_ep_mV": 29.58413525782778,
+          "resistance_ratio_at_sampled_nadir": 1.5751516036311466,
+          "resistance_ratio_at_assumed_6_min": 1.5668508364786322,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.75,
+          "sampled_nadir_ep_mV": 29.584602323583177,
+          "resistance_ratio_at_sampled_nadir": 1.5745339859475025,
+          "resistance_ratio_at_assumed_6_min": 1.5668508364786322,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.65,
+          "sampled_nadir_ep_mV": 29.58413558412668,
+          "resistance_ratio_at_sampled_nadir": 1.5751516036311466,
+          "resistance_ratio_at_assumed_6_min": 1.5668508364786322,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    },
+    {
+      "source_case_index": 2,
+      "hill": 2.6,
+      "water_rate": 0.005,
+      "exchange": 0.1538480234717621,
+      "parameters": {
+        "potassium_flux": 1.2968582709153333,
+        "effective_dose_scale_mg_kg": 30.000005197202107,
+        "exposure_decay_min": 43.2127096804629,
+        "rybak_exposure_multiplier": 1.1277929535165974,
+        "met_conductance": 0.14814322522323528,
+        "drug_loss_fraction": 0.9777080115355729
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.0,
+          "sampled_nadir_ep_mV": -4.619985265461101,
+          "resistance_ratio_at_sampled_nadir": 2.1884485963082057,
+          "resistance_ratio_at_assumed_6_min": 2.105648973171485,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.0,
+          "sampled_nadir_ep_mV": -4.619985265461101,
+          "resistance_ratio_at_sampled_nadir": 2.1884485963082057,
+          "resistance_ratio_at_assumed_6_min": 2.105648973171485,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.0,
+          "sampled_nadir_ep_mV": -4.619985155328615,
+          "resistance_ratio_at_sampled_nadir": 2.1884485963082057,
+          "resistance_ratio_at_assumed_6_min": 2.105648973171485,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.0,
+          "sampled_nadir_ep_mV": -4.619985155328615,
+          "resistance_ratio_at_sampled_nadir": 2.1884485963082057,
+          "resistance_ratio_at_assumed_6_min": 2.105648973171485,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    },
+    {
+      "source_case_index": 3,
+      "hill": 1.0,
+      "water_rate": 0.005,
+      "exchange": 1.1101093546389834e-11,
+      "parameters": {
+        "potassium_flux": 1.9999999999937146,
+        "effective_dose_scale_mg_kg": 30.000000000000416,
+        "exposure_decay_min": 46.75402499894451,
+        "rybak_exposure_multiplier": 1.3371269244274966,
+        "met_conductance": 0.15875044546478162,
+        "drug_loss_fraction": 0.98
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": 20.072320865862842,
+          "resistance_ratio_at_sampled_nadir": 1.6100843240507123,
+          "resistance_ratio_at_assumed_6_min": 1.5851031154439665,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.5500000000000003,
+          "sampled_nadir_ep_mV": 20.072153463368785,
+          "resistance_ratio_at_sampled_nadir": 1.60957786321004,
+          "resistance_ratio_at_assumed_6_min": 1.5851031154439665,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": 20.07232112754649,
+          "resistance_ratio_at_sampled_nadir": 1.6100843240507123,
+          "resistance_ratio_at_assumed_6_min": 1.5851031154439665,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.5500000000000003,
+          "sampled_nadir_ep_mV": 20.072153775317062,
+          "resistance_ratio_at_sampled_nadir": 1.60957786321004,
+          "resistance_ratio_at_assumed_6_min": 1.5851031154439665,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    },
+    {
+      "source_case_index": 4,
+      "hill": 2.6,
+      "water_rate": 0.00025,
+      "exchange": 0.3936532636468366,
+      "parameters": {
+        "potassium_flux": 1.9539492576215867,
+        "effective_dose_scale_mg_kg": 32.49471942667276,
+        "exposure_decay_min": 37.60874261133371,
+        "rybak_exposure_multiplier": 1.0871110483714133,
+        "met_conductance": 0.07624039889301332,
+        "drug_loss_fraction": 0.9694589894196275
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": -10.017002465681955,
+          "resistance_ratio_at_sampled_nadir": 2.258750856567173,
+          "resistance_ratio_at_assumed_6_min": 2.107731730221505,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.5500000000000003,
+          "sampled_nadir_ep_mV": -10.018004146881337,
+          "resistance_ratio_at_sampled_nadir": 2.2556118432626246,
+          "resistance_ratio_at_assumed_6_min": 2.107731730221505,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 3.5,
+          "sampled_nadir_ep_mV": -10.017001734760386,
+          "resistance_ratio_at_sampled_nadir": 2.258750856567173,
+          "resistance_ratio_at_assumed_6_min": 2.107731730221505,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 3.5500000000000003,
+          "sampled_nadir_ep_mV": -10.018003444353198,
+          "resistance_ratio_at_sampled_nadir": 2.2556118432626246,
+          "resistance_ratio_at_assumed_6_min": 2.107731730221505,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    },
+    {
+      "source_case_index": 5,
+      "hill": 1.0,
+      "water_rate": 0.00025,
+      "exchange": 4.7981797594983566e-12,
+      "parameters": {
+        "potassium_flux": 1.9999999999574056,
+        "effective_dose_scale_mg_kg": 30.000000006150614,
+        "exposure_decay_min": 44.90266139179993,
+        "rybak_exposure_multiplier": 1.0504888496746219,
+        "met_conductance": 0.021675801552118658,
+        "drug_loss_fraction": 0.98
+      },
+      "runs": [
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.5,
+          "sampled_nadir_ep_mV": 10.827600003859198,
+          "resistance_ratio_at_sampled_nadir": 1.8080987142112959,
+          "resistance_ratio_at_assumed_6_min": 1.7833186224376438,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "Radau",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.5,
+          "sampled_nadir_ep_mV": 10.827600003859198,
+          "resistance_ratio_at_sampled_nadir": 1.8080987142112959,
+          "resistance_ratio_at_assumed_6_min": 1.7833186224376438,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.25,
+          "sampled_nadir_time_min": 4.5,
+          "sampled_nadir_ep_mV": 10.827600835823114,
+          "resistance_ratio_at_sampled_nadir": 1.8080987142112959,
+          "resistance_ratio_at_assumed_6_min": 1.7833186224376438,
+          "nadir_at_window_boundary": false
+        },
+        {
+          "solver": "BDF",
+          "grid_step_min": 0.05,
+          "sampled_nadir_time_min": 4.5,
+          "sampled_nadir_ep_mV": 10.827600835823114,
+          "resistance_ratio_at_sampled_nadir": 1.8080987142112959,
+          "resistance_ratio_at_assumed_6_min": 1.7833186224376438,
+          "nadir_at_window_boundary": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The original parameters were fitted using an incorrectly sourced 6-minute resistance mapping and were not refitted.",
+    "Source reports resistance at the table-cohort greatest EP decrease, not a numerically specified time.",
+    "A single modeled trajectory's nadir-associated resistance need not equal a ratio of group means at individual nadirs.",
+    "Baseline series fraction, shared exposure mapping and extrema window are assumptions, not measured quantities.",
+    "The arbitrary six-minute comparison is retained only to show impact of the previous mapping.",
+    "This is not independent validation, statistical model selection or proof of ion, charge or water closure."
+  ]
+}

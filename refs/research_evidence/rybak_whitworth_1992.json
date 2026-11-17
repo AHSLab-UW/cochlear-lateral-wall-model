@@ -1,0 +1,61 @@
+{
+  "status": "Candidate Tier 1 source transcription; not used in numerical fitting",
+  "study": {
+    "authors": "Rybak, Whitworth, Weberg and Scott",
+    "year": 1992,
+    "title": "Effects of organic acids on the edema of the stria vascularis induced by furosemide",
+    "journal": "Hearing Research",
+    "volume": 59,
+    "pages": "75-84",
+    "species": "chinchilla",
+    "source": "refs/1-s2.0-037859559290104U-main.pdf",
+    "source_sha256": "60f5a3f2307c44aa6c826f307e505fc19e1273886b46654cdf6c38183e9e9462",
+    "tier": "candidate Tier 1",
+    "blinded_validation": false
+  },
+  "protocol": {
+    "pretreatment_route": "intravenous",
+    "pretreatment_to_furosemide_min": 30,
+    "pretreatment_note": "The abstract states the 30-minute delay for both saline controls and experimental pretreatments.",
+    "furosemide_mg_per_kg": 25,
+    "furosemide_route": "intravenous",
+    "each_injection_duration_s_range": [1, 2],
+    "baseline_stabilization_min_range": [10, 15],
+    "ep_monitoring_after_injection_h_range": [1, 2],
+    "recovery_definition": "Time from drug injection until recovery of EP to 80% of control.",
+    "recovery_caveats": [
+      "The timing of EP measurement versus tissue collection at 10, 20 and 30 minutes is not reconciled for each animal.",
+      "The paper does not specify the exact rule for trajectories that never fall below 80% of control, multiple crossings, or incomplete recovery.",
+      "The table gives group means of individual endpoints, not endpoints of a group-average trajectory."
+    ]
+  },
+  "table_i": {
+    "pdf_page": 2,
+    "units": "mean plus or minus SEM",
+    "groups": [
+      {"pretreatment": "alkaline saline", "n": 18, "pretreatment_dose_ml": 0.5, "ep_drop_mean_mV": 49.69, "ep_drop_sem_mV": 6.68, "recovery_mean_min": 18.50, "recovery_sem_min": 3.53},
+      {"pretreatment": "penicillin G", "n": 6, "pretreatment_dose_mg_per_kg": 50, "ep_drop_mean_mV": 11.25, "ep_drop_sem_mV": 2.99, "recovery_mean_min": 2.83, "recovery_sem_min": 1.74},
+      {"pretreatment": "probenecid", "n": 8, "pretreatment_dose_mg_per_kg": 50, "ep_drop_mean_mV": 18.28, "ep_drop_sem_mV": 4.08, "recovery_mean_min": 21.38, "recovery_sem_min": 7.59},
+      {"pretreatment": "sodium salicylate", "n": 9, "pretreatment_dose_mg_per_kg": 50, "ep_drop_mean_mV": 16.92, "ep_drop_sem_mV": 3.52, "recovery_mean_min": 12.22, "recovery_sem_min": 2.39}
+    ],
+    "significance": "Against saline control, all EP reductions P < 0.01; penicillin recovery time P < 0.05.",
+    "limitations": "The covariance of EP drop and recovery is not reported; uncertainties for each endpoint are not independent animal observations. The relation between these groups and tissue specimens needs clarification."
+  },
+  "morphology": {
+    "pdf_page": 2,
+    "method": "electron microscopy of basal-turn lateral wall",
+    "collection_times_min": [10, 20, 30],
+    "rank_scale": [0, 1, 2, 3, 4],
+    "raters": 2,
+    "rater_blinding": "Two individuals ranked coded photomicrographs without knowing treatment.",
+    "saline_control_text_observations": [
+      {"time_min": 3, "description": "1+ edema", "source": "PDF page 3, prose; data not shown"},
+      {"time_min": 10, "description": "moderately severe intercellular edema", "source": "PDF page 3, prose and Figure 2"},
+      {"time_min": 20, "description": "minimal edema", "source": "PDF page 3, prose and Figure 3"},
+      {"time_min": 30, "description": "interstitial fluid had cleared", "source": "PDF pages 3-4, prose and Figure 4"}
+    ],
+    "temporal_comparison": "The authors describe more edema at 10 than 20 minutes, with clearance at 30 minutes. The representative EP minimum occurs within two to three minutes; 10 minutes is the worst of the shown later tissue samples, not a proven continuous-time peak.",
+    "sampling_caveat": "The 3-minute samples are mentioned in prose but absent from the Figure 1 bars. The animal count per tissue time, overlap with EP animals, and aggregation or inter-rater agreement for the plotted bars are not established.",
+    "limitations": "Ordinal photomicrograph ratings are not continuous fluid volume or water flux; inter-rater agreement and animal-level mapping were not extracted."
+  }
+}

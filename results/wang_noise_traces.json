@@ -1,0 +1,1495 @@
+{
+  "status": "completed exploratory sequential noise calibration",
+  "source_sha256": {
+    "results/kinetics_fit.json": "69e372ccde0fe5f3ac0e16554f4e0b7095ab8b962650d56e445499c25172d036",
+    "refs/research_evidence/research_evidence.json": "b7737c786f04ec0fb87fa0a9b66903398ffafa2e62e9605f1f8f6f6e5ba29da0",
+    "refs/target_source/wang_1992_hear_res.pdf": "22a331e61303773cfa55ea5ecefc3f6659a6cdeb2f42bdd9d3ad075d222f43ea"
+  },
+  "drug_parameters_frozen": {
+    "guinea_pig_proxy_per_mg_kg": 0.04883354272524996,
+    "chinchilla_exposure_multiplier": 0.7862462940316276,
+    "drug_conductance_loss": 0.9490358272257537,
+    "drug_k_loss": 0.012923816323303848,
+    "drug_slow_fraction": 0.687879903365263,
+    "drug_slow_min": 59.40463082006377
+  },
+  "sound_parameter_bounds": {
+    "adapt_rate": [
+      0.03,
+      0.5
+    ],
+    "adapt_evoked": [
+      0.2,
+      1.0
+    ],
+    "trauma_vasoconstriction": [
+      0.2,
+      0.99
+    ]
+  },
+  "limitations": [
+    "Sequential noise-only optimization of three existing parameters with six drug parameters frozen; this is not a joint optimization over all parameters or all Tier 1 evidence.",
+    "Wang 1992 Fig. 1 provides approximate correlated group-mean observations; within-animal covariance is unavailable.",
+    "Each level receives equal total weight, with illustrative 3 mV scale; objective is not a likelihood.",
+    "The 125 dB condition includes severe acoustic trauma; the reference trauma model and broadband SPL-to-drive transform are unverified assumptions.",
+    "Digitized times close to stimulus onset and offset have finite resolution, and plotted group means cannot reveal individual trajectories.",
+    "Bounds are numerical choices, not measured physiological ranges; three starts do not establish a global optimum.",
+    "Drug K boundary, species-exposure multiplier and hybrid workload closure remain conditional.",
+    "No new model parameters are introduced; changing existing sound parameters may alter the drug fit, so it is separately reevaluated."
+  ],
+  "attempts": [
+    {
+      "start": [
+        0.145,
+        0.68,
+        0.76
+      ],
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "evaluations": 8,
+      "initial_score": 6.5798411064712035,
+      "score": 4.942585481315422,
+      "parameters": {
+        "adapt_rate": 0.2142173179732219,
+        "adapt_evoked": 0.9999999999826259,
+        "trauma_vasoconstriction": 0.20000000000000004
+      },
+      "active_bounds": {
+        "adapt_rate": 0,
+        "adapt_evoked": 1,
+        "trauma_vasoconstriction": -1
+      }
+    },
+    {
+      "start": [
+        0.08,
+        0.9,
+        0.4
+      ],
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "evaluations": 8,
+      "initial_score": 8.009441902353782,
+      "score": 4.942585480695321,
+      "parameters": {
+        "adapt_rate": 0.2142179438612177,
+        "adapt_evoked": 0.9999999999994852,
+        "trauma_vasoconstriction": 0.20000000000000004
+      },
+      "active_bounds": {
+        "adapt_rate": 0,
+        "adapt_evoked": 1,
+        "trauma_vasoconstriction": -1
+      }
+    },
+    {
+      "start": [
+        0.3,
+        0.4,
+        0.9
+      ],
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "evaluations": 8,
+      "initial_score": 6.504084453075659,
+      "score": 4.942585481064581,
+      "parameters": {
+        "adapt_rate": 0.21421841317652338,
+        "adapt_evoked": 0.9999999983555842,
+        "trauma_vasoconstriction": 0.20000000000000004
+      },
+      "active_bounds": {
+        "adapt_rate": 0,
+        "adapt_evoked": 1,
+        "trauma_vasoconstriction": -1
+      }
+    }
+  ],
+  "sound_parameters": {
+    "adapt_rate": 0.2142179438612177,
+    "adapt_evoked": 0.9999999999994852,
+    "trauma_vasoconstriction": 0.20000000000000004
+  },
+  "noise_checks": [
+    {
+      "method": "Radau",
+      "score": 4.942585074380175,
+      "predictions": [
+        {
+          "level_db_spl": 105,
+          "time_min": [
+            0.0,
+            0.26,
+            0.66,
+            1.98,
+            3.04,
+            4.98,
+            9.96,
+            14.98,
+            19.96,
+            20.22,
+            20.72,
+            21.05,
+            22.49,
+            25.09,
+            30.07
+          ],
+          "observed_change_mV": [
+            0.0,
+            -3.1499999999999915,
+            -3.0799999999999983,
+            -2.0999999999999943,
+            -1.539999999999992,
+            -0.769999999999996,
+            -0.4899999999999949,
+            0.4900000000000091,
+            1.25,
+            2.5800000000000125,
+            2.5800000000000125,
+            2.719999999999999,
+            2.3700000000000045,
+            2.230000000000004,
+            1.8800000000000097
+          ],
+          "model_change_mV": [
+            0.0,
+            -3.404367370202152,
+            -3.204625486830068,
+            -1.7786769889486607,
+            -0.5932762836258121,
+            1.1954494935836948,
+            3.9143061790158953,
+            5.104152895924599,
+            5.572347362887228,
+            6.240777817151894,
+            6.442298022094448,
+            6.496765199545763,
+            6.448699334632408,
+            6.1347318394738295,
+            5.562939725795275
+          ],
+          "rmse_mV": 3.1868806742773748,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9847928781146961,
+              "sampled_maximum": 1.0008436582636515,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06999556286869325,
+              "sampled_maximum": 0.07011810333473117,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9806061858425741,
+              "sampled_maximum": 1.0013385797567516,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9949181817081472,
+              "sampled_maximum": 1.0784069887883352,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03443686402035562,
+              "sampled_maximum": 0.03502116890925043,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 128.07302454138468,
+              "sampled_maximum": 140.94234493699318,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.3088913714920998,
+              "sampled_maximum": 1.5148425100169267,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 134.8640724889243,
+              "sampled_maximum": 145.66966177487467,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.59563262979785,
+              "sampled_maximum": 86.49676519954576,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399832369996221,
+              "sampled_maximum": 0.01309214339365729,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.8572438530365997,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 4.3287321788718046e-07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        {
+          "level_db_spl": 115,
+          "time_min": [
+            0.0,
+            0.22,
+            0.59,
+            1.65,
+            2.64,
+            3.88,
+            4.91,
+            9.89,
+            14.98,
+            19.96,
+            20.22,
+            20.83,
+            22.35,
+            25.05,
+            30.0
+          ],
+          "observed_change_mV": [
+            0.0,
+            -5.670000000000002,
+            -4.200000000000003,
+            -3.990000000000009,
+            -3.5,
+            -2.940000000000012,
+            -1.8900000000000006,
+            0.6999999999999886,
+            2.299999999999997,
+            3.069999999999993,
+            10.489999999999995,
+            10.559999999999988,
+            10.349999999999994,
+            9.509999999999991,
+            8.599999999999994
+          ],
+          "model_change_mV": [
+            0.0,
+            -7.1516293571700515,
+            -6.9498677725559475,
+            -5.327664730986129,
+            -3.6402141078871892,
+            -1.8017856096351466,
+            -0.551555810681009,
+            2.8712585894775486,
+            3.9296366407515677,
+            4.030833034095849,
+            5.0086192331636,
+            5.48648964271699,
+            5.653117472678943,
+            5.348858579301762,
+            4.765439488388736
+          ],
+          "rmse_mV": 2.9755890153982913,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9887666081464485,
+              "sampled_maximum": 1.0038582531283655,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06993045934456368,
+              "sampled_maximum": 0.07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9773661694914342,
+              "sampled_maximum": 1.0034200218833054,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9772751918797754,
+              "sampled_maximum": 1.0559922895534486,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.034724956141839305,
+              "sampled_maximum": 0.03515828417959279,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 125.97508638806146,
+              "sampled_maximum": 142.32719640836788,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.3505931478837232,
+              "sampled_maximum": 1.563248872849072,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.63266396660632,
+              "sampled_maximum": 148.02843305102567,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 72.84837064282995,
+              "sampled_maximum": 85.65311747267894,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.0073997949431910065,
+              "sampled_maximum": 0.019195359886582487,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.9094928947244814,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.019747344225688423,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        {
+          "level_db_spl": 125,
+          "time_min": [
+            0.0,
+            0.37,
+            0.7,
+            1.03,
+            2.56,
+            4.91,
+            9.89,
+            15.02,
+            20.0,
+            20.22,
+            20.76,
+            21.16,
+            22.53,
+            25.05,
+            30.0
+          ],
+          "observed_change_mV": [
+            0.0,
+            -7.819999999999993,
+            -7.75,
+            -7.75,
+            -7.75,
+            -7.75,
+            -8.870000000000005,
+            -12.11,
+            -13.689999999999998,
+            -7.969999999999999,
+            -7.3700000000000045,
+            -7.140000000000001,
+            -7.140000000000001,
+            -9.480000000000004,
+            -12.780000000000001
+          ],
+          "model_change_mV": [
+            0.0,
+            -9.992917677714289,
+            -10.132619580810356,
+            -10.063547174952461,
+            -9.151349740564285,
+            -8.664234956398673,
+            -11.103047033007215,
+            -14.777641639029824,
+            -17.885112016825047,
+            -16.898464537081665,
+            -16.273622781424507,
+            -15.971441622027598,
+            -15.358818777326604,
+            -14.742273660663287,
+            -14.050721656434547
+          ],
+          "rmse_mV": 5.0470711555098955,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9983086567697881,
+              "sampled_maximum": 1.0298225545691007,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06798856938168699,
+              "sampled_maximum": 0.07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9186760724669855,
+              "sampled_maximum": 1.0030019704881097,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.6849259515029683,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.035,
+              "sampled_maximum": 0.03973491918296609,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 91.91372983604344,
+              "sampled_maximum": 141.74091386270737,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.5,
+              "sampled_maximum": 2.8139650773431484,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 145.0,
+              "sampled_maximum": 190.9931331498358,
+              "outside_sample_count": 7,
+              "first_outside_time_min": 9.89
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 62.11488798317495,
+              "sampled_maximum": 80.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399122106571819,
+              "sampled_maximum": 0.023210076006682807,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.918937913582506,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.3692521610714419,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "method": "BDF",
+      "score": 4.942585063840797,
+      "predictions": [
+        {
+          "level_db_spl": 105,
+          "time_min": [
+            0.0,
+            0.26,
+            0.66,
+            1.98,
+            3.04,
+            4.98,
+            9.96,
+            14.98,
+            19.96,
+            20.22,
+            20.72,
+            21.05,
+            22.49,
+            25.09,
+            30.07
+          ],
+          "observed_change_mV": [
+            0.0,
+            -3.1499999999999915,
+            -3.0799999999999983,
+            -2.0999999999999943,
+            -1.539999999999992,
+            -0.769999999999996,
+            -0.4899999999999949,
+            0.4900000000000091,
+            1.25,
+            2.5800000000000125,
+            2.5800000000000125,
+            2.719999999999999,
+            2.3700000000000045,
+            2.230000000000004,
+            1.8800000000000097
+          ],
+          "model_change_mV": [
+            0.0,
+            -3.4043666169243636,
+            -3.2046254100512215,
+            -1.7786767202233307,
+            -0.5932759287478149,
+            1.1954498174222863,
+            3.914306207494832,
+            5.104152352436287,
+            5.572346685649109,
+            6.240776411406955,
+            6.442297666422235,
+            6.496764712936596,
+            6.448698886426072,
+            6.13473159594831,
+            5.562939552204426
+          ],
+          "rmse_mV": 3.186880334804321,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9847928796855004,
+              "sampled_maximum": 1.000843658178115,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06999556286917516,
+              "sampled_maximum": 0.07011810332801703,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9806061868687866,
+              "sampled_maximum": 1.0013385797375878,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9949181817480481,
+              "sampled_maximum": 1.0784069849589715,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.034436864040455546,
+              "sampled_maximum": 0.03502116890793366,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 128.07302454423206,
+              "sampled_maximum": 140.94234489109124,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.3088913729158336,
+              "sampled_maximum": 1.514842509310353,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 134.864073005082,
+              "sampled_maximum": 145.6696617676986,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.59563338307564,
+              "sampled_maximum": 86.4967647129366,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399832320167994,
+              "sampled_maximum": 0.013092143033425777,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.8572438062963939,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 4.3287321788697755e-07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        {
+          "level_db_spl": 115,
+          "time_min": [
+            0.0,
+            0.22,
+            0.59,
+            1.65,
+            2.64,
+            3.88,
+            4.91,
+            9.89,
+            14.98,
+            19.96,
+            20.22,
+            20.83,
+            22.35,
+            25.05,
+            30.0
+          ],
+          "observed_change_mV": [
+            0.0,
+            -5.670000000000002,
+            -4.200000000000003,
+            -3.990000000000009,
+            -3.5,
+            -2.940000000000012,
+            -1.8900000000000006,
+            0.6999999999999886,
+            2.299999999999997,
+            3.069999999999993,
+            10.489999999999995,
+            10.559999999999988,
+            10.349999999999994,
+            9.509999999999991,
+            8.599999999999994
+          ],
+          "model_change_mV": [
+            0.0,
+            -7.151628414422333,
+            -6.949867658800471,
+            -5.327664380422604,
+            -3.640213554803978,
+            -1.801785129689506,
+            -0.5515554079387641,
+            2.8712585482375346,
+            3.929635905751965,
+            4.030832308764204,
+            5.008617696109454,
+            5.4864893055331265,
+            5.653117034821506,
+            5.348858370477032,
+            4.76543946613738
+          ],
+          "rmse_mV": 2.9755892392577294,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9887666103122605,
+              "sampled_maximum": 1.0038582553788054,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06993045934222707,
+              "sampled_maximum": 0.07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9773661703715271,
+              "sampled_maximum": 1.003420021749989,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9772751866235003,
+              "sampled_maximum": 1.0559922849731098,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03472495615726896,
+              "sampled_maximum": 0.035158284206061305,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 125.97508630870855,
+              "sampled_maximum": 142.3271962940309,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.3505931485342522,
+              "sampled_maximum": 1.5632488705759238,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.632664629339,
+              "sampled_maximum": 148.0284337467084,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 72.84837158557767,
+              "sampled_maximum": 85.6531170348215,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399794884191859,
+              "sampled_maximum": 0.019195359441374328,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.9094928564367315,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.019747344225680332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        {
+          "level_db_spl": 125,
+          "time_min": [
+            0.0,
+            0.37,
+            0.7,
+            1.03,
+            2.56,
+            4.91,
+            9.89,
+            15.02,
+            20.0,
+            20.22,
+            20.76,
+            21.16,
+            22.53,
+            25.05,
+            30.0
+          ],
+          "observed_change_mV": [
+            0.0,
+            -7.819999999999993,
+            -7.75,
+            -7.75,
+            -7.75,
+            -7.75,
+            -8.870000000000005,
+            -12.11,
+            -13.689999999999998,
+            -7.969999999999999,
+            -7.3700000000000045,
+            -7.140000000000001,
+            -7.140000000000001,
+            -9.480000000000004,
+            -12.780000000000001
+          ],
+          "model_change_mV": [
+            0.0,
+            -9.992917530816015,
+            -10.132619406397367,
+            -10.063546897409822,
+            -9.1513491438008,
+            -8.66423455633182,
+            -11.103047167870471,
+            -14.777641815281072,
+            -17.885112231778066,
+            -16.898464977429434,
+            -16.273622821832042,
+            -15.971441711931277,
+            -15.358818931063553,
+            -14.74227371701005,
+            -14.050721487371817
+          ],
+          "rmse_mV": 5.047071228486702,
+          "sampled_state_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.998308662811686,
+              "sampled_maximum": 1.029822558422755,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.06798856935438696,
+              "sampled_maximum": 0.07,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9186760740053197,
+              "sampled_maximum": 1.0030019703798358,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.6849259514323113,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.035,
+              "sampled_maximum": 0.03973491900146946,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 91.91372959767494,
+              "sampled_maximum": 141.7409138059771,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.5,
+              "sampled_maximum": 2.8139650701033974,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 145.0,
+              "sampled_maximum": 190.9931328017665,
+              "outside_sample_count": 7,
+              "first_outside_time_min": 9.89
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 62.114887768221934,
+              "sampled_maximum": 80.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399122059786045,
+              "sampled_maximum": 0.023210073971879925,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.9189378902103127,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.3692521610574898,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "drug_recheck": {
+    "score": 11.513644071143398,
+    "predictions": {
+      "pike_40": {
+        "change_rmse_mV": 6.27287117170767,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_60": {
+        "change_rmse_mV": 7.018594661499494,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_80": {
+        "change_rmse_mV": 10.340839344893391,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "asakuma_60": {
+        "ep_reduction_mV": 110.87205444307598,
+        "ep_nadir_mV_model_reference": -30.87205444307598,
+        "resistance_ratio_at_ep_nadir": 2.151411556416303,
+        "ep_nadir_time_min": 0.8250000000000001,
+        "observed_baseline_minus_nadir_mean_mV": 118.4
+      },
+      "rybak_25": {
+        "ep_reduction_mV": 28.2605250072668,
+        "k_reduction_mM": 4.0944088205628475,
+        "n": 3,
+        "ep_nadir_time_min": 0.5750000000000001,
+        "k_nadir_time_min": 37.575,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9818114351983038,
+            "sampled_maximum": 1.0000007634507244,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07017409113798755,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0180994773573975,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0672448861260502,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.034762678968396535,
+            "sampled_maximum": 0.03598957860589246,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 135.48169640314012,
+            "sampled_maximum": 140.00000402163667,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.4481111280869234,
+            "sampled_maximum": 2.5769376876455876,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 136.2835186233976,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 51.7394749927332,
+            "sampled_maximum": 80.21641192967795,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399836547357764,
+            "sampled_maximum": 0.007401451569451921,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0002995420515283938,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_50": {
+        "ep_reduction_mV": 82.97805502374692,
+        "k_reduction_mM": 15.912589808484881,
+        "n": 5,
+        "ep_nadir_time_min": 0.675,
+        "k_nadir_time_min": 46.975,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9237799600240645,
+            "sampled_maximum": 1.0000004167695302,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07068590732560186,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0726282744110527,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.2810117944713433,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03409499439145329,
+            "sampled_maximum": 0.041712073780163575,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 121.93545880348543,
+            "sampled_maximum": 140.0000059027177,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.30266707181711,
+            "sampled_maximum": 8.509006155353687,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 110.13924128311933,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -2.978055023746925,
+            "sampled_maximum": 80.80285511180212,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007398979061713399,
+            "sampled_maximum": 0.007410716891746069,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.002045021346546234,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_100": {
+        "ep_reduction_mV": 121.32618533301364,
+        "k_reduction_mM": 37.9307461392667,
+        "n": 7,
+        "ep_nadir_time_min": 1.05,
+        "k_nadir_time_min": 64.425,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.7812684293293009,
+            "sampled_maximum": 1.0000001578522415,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07148745159351072,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9974234729135151,
+            "sampled_maximum": 1.1830853795928755,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.8025172116835757,
+            "outside_sample_count": 1834,
+            "first_outside_time_min": 1.7000000000000002
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03296340424484176,
+            "sampled_maximum": 0.07678649197101832,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 96.77956748997525,
+            "sampled_maximum": 140.00002764365343,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0581449827096852,
+            "sampled_maximum": 24.34822226932689,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 55.710556389721525,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 216,
+            "first_outside_time_min": 3.4250000000000003
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -41.32618533301364,
+            "sampled_maximum": 80.92833081534397,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007393606167534822,
+            "sampled_maximum": 0.007442350267652868,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.012779872677763881,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      }
+    }
+  }
+}

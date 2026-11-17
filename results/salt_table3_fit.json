@@ -1,0 +1,2237 @@
+{
+  "status": "completed conditional joint Wang and Salt Table III fit",
+  "interpretation": "Exploratory, nonblinded conditional calibration. Salt outcomes were previously inspected; this is not independent validation or a matched acoustic prediction.",
+  "provenance": {
+    "salt_citation": "Salt AN, Konishi T. Effects of noise on cochlear potentials and endolymph potassium concentration recorded with potassium-selective electrodes. Hearing Research. 1979;1:343-363. doi:10.1016/0378-5955(79)90005-4.",
+    "salt_primary_source": "refs/target_source/salt_1979_hear_res.pdf",
+    "salt_source_page": "PDF page 10 (printed page 352), Table III",
+    "salt_table_definition": "\u0394EPo is the difference between pre-exposure EP and EP measured after exposure under quiet conditions; Table III values are mean \u00b1 standard deviation, with n identified as observations.",
+    "wang_sources": [
+      "refs/target_source/wang_1990_hear_res.pdf",
+      "refs/target_source/wang_1992_hear_res.pdf"
+    ],
+    "wang_digitized_data_source": "refs/research_evidence/research_evidence.json",
+    "frozen_candidate_source": "results/candidate_freeze_20261116.json",
+    "source_sha256": {
+      "refs/target_source/salt_1979_hear_res.pdf": "2cdf859ed18c715e464a261c2fa81d28cac8543bcf0c4fc067536879ba2d9d55",
+      "refs/target_source/wang_1990_hear_res.pdf": "1af39b779637a548a5f46d411483d950a7c78ce6357a7e72de8991afef3a04ce",
+      "refs/target_source/wang_1992_hear_res.pdf": "22a331e61303773cfa55ea5ecefc3f6659a6cdeb2f42bdd9d3ad075d222f43ea",
+      "refs/research_evidence/research_evidence.json": "b7737c786f04ec0fb87fa0a9b66903398ffafa2e62e9605f1f8f6f6e5ba29da0",
+      "results/candidate_freeze_20261116.json": "c2c009f07eaf252ae40225e378a9751baab5e26e61f25e20d4dff9379f1e4850",
+      "results/wang_noise_cohorts.json": "48ada47ec042b0df58d02d1d12b2b9f9d405f2c492b3b247db658c60489551e5"
+    }
+  },
+  "candidate": {
+    "frozen_status": "user-authorized exploratory reference candidate evaluation freeze",
+    "freeze_date": "2026-11-16",
+    "frozen_model_sha256": "5577c883d228d2626e946001c4cd1527ef137814f28ef73f31c8f4274c92b2ba",
+    "frozen_fit_sha256": "48ada47ec042b0df58d02d1d12b2b9f9d405f2c492b3b247db658c60489551e5",
+    "hybrid_closure": "U_C, U_M, marginal K half-saturation (4 mM) and intact basal paracellular leak adapted from related 19-state C model commit 64ae8344e45dcb45b8b9d2bc9fb0528cd6876aac; not specified in manuscript.",
+    "drug_parameter_values": {
+      "guinea_pig_proxy_per_mg_kg": 0.04883354272524996,
+      "chinchilla_exposure_multiplier": 0.7862462940316276,
+      "drug_conductance_loss": 0.9490358272257537,
+      "drug_k_loss": 0.012923816323303848,
+      "drug_slow_fraction": 0.687879903365263,
+      "drug_slow_min": 59.40463082006377
+    },
+    "all_model_parameter_values": {
+      "flow_base": 1.0,
+      "flow_min": 0.12,
+      "flow_smoothing": 0.01,
+      "autoregulation": 0.55,
+      "flow_tau": 1.5,
+      "oxygen_permeability": 1.0,
+      "arterial_oxygen": 0.13,
+      "oxygen_base": 0.07,
+      "oxygen_km": 0.035,
+      "oxygen_transport": 0.081,
+      "oxygen_stoichiometry": 6.0,
+      "oxygen_scaling": 0.0045,
+      "metabolism_base": 0.18,
+      "demand_gain": 0.35,
+      "atp_base": 1.0,
+      "sync_atp_tau": 2.0,
+      "marginal_atp_tau": 1.5,
+      "sync_pump_fraction": 0.65,
+      "marginal_pump_fraction": 0.78,
+      "sync_atp_km": 0.4,
+      "marginal_atp_km": 0.45,
+      "marginal_k_km": 4.0,
+      "strial_volume_base": 0.035,
+      "sync_volume": 0.4,
+      "marginal_volume": 0.042,
+      "water_permeability": 0.00024,
+      "potassium_reflection": 0.95,
+      "volume_restoration": 0.095,
+      "volume_span": 0.07,
+      "k_sync_base": 140.0,
+      "k_strial_base": 1.5,
+      "k_marginal_base": 145.0,
+      "k_endolymph_base": 150.0,
+      "k_plasma": 4.2,
+      "k_flux": 2.8,
+      "kir_fraction": 1.0,
+      "blb_leak": 0.0,
+      "drug_k_loss": 0.012923816323303848,
+      "drug_k_relax": 0.022,
+      "thermal_voltage": 26.7,
+      "pump_voltage": 15.0,
+      "voltage_offset": 10.16,
+      "intrastrial_voltage_offset": 4.87,
+      "sync_resistance": 1.0,
+      "strial_conductance": 1.0,
+      "drug_conductance_loss": 0.9490358272257537,
+      "met_conductance": 0.3,
+      "met_reversal": -70.0,
+      "p2x_reversal": 0.0,
+      "capacitance": 0.03,
+      "ep_base": 80.0,
+      "resistance_series_fraction": 0.4220148,
+      "drug_onset": 0.22,
+      "drug_fast": 1.55,
+      "drug_slow": 59.40463082006377,
+      "drug_slow_fraction": 0.687879903365263,
+      "drug_hill": 2.6,
+      "atp_endolymph_base": 0.0074,
+      "atp_release": 0.1,
+      "atp_degradation": 1.5,
+      "atp_cleft_factor": 30.0,
+      "p2x_max": 0.9797,
+      "p2x_half": 12.34,
+      "p2x_hill": 1.0,
+      "adapt_rate": 0.16635736128147113,
+      "adapt_recovery": 90.0,
+      "adapt_half": 0.105,
+      "adapt_hill": 2.2,
+      "adapt_rest": 0.23,
+      "adapt_evoked": 0.9999999990267543,
+      "adapt_p2x_fraction": 0.78,
+      "adapt_p2x_half": 0.006,
+      "trauma_half": 0.272,
+      "trauma_hill": 14.0,
+      "trauma_time": 26.0,
+      "repair_time": 95.0,
+      "trauma_vasoconstriction": 0.20000000000882287,
+      "trauma_k_leak": 0.052
+    },
+    "only_fitted_parameters": [
+      "adapt_rate",
+      "adapt_evoked",
+      "trauma_vasoconstriction"
+    ],
+    "drug_source": "All six existing drug-proxy/calibration values loaded from the validated freeze; not varied in this fit."
+  },
+  "salt_source_data": {
+    "included_rows": [
+      {
+        "noise_dba": 95,
+        "exposure_number": 1,
+        "mean_mV": 0.1,
+        "sd_mV": 1.1,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 95,
+        "exposure_number": 2,
+        "mean_mV": -0.4,
+        "sd_mV": 0.8,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 95,
+        "exposure_number": 3,
+        "mean_mV": -0.8,
+        "sd_mV": 0.8,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 1,
+        "mean_mV": 0.4,
+        "sd_mV": 2.3,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 2,
+        "mean_mV": -0.5,
+        "sd_mV": 0.5,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 3,
+        "mean_mV": -1.4,
+        "sd_mV": 1.3,
+        "n_observations": 3
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 1,
+        "mean_mV": 5.1,
+        "sd_mV": 2.9,
+        "n_observations": 9
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 2,
+        "mean_mV": -0.5,
+        "sd_mV": 1.0,
+        "n_observations": 9
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 3,
+        "mean_mV": -0.4,
+        "sd_mV": 1.1,
+        "n_observations": 7
+      }
+    ],
+    "unit": "mV",
+    "recording_site": "basal turn",
+    "excluded_outcomes": "Only \u0394EPo overall per-exposure changes were fitted. \u0394EPc, \u0394EPon-off, \u0394EPq, CM/SP/AP, potassium concentrations, and separate second-turn rows were not included. The separate second-turn 115-dBA group is not pooled with the basal-turn target because the spatially lumped model has no turn-specific observation operator; correlated Table III components were not counted as additional targets.",
+    "repeat_measures": "Exposure numbers 1-3 are retained as repeated outcomes. The paper reports n observations per row (3, 3, 3 at 95/105 dBA; 9, 9, 7 at 115 dBA), but provides no within-subject covariance. Repeated rows are therefore not treated as independent likelihood samples."
+  },
+  "conditional_acoustic_input": {
+    "mapping_is_fitted": false,
+    "mapping_is_supported_conversion": false,
+    "central_scenario": {
+      "name": "primary_same_numeric_level",
+      "illustrative_offset_db": 0,
+      "interpretation": "Conditionally assign each dBA number to the same numerical dB SPL value. This is an illustrative fixed input assumption, not a conversion.",
+      "levels": [
+        {
+          "noise_dba": 95,
+          "conditional_model_level_db_spl": 95,
+          "sound_multiplier": 1.029090909090909
+        },
+        {
+          "noise_dba": 105,
+          "conditional_model_level_db_spl": 105,
+          "sound_multiplier": 1.0980451209366557
+        },
+        {
+          "noise_dba": 115,
+          "conditional_model_level_db_spl": 115,
+          "sound_multiplier": 1.2115729633842405
+        }
+      ]
+    },
+    "alternate_scenarios": [
+      {
+        "name": "alternate_minus_10_db",
+        "illustrative_offset_db": -10,
+        "interpretation": "Illustrative fixed -10 dB offset from the same-number mapping; not a justified conversion, correction, or uncertainty bound.",
+        "levels": [
+          {
+            "noise_dba": 95,
+            "conditional_model_level_db_spl": 85,
+            "sound_multiplier": 1.0070838074362038
+          },
+          {
+            "noise_dba": 105,
+            "conditional_model_level_db_spl": 95,
+            "sound_multiplier": 1.029090909090909
+          },
+          {
+            "noise_dba": 115,
+            "conditional_model_level_db_spl": 105,
+            "sound_multiplier": 1.0980451209366557
+          }
+        ]
+      },
+      {
+        "name": "alternate_plus_10_db",
+        "illustrative_offset_db": 10,
+        "interpretation": "Illustrative fixed +10 dB offset from the same-number mapping; not a justified conversion, correction, or uncertainty bound.",
+        "levels": [
+          {
+            "noise_dba": 95,
+            "conditional_model_level_db_spl": 105,
+            "sound_multiplier": 1.0980451209366557
+          },
+          {
+            "noise_dba": 105,
+            "conditional_model_level_db_spl": 115,
+            "sound_multiplier": 1.2115729633842405
+          },
+          {
+            "noise_dba": 115,
+            "conditional_model_level_db_spl": 125,
+            "sound_multiplier": 1.2867343610801805
+          }
+        ]
+      }
+    ],
+    "interpretation": "The existing model expects a dB SPL-like input to its empirical broadband transform. No unique mapping from the paper's dBA open-bulla stimulus to dB SPL or model drive was identified. The central same-number mapping and \u00b110 dB offsets are fixed illustrative scenarios, not conversions, justified corrections, or uncertainty bounds. Alternates are predictions with the central fitted parameters."
+  },
+  "observation_protocol": {
+    "source_protocol": "NIH-strain guinea pigs (350-550 g) were anesthetized throughout recording and exposure (pentobarbital 30-35 mg/kg, gallamine immobilization, artificial respiration). Filtered broadband white noise (approximately 400 Hz-8 kHz) was delivered to the open bulla for repeated 20-minute periods, at levels including 95, 105, and 115 dBA. EP was recorded from basal-turn scala media. Measurements of auditory-response input-output functions started 1 minute after noise offset and took approximately 2 minutes; this does not specify the timing of Table III EP summaries. Quiet intervals were usually 5 minutes, sometimes 10.",
+    "model_schedule": {
+      "exposure_duration_min": 20.0,
+      "quiet_interval_min": 5.0,
+      "exposure_starts_min": [
+        0.0,
+        25.0,
+        50.0
+      ],
+      "measurement_window_after_each_offset_min": [
+        1.0,
+        3.0
+      ],
+      "temporal_operator": "For each exposure, trapezoidal mean of model EP at 1, 2, and 3 min after offset, minus model EP immediately before that exposure. This is a hypothetical EP observation operator, not a source-established Table III measurement window.",
+      "episode_change_is_local": true
+    },
+    "model_observation": "reference state y[8], EP in mV."
+  },
+  "weighting": {
+    "objective": "Existing Wang 1992 and Wang 1990 residual definitions/scales are unchanged. Salt residuals are (predicted \u0394EPo - Table III mean) / (3 mV \u00d7 sqrt(3 episodes)); sum of squares is therefore equally weighted per Salt level, with the three repeated episodes sharing one level's total weight.",
+    "salt_scale_mV": 3.0,
+    "salt_episode_count_per_level": 3,
+    "uses_n_or_sd_as_independent_precision": false,
+    "objective_is_likelihood": false
+  },
+  "fit": {
+    "scenario": "primary_same_numeric_level",
+    "optimizer": {
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "function_evaluations": 4,
+      "optimality": 7.26288601760959e-05,
+      "active_bounds": {
+        "adapt_rate": 0,
+        "adapt_evoked": 1,
+        "trauma_vasoconstriction": -1
+      },
+      "bounds": {
+        "adapt_rate": [
+          0.03,
+          0.5
+        ],
+        "adapt_evoked": [
+          0.2,
+          1.0
+        ],
+        "trauma_vasoconstriction": [
+          0.2,
+          0.99
+        ]
+      },
+      "initial_sound_parameters": {
+        "adapt_rate": 0.2148092140917872,
+        "adapt_evoked": 0.9999999998837632,
+        "trauma_vasoconstriction": 0.20000000002157092
+      },
+      "fitted_sound_parameters": {
+        "adapt_rate": 0.16635736128147113,
+        "adapt_evoked": 0.9999999990267543,
+        "trauma_vasoconstriction": 0.20000000000882287
+      },
+      "initial_weighted_sum_squares": 7.783761853754984,
+      "final_optimizer_weighted_sum_squares": 7.6182469773028805
+    },
+    "solver_checks": [
+      {
+        "method": "Radau",
+        "weighted_sum_squares": 7.618247234268979,
+        "wang_1992_weighted_sum_squares": 5.10269746340961,
+        "wang_1990_weighted_sum_squares": 0.40100420896869476,
+        "salt_table_iii_weighted_sum_squares": 2.1145455618906737
+      },
+      {
+        "method": "BDF",
+        "weighted_sum_squares": 7.618246973856763,
+        "wang_1992_weighted_sum_squares": 5.1026974772973395,
+        "wang_1990_weighted_sum_squares": 0.4010042073990249,
+        "salt_table_iii_weighted_sum_squares": 2.114545289160398
+      }
+    ],
+    "wang1992_predictions": [
+      {
+        "level_db_spl": 105,
+        "time_min": [
+          0.0,
+          0.26,
+          0.66,
+          1.98,
+          3.04,
+          4.98,
+          9.96,
+          14.98,
+          19.96,
+          20.22,
+          20.72,
+          21.05,
+          22.49,
+          25.09,
+          30.07
+        ],
+        "observed_change_mV": [
+          0.0,
+          -3.1499999999999915,
+          -3.0799999999999983,
+          -2.0999999999999943,
+          -1.539999999999992,
+          -0.769999999999996,
+          -0.4899999999999949,
+          0.4900000000000091,
+          1.25,
+          2.5800000000000125,
+          2.5800000000000125,
+          2.719999999999999,
+          2.3700000000000045,
+          2.230000000000004,
+          1.8800000000000097
+        ],
+        "model_change_mV": [
+          0.0,
+          -3.4425937375148408,
+          -3.345097619004278,
+          -2.254047069151923,
+          -1.2716057501578888,
+          0.2894225104397776,
+          2.9184874782278314,
+          4.279731040468761,
+          4.944469715506543,
+          5.836010287881891,
+          6.059130712486606,
+          6.122999425814584,
+          6.095654191175797,
+          5.799193747517577,
+          5.252904279346879
+        ],
+        "rmse_mV": 2.748156589874774,
+        "sampled_state_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9870894679857323,
+            "sampled_maximum": 1.0009864331633018,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.06999352602031099,
+            "sampled_maximum": 0.07009744261780783,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9831245260429872,
+            "sampled_maximum": 1.0016858519151135,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.993595734782717,
+            "sampled_maximum": 1.0675762934571833,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.034537047565438996,
+            "sampled_maximum": 0.03503181068738333,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 129.53129725568198,
+            "sampled_maximum": 141.11621169029704,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.3316418914308752,
+            "sampled_maximum": 1.5185827076964937,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 136.23386427286286,
+            "sampled_maximum": 145.84243490381732,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 76.55740626248516,
+            "sampled_maximum": 86.12299942581458,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399837389649166,
+            "sampled_maximum": 0.013197112789603317,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.8000732255420137,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 4.328732178872925e-07,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      {
+        "level_db_spl": 115,
+        "time_min": [
+          0.0,
+          0.22,
+          0.59,
+          1.65,
+          2.64,
+          3.88,
+          4.91,
+          9.89,
+          14.98,
+          19.96,
+          20.22,
+          20.83,
+          22.35,
+          25.05,
+          30.0
+        ],
+        "observed_change_mV": [
+          0.0,
+          -5.670000000000002,
+          -4.200000000000003,
+          -3.990000000000009,
+          -3.5,
+          -2.940000000000012,
+          -1.8900000000000006,
+          0.6999999999999886,
+          2.299999999999997,
+          3.069999999999993,
+          10.489999999999995,
+          10.559999999999988,
+          10.349999999999994,
+          9.509999999999991,
+          8.599999999999994
+        ],
+        "model_change_mV": [
+          0.0,
+          -7.214693918111379,
+          -7.176988998062967,
+          -5.992007726442495,
+          -4.609373716279535,
+          -3.0204333688400595,
+          -1.88764789253419,
+          1.5882166911928124,
+          3.0150724568438534,
+          3.420777217673404,
+          4.7457138273829,
+          5.255368938084871,
+          5.44901978724603,
+          5.154885495848518,
+          4.580371685211816
+        ],
+        "rmse_mV": 3.0353148163372317,
+        "sampled_state_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.991256189510791,
+            "sampled_maximum": 1.004995687892724,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.06990934122217926,
+            "sampled_maximum": 0.07,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9799596663045408,
+            "sampled_maximum": 1.0039579919547303,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9701062786462401,
+            "sampled_maximum": 1.0445560853886255,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03484957151264155,
+            "sampled_maximum": 0.03523252296169824,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 127.43971959420684,
+            "sampled_maximum": 142.83903962010035,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.3750960952675044,
+            "sampled_maximum": 1.5766674782749626,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 139.10311124667533,
+            "sampled_maximum": 148.98432419679938,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 72.78530608188862,
+            "sampled_maximum": 85.44901978724603,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399792768306327,
+            "sampled_maximum": 0.019544393221149255,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.8669048594195016,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.019747344225690126,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      {
+        "level_db_spl": 125,
+        "time_min": [
+          0.0,
+          0.37,
+          0.7,
+          1.03,
+          2.56,
+          4.91,
+          9.89,
+          15.02,
+          20.0,
+          20.22,
+          20.76,
+          21.16,
+          22.53,
+          25.05,
+          30.0
+        ],
+        "observed_change_mV": [
+          0.0,
+          -7.819999999999993,
+          -7.75,
+          -7.75,
+          -7.75,
+          -7.75,
+          -8.870000000000005,
+          -12.11,
+          -13.689999999999998,
+          -7.969999999999999,
+          -7.3700000000000045,
+          -7.140000000000001,
+          -7.140000000000001,
+          -9.480000000000004,
+          -12.780000000000001
+        ],
+        "model_change_mV": [
+          0.0,
+          -10.15287338484191,
+          -10.468278011648295,
+          -10.564250123790842,
+          -10.221511057628973,
+          -10.093197808691272,
+          -12.396012277461026,
+          -15.71112992615737,
+          -18.545471815429664,
+          -17.21396942733311,
+          -16.560675971708235,
+          -16.242787367379222,
+          -15.593512954077426,
+          -14.936712384849002,
+          -14.207247895326901
+        ],
+        "rmse_mV": 5.399886711213303,
+        "sampled_state_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9992477646716867,
+            "sampled_maximum": 1.0318936486211918,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.0679654703199345,
+            "sampled_maximum": 0.07,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9199541659973991,
+            "sampled_maximum": 1.0036048959749118,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.6730400805126219,
+            "sampled_maximum": 1.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.035,
+            "sampled_maximum": 0.04002231855793619,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 92.68509121706613,
+            "sampled_maximum": 141.96288990358252,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.5,
+            "sampled_maximum": 2.897652164921187,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 145.0,
+            "sampled_maximum": 193.0615721229125,
+            "outside_sample_count": 8,
+            "first_outside_time_min": 9.89
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 61.454528184570336,
+            "sampled_maximum": 80.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399076331575295,
+            "sampled_maximum": 0.023766275737431702,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.8801276179561555,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.3692521610714399,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      }
+    ],
+    "wang1990_predictions": [
+      {
+        "exposure_min": 20,
+        "assumed_delay_min": 45.0,
+        "observed_difference_mV": -7.5,
+        "modeled_difference_mV": -10.773563809337944
+      },
+      {
+        "exposure_min": 40,
+        "assumed_delay_min": 45.0,
+        "observed_difference_mV": -13.5,
+        "modeled_difference_mV": -16.12495179403487
+      },
+      {
+        "exposure_min": 60,
+        "assumed_delay_min": 45.0,
+        "observed_difference_mV": -20.799999999999997,
+        "modeled_difference_mV": -18.524592045292557
+      },
+      {
+        "exposure_min": 80,
+        "assumed_delay_min": 45.0,
+        "observed_difference_mV": -23.799999999999997,
+        "modeled_difference_mV": -19.63870842145019
+      }
+    ],
+    "salt_targets_and_predictions": [
+      {
+        "noise_dba": 95,
+        "exposure_number": 1,
+        "mean_mV": 0.1,
+        "sd_mV": 1.1,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 95.0,
+        "sound_multiplier": 1.029090909090909,
+        "exposure_start_min": 0.0,
+        "exposure_end_min": 20.0,
+        "measurement_window_min": [
+          21.0,
+          23.0
+        ],
+        "pre_exposure_ep_mV": 80.0,
+        "measurement_window_mean_ep_mV": 84.39568069328377,
+        "predicted_overall_ep_change_mV": 4.395680693283765,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 4.2956806932837655
+      },
+      {
+        "noise_dba": 95,
+        "exposure_number": 2,
+        "mean_mV": -0.4,
+        "sd_mV": 0.8,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 95.0,
+        "sound_multiplier": 1.029090909090909,
+        "exposure_start_min": 25.0,
+        "exposure_end_min": 45.0,
+        "measurement_window_min": [
+          46.0,
+          48.0
+        ],
+        "pre_exposure_ep_mV": 84.17295506913294,
+        "measurement_window_mean_ep_mV": 84.98718186464697,
+        "predicted_overall_ep_change_mV": 0.8142267955140312,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 1.2142267955140311
+      },
+      {
+        "noise_dba": 95,
+        "exposure_number": 3,
+        "mean_mV": -0.8,
+        "sd_mV": 0.8,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 95.0,
+        "sound_multiplier": 1.029090909090909,
+        "exposure_start_min": 50.0,
+        "exposure_end_min": 70.0,
+        "measurement_window_min": [
+          71.0,
+          73.0
+        ],
+        "pre_exposure_ep_mV": 84.75544172747175,
+        "measurement_window_mean_ep_mV": 85.03148608989679,
+        "predicted_overall_ep_change_mV": 0.27604436242503994,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 1.07604436242504
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 1,
+        "mean_mV": 0.4,
+        "sd_mV": 2.3,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 105.0,
+        "sound_multiplier": 1.0980451209366557,
+        "exposure_start_min": 0.0,
+        "exposure_end_min": 20.0,
+        "measurement_window_min": [
+          21.0,
+          23.0
+        ],
+        "pre_exposure_ep_mV": 80.0,
+        "measurement_window_mean_ep_mV": 86.10716676770683,
+        "predicted_overall_ep_change_mV": 6.107166767706829,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 5.707166767706829
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 2,
+        "mean_mV": -0.5,
+        "sd_mV": 0.5,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 105.0,
+        "sound_multiplier": 1.0980451209366557,
+        "exposure_start_min": 25.0,
+        "exposure_end_min": 45.0,
+        "measurement_window_min": [
+          46.0,
+          48.0
+        ],
+        "pre_exposure_ep_mV": 85.80980281906405,
+        "measurement_window_mean_ep_mV": 86.05453543262838,
+        "predicted_overall_ep_change_mV": 0.24473261356433795,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 0.744732613564338
+      },
+      {
+        "noise_dba": 105,
+        "exposure_number": 3,
+        "mean_mV": -1.4,
+        "sd_mV": 1.3,
+        "n_observations": 3,
+        "conditional_model_level_db_spl": 105.0,
+        "sound_multiplier": 1.0980451209366557,
+        "exposure_start_min": 50.0,
+        "exposure_end_min": 70.0,
+        "measurement_window_min": [
+          71.0,
+          73.0
+        ],
+        "pre_exposure_ep_mV": 85.79532676902677,
+        "measurement_window_mean_ep_mV": 85.88847057736507,
+        "predicted_overall_ep_change_mV": 0.09314380833829716,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 1.493143808338297
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 1,
+        "mean_mV": 5.1,
+        "sd_mV": 2.9,
+        "n_observations": 9,
+        "conditional_model_level_db_spl": 115.0,
+        "sound_multiplier": 1.2115729633842405,
+        "exposure_start_min": 0.0,
+        "exposure_end_min": 20.0,
+        "measurement_window_min": [
+          21.0,
+          23.0
+        ],
+        "pre_exposure_ep_mV": 80.0,
+        "measurement_window_mean_ep_mV": 85.41134582563254,
+        "predicted_overall_ep_change_mV": 5.411345825632537,
+        "method": "Radau",
+        "residual_model_minus_target_mV": 0.31134582563253765
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 2,
+        "mean_mV": -0.5,
+        "sd_mV": 1.0,
+        "n_observations": 9,
+        "conditional_model_level_db_spl": 115.0,
+        "sound_multiplier": 1.2115729633842405,
+        "exposure_start_min": 25.0,
+        "exposure_end_min": 45.0,
+        "measurement_window_min": [
+          46.0,
+          48.0
+        ],
+        "pre_exposure_ep_mV": 85.16104811703885,
+        "measurement_window_mean_ep_mV": 84.03884831391888,
+        "predicted_overall_ep_change_mV": -1.122199803119969,
+        "method": "Radau",
+        "residual_model_minus_target_mV": -0.6221998031199689
+      },
+      {
+        "noise_dba": 115,
+        "exposure_number": 3,
+        "mean_mV": -0.4,
+        "sd_mV": 1.1,
+        "n_observations": 7,
+        "conditional_model_level_db_spl": 115.0,
+        "sound_multiplier": 1.2115729633842405,
+        "exposure_start_min": 50.0,
+        "exposure_end_min": 70.0,
+        "measurement_window_min": [
+          71.0,
+          73.0
+        ],
+        "pre_exposure_ep_mV": 83.87151520074383,
+        "measurement_window_mean_ep_mV": 83.06198749606148,
+        "predicted_overall_ep_change_mV": -0.8095277046823526,
+        "method": "Radau",
+        "residual_model_minus_target_mV": -0.40952770468235256
+      }
+    ],
+    "alternate_fixed_parameter_predictions": [
+      {
+        "name": "alternate_minus_10_db",
+        "illustrative_offset_db": -10,
+        "interpretation": "Illustrative fixed -10 dB offset from the same-number mapping; not a justified conversion, correction, or uncertainty bound.",
+        "levels": [
+          {
+            "noise_dba": 95,
+            "conditional_model_level_db_spl": 85,
+            "sound_multiplier": 1.0070838074362038
+          },
+          {
+            "noise_dba": 105,
+            "conditional_model_level_db_spl": 95,
+            "sound_multiplier": 1.029090909090909
+          },
+          {
+            "noise_dba": 115,
+            "conditional_model_level_db_spl": 105,
+            "sound_multiplier": 1.0980451209366557
+          }
+        ],
+        "status": "fixed-parameter sensitivity; no alternate refit",
+        "salt_weighted_sum_squares": 1.0954957158887535,
+        "salt_targets_and_predictions": [
+          {
+            "noise_dba": 95,
+            "exposure_number": 1,
+            "mean_mV": 0.1,
+            "sd_mV": 1.1,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 85.0,
+            "sound_multiplier": 1.0070838074362038,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 82.11270997376076,
+            "predicted_overall_ep_change_mV": 2.112709973760758,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 2.012709973760758
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 2,
+            "mean_mV": -0.4,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 85.0,
+            "sound_multiplier": 1.0070838074362038,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 82.00704131647058,
+            "measurement_window_mean_ep_mV": 82.88803966103686,
+            "predicted_overall_ep_change_mV": 0.8809983445662795,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.2809983445662794
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 3,
+            "mean_mV": -0.8,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 85.0,
+            "sound_multiplier": 1.0070838074362038,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 82.75320806574548,
+            "measurement_window_mean_ep_mV": 83.20717886875985,
+            "predicted_overall_ep_change_mV": 0.4539708030143714,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.2539708030143715
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 1,
+            "mean_mV": 0.4,
+            "sd_mV": 2.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 84.39568069328377,
+            "predicted_overall_ep_change_mV": 4.395680693283765,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 3.995680693283765
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 0.5,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 84.17295506913294,
+            "measurement_window_mean_ep_mV": 84.98718186464697,
+            "predicted_overall_ep_change_mV": 0.8142267955140312,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.3142267955140312
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 3,
+            "mean_mV": -1.4,
+            "sd_mV": 1.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 95.0,
+            "sound_multiplier": 1.029090909090909,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 84.75544172747175,
+            "measurement_window_mean_ep_mV": 85.03148608989679,
+            "predicted_overall_ep_change_mV": 0.27604436242503994,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.6760443624250398
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 1,
+            "mean_mV": 5.1,
+            "sd_mV": 2.9,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 86.10716676770683,
+            "predicted_overall_ep_change_mV": 6.107166767706829,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 1.0071667677068294
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 1.0,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.80980281906405,
+            "measurement_window_mean_ep_mV": 86.05453543262838,
+            "predicted_overall_ep_change_mV": 0.24473261356433795,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.744732613564338
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 3,
+            "mean_mV": -0.4,
+            "sd_mV": 1.1,
+            "n_observations": 7,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 85.79532676902677,
+            "measurement_window_mean_ep_mV": 85.88847057736507,
+            "predicted_overall_ep_change_mV": 0.09314380833829716,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.4931438083382972
+          }
+        ]
+      },
+      {
+        "name": "alternate_plus_10_db",
+        "illustrative_offset_db": 10,
+        "interpretation": "Illustrative fixed +10 dB offset from the same-number mapping; not a justified conversion, correction, or uncertainty bound.",
+        "levels": [
+          {
+            "noise_dba": 95,
+            "conditional_model_level_db_spl": 105,
+            "sound_multiplier": 1.0980451209366557
+          },
+          {
+            "noise_dba": 105,
+            "conditional_model_level_db_spl": 115,
+            "sound_multiplier": 1.2115729633842405
+          },
+          {
+            "noise_dba": 115,
+            "conditional_model_level_db_spl": 125,
+            "sound_multiplier": 1.2867343610801805
+          }
+        ],
+        "status": "fixed-parameter sensitivity; no alternate refit",
+        "salt_weighted_sum_squares": 21.180696996450486,
+        "salt_targets_and_predictions": [
+          {
+            "noise_dba": 95,
+            "exposure_number": 1,
+            "mean_mV": 0.1,
+            "sd_mV": 1.1,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 86.10716676770683,
+            "predicted_overall_ep_change_mV": 6.107166767706829,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 6.0071667677068294
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 2,
+            "mean_mV": -0.4,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.80980281906405,
+            "measurement_window_mean_ep_mV": 86.05453543262838,
+            "predicted_overall_ep_change_mV": 0.24473261356433795,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.644732613564338
+          },
+          {
+            "noise_dba": 95,
+            "exposure_number": 3,
+            "mean_mV": -0.8,
+            "sd_mV": 0.8,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 105.0,
+            "sound_multiplier": 1.0980451209366557,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 85.79532676902677,
+            "measurement_window_mean_ep_mV": 85.88847057736507,
+            "predicted_overall_ep_change_mV": 0.09314380833829716,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.8931438083382972
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 1,
+            "mean_mV": 0.4,
+            "sd_mV": 2.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 85.41134582563254,
+            "predicted_overall_ep_change_mV": 5.411345825632537,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 5.011345825632537
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 0.5,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 85.16104811703885,
+            "measurement_window_mean_ep_mV": 84.03884831391888,
+            "predicted_overall_ep_change_mV": -1.122199803119969,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -0.6221998031199689
+          },
+          {
+            "noise_dba": 105,
+            "exposure_number": 3,
+            "mean_mV": -1.4,
+            "sd_mV": 1.3,
+            "n_observations": 3,
+            "conditional_model_level_db_spl": 115.0,
+            "sound_multiplier": 1.2115729633842405,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 83.87151520074383,
+            "measurement_window_mean_ep_mV": 83.06198749606148,
+            "predicted_overall_ep_change_mV": -0.8095277046823526,
+            "method": "Radau",
+            "residual_model_minus_target_mV": 0.5904722953176473
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 1,
+            "mean_mV": 5.1,
+            "sd_mV": 2.9,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 125.0,
+            "sound_multiplier": 1.2867343610801805,
+            "exposure_start_min": 0.0,
+            "exposure_end_min": 20.0,
+            "measurement_window_min": [
+              21.0,
+              23.0
+            ],
+            "pre_exposure_ep_mV": 80.0,
+            "measurement_window_mean_ep_mV": 64.15202305925672,
+            "predicted_overall_ep_change_mV": -15.84797694074328,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -20.94797694074328
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 2,
+            "mean_mV": -0.5,
+            "sd_mV": 1.0,
+            "n_observations": 9,
+            "conditional_model_level_db_spl": 125.0,
+            "sound_multiplier": 1.2867343610801805,
+            "exposure_start_min": 25.0,
+            "exposure_end_min": 45.0,
+            "measurement_window_min": [
+              46.0,
+              48.0
+            ],
+            "pre_exposure_ep_mV": 65.05317765375824,
+            "measurement_window_mean_ep_mV": 56.939570665190914,
+            "predicted_overall_ep_change_mV": -8.113606988567327,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -7.6136069885673265
+          },
+          {
+            "noise_dba": 115,
+            "exposure_number": 3,
+            "mean_mV": -0.4,
+            "sd_mV": 1.1,
+            "n_observations": 7,
+            "conditional_model_level_db_spl": 125.0,
+            "sound_multiplier": 1.2867343610801805,
+            "exposure_start_min": 50.0,
+            "exposure_end_min": 70.0,
+            "measurement_window_min": [
+              71.0,
+              73.0
+            ],
+            "pre_exposure_ep_mV": 57.74215201941216,
+            "measurement_window_mean_ep_mV": 53.885961352383354,
+            "predicted_overall_ep_change_mV": -3.8561906670288053,
+            "method": "Radau",
+            "residual_model_minus_target_mV": -3.4561906670288054
+          }
+        ]
+      }
+    ]
+  },
+  "drug_recheck": {
+    "frozen_candidate_weighted_sum_squares": 11.513622748691692,
+    "joint_candidate_weighted_sum_squares": 11.515375773759397,
+    "frozen_candidate_predictions": {
+      "pike_40": {
+        "change_rmse_mV": 6.272897777488316,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_60": {
+        "change_rmse_mV": 7.018626195584766,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_80": {
+        "change_rmse_mV": 10.340726273006569,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "asakuma_60": {
+        "ep_reduction_mV": 110.87205035525216,
+        "ep_nadir_mV_model_reference": -30.87205035525215,
+        "resistance_ratio_at_ep_nadir": 2.1514117817716127,
+        "ep_nadir_time_min": 0.8250000000000001,
+        "observed_baseline_minus_nadir_mean_mV": 118.4
+      },
+      "rybak_25": {
+        "ep_reduction_mV": 28.26052480161919,
+        "k_reduction_mM": 4.094405591438829,
+        "n": 3,
+        "ep_nadir_time_min": 0.5750000000000001,
+        "k_nadir_time_min": 37.575,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9818114333009624,
+            "sampled_maximum": 1.0000007634507244,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.0701740912904603,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0180994643571313,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0672448881431282,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03476267807022478,
+            "sampled_maximum": 0.03598957846967528,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 135.48168375764175,
+            "sampled_maximum": 140.00000402163664,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.4481109357191875,
+            "sampled_maximum": 2.5769376875882246,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 136.28351835914606,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 51.73947519838081,
+            "sampled_maximum": 80.21641413968432,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399836547212251,
+            "sampled_maximum": 0.007401451569450757,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.00030036866514198855,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_50": {
+        "ep_reduction_mV": 82.97805346659409,
+        "k_reduction_mM": 15.912573052581422,
+        "n": 5,
+        "ep_nadir_time_min": 0.675,
+        "k_nadir_time_min": 46.975,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9237799526376731,
+            "sampled_maximum": 1.0000004167695302,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07068590807760433,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0726282022611366,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.2810118041046281,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03409498967110346,
+            "sampled_maximum": 0.04171207286397878,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 121.93538945597302,
+            "sampled_maximum": 140.0000059027177,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.30266606873145,
+            "sampled_maximum": 8.509006153817348,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 110.13924038693995,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -2.978053466594093,
+            "sampled_maximum": 80.80286814973218,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007398979060799039,
+            "sampled_maximum": 0.007410716891734849,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.002050659564183856,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_100": {
+        "ep_reduction_mV": 121.32617710284853,
+        "k_reduction_mM": 37.93068421460468,
+        "n": 7,
+        "ep_nadir_time_min": 1.05,
+        "k_nadir_time_min": 64.425,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.7812684318336208,
+            "sampled_maximum": 1.0000001578522417,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07148745314522831,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9974234711098005,
+            "sampled_maximum": 1.183085074032511,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.8025172169485344,
+            "outside_sample_count": 1834,
+            "first_outside_time_min": 1.7000000000000002
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.0329633868409567,
+            "sampled_maximum": 0.0767864872103486,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 96.77931008148744,
+            "sampled_maximum": 140.00002764365343,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0581413181314412,
+            "sampled_maximum": 24.34822223523046,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 55.71055620214592,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 216,
+            "first_outside_time_min": 3.4250000000000003
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -41.326177102848526,
+            "sampled_maximum": 80.9284021830835,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.0073936061610256724,
+            "sampled_maximum": 0.007442350267561631,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.01281490630093633,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      }
+    },
+    "joint_candidate_predictions": {
+      "pike_40": {
+        "change_rmse_mV": 6.270717573750236,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_60": {
+        "change_rmse_mV": 7.016043303198822,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "pike_80": {
+        "change_rmse_mV": 10.350010503323793,
+        "modeled_baseline_mV": 80.0,
+        "observed_digitized_baseline_mV": 82.372881
+      },
+      "asakuma_60": {
+        "ep_reduction_mV": 110.87238534042044,
+        "ep_nadir_mV_model_reference": -30.872385340420433,
+        "resistance_ratio_at_ep_nadir": 2.151393314529454,
+        "ep_nadir_time_min": 0.8250000000000001,
+        "observed_baseline_minus_nadir_mean_mV": 118.4
+      },
+      "rybak_25": {
+        "ep_reduction_mV": 28.260541653501072,
+        "k_reduction_mM": 4.094670785911404,
+        "n": 3,
+        "ep_nadir_time_min": 0.5750000000000001,
+        "k_nadir_time_min": 37.575,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.9818115888089455,
+            "sampled_maximum": 1.0000007634507244,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07017407878493002,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0181005341724894,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.067244722860477,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.03476275173624126,
+            "sampled_maximum": 0.03598958963213387,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 135.48272017353514,
+            "sampled_maximum": 140.00000402163735,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.4481266907570889,
+            "sampled_maximum": 2.5769376922886464,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 136.2835400146926,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 51.73945834649893,
+            "sampled_maximum": 80.21623295640576,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007399836558799348,
+            "sampled_maximum": 0.007401451569545736,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.00023262854548465543,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_50": {
+        "ep_reduction_mV": 82.97818106884934,
+        "k_reduction_mM": 15.913947324824505,
+        "n": 5,
+        "ep_nadir_time_min": 0.675,
+        "k_nadir_time_min": 46.95,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.923780558009239,
+            "sampled_maximum": 1.0000004167695304,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07068584644161431,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.0726341175010503,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.2810110146201097,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.0340953765566097,
+            "sampled_maximum": 0.04171214795438273,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 121.941073331471,
+            "sampled_maximum": 140.00000590271776,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.302748295502368,
+            "sampled_maximum": 8.509006279713699,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 110.1393138318829,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -2.9781810688493415,
+            "sampled_maximum": 80.80179947137735,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007398979135576707,
+            "sampled_maximum": 0.007410716892654339,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.001588518548538571,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      },
+      "rybak_100": {
+        "ep_reduction_mV": 121.32685155994871,
+        "k_reduction_mM": 37.935765539630296,
+        "n": 7,
+        "ep_nadir_time_min": 1.05,
+        "k_nadir_time_min": 64.425,
+        "declared_ranges": {
+          "flow": {
+            "declared_lower": 0.15,
+            "declared_upper": 2.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.7812682263948756,
+            "sampled_maximum": 1.000000157852242,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "oxygen": {
+            "declared_lower": 0.005,
+            "declared_upper": 0.13,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.07,
+            "sampled_maximum": 0.07148732598616228,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_sync": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.997423618963416,
+            "sampled_maximum": 1.1831101489432976,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "atp_marginal": {
+            "declared_lower": 0.1,
+            "declared_upper": 1.5,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0,
+            "sampled_maximum": 1.802516785004072,
+            "outside_sample_count": 1832,
+            "first_outside_time_min": 1.7000000000000002
+          },
+          "strial_volume": {
+            "declared_lower": 0.01,
+            "declared_upper": 0.25,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.032964815153699256,
+            "sampled_maximum": 0.07678687761105399,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_sync": {
+            "declared_lower": 40.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 96.80043186174281,
+            "sampled_maximum": 140.00002764365385,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_intrastrial": {
+            "declared_lower": 0.5,
+            "declared_upper": 60.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 1.0584420426502472,
+            "sampled_maximum": 24.348225029526226,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "k_marginal": {
+            "declared_lower": 60.0,
+            "declared_upper": 180.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 55.71057160636587,
+            "sampled_maximum": 145.0,
+            "outside_sample_count": 216,
+            "first_outside_time_min": 3.4250000000000003
+          },
+          "ep": {
+            "declared_lower": -50.0,
+            "declared_upper": 130.0,
+            "upper_inclusive": true,
+            "sampled_minimum": -41.32685155994871,
+            "sampled_maximum": 80.922546044141,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "endolymph_atp": {
+            "declared_lower": 0.001,
+            "declared_upper": 5.0,
+            "upper_inclusive": true,
+            "sampled_minimum": 0.007393606695321158,
+            "sampled_maximum": 0.007442350275039025,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "met_adaptation": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.009939687409156881,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          },
+          "trauma": {
+            "declared_lower": 0.0,
+            "declared_upper": 1.0,
+            "upper_inclusive": false,
+            "sampled_minimum": 0.0,
+            "sampled_maximum": 0.0,
+            "outside_sample_count": 0,
+            "first_outside_time_min": null
+          }
+        }
+      }
+    },
+    "interpretation": "Existing drug objective reevaluated after changing only the three sound parameters; six frozen drug parameters remain fixed."
+  },
+  "limitations": [
+    "The table gives group mean \u00b1 SD and observation counts but no within-animal or cross-episode covariance; repeated rows and Table III components are correlated. The deterministic equal-level weighting is not a likelihood and does not infer a covariance.",
+    "The central dBA-to-dB-SPL numerical mapping and \u00b110 dB alternatives are unsupported illustrative assumptions; they are not acoustic conversions, corrections, or uncertainty bounds.",
+    "The primary 95-dBA-to-95-dB-SPL assumption lies below the 105-125 dB SPL Wang calibration levels; its model transform input is not directly constrained by the fitted Wang range.",
+    "The model is a spatially lumped guinea-pig cochlear reconstruction, not a matched basal-turn electrode/acoustic-field model; species/preparation and output measurement processes remain simplified.",
+    "The 5-min quiet gap is the reported usual interval; some experiments used 10 min. The 1–3-min auditory-response measurement window does not establish when Table III EP was measured. Averaging EP over that window is a hypothetical, unverified observation operator.",
+    "The table's n is number of observations, not necessarily independent animals; n and SD are preserved but not used to imply independent residual precision.",
+    "Only basal-turn \u0394EPo was fit; the separate second-turn 115-dBA group was excluded because the lumped model cannot resolve turn-specific EP, and correlated EP components were excluded.",
+    "The frozen candidate was outcome-informed and Salt was previously inspected, so this is nonblinded recalibration, not independent validation. The candidate freeze file, model source, previous fitted result, and figure are not modified.",
+    "The model uses a related-code hybrid closure absent from the manuscript; sound parameters have numerical bounds and a local optimizer does not establish a global optimum or identify mechanism.",
+    "The nominal frozen initial state is not exactly stationary, though Salt per-episode changes use the immediate pre-exposure EP and therefore report episode-local change."
+  ]
+}

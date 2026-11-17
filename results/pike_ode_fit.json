@@ -1,0 +1,70 @@
+{
+  "status": "conditional partial 14-state fit; not a full calibration or validation",
+  "data": "Pike and Bosher 1980 Fig. 1 manual anchors; n=2,3,3 group means",
+  "objective": "equal total squared-error weight per dose; not inverse variance",
+  "assumptions": [
+    "shared effective dose scale and exposure decay; fixed 0.3 min rise",
+    "zero external potassium sink, default endolymph-volume closure, other parameters fixed",
+    "relative 80 mV baseline; no fitted baseline, species scaling or observation operator",
+    "bounds are numerical exploration bounds, not established physiological bounds",
+    "digitized points are correlated; uncertainty and covariance are not estimated"
+  ],
+  "limitations": [
+    "fit cannot separately identify local exposure and transporter affinity",
+    "only three parameters vary; no joint multi-subsystem fit or uncertainty analysis",
+    "no held-out prediction and no proof of global optimum",
+    "dose-input function is hypothetical and local drug exposure is unmeasured",
+    "search bounds were narrowed after an invalid residual endolymph potassium amount occurred"
+  ],
+  "parameters": {
+    "potassium_flux": 0.49999999999999994,
+    "effective_dose_scale_mg_kg": 30.000000000000014,
+    "exposure_decay_min": 79.9999999999989
+  },
+  "numerical_bounds": {
+    "potassium_flux": [
+      0.05,
+      0.5
+    ],
+    "effective_dose_scale_mg_kg": [
+      30.0,
+      400.0
+    ],
+    "exposure_decay_min": [
+      3.0,
+      80.0
+    ]
+  },
+  "active_bounds_by_start": [
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1
+    ]
+  ],
+  "cost_by_start": [
+    2784.3545093286716,
+    2784.3545083241347,
+    2784.354508380087
+  ],
+  "evaluations_by_start": [
+    5,
+    6,
+    5
+  ],
+  "rmse_mV_by_curve": {
+    "pike_40": 24.845102699128464,
+    "pike_60": 45.23285975966989,
+    "pike_80": 53.90192998295167
+  }
+}

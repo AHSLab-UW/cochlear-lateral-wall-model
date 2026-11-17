@@ -1,0 +1,1602 @@
+{
+  "status": "completed exploratory fine-grid tier 1 drug calibration",
+  "source": "results/drug_calibration.json",
+  "source_sha256": "95e5cdbbb74245718931f10329a1e4e55a8296f63fe7d00ed6d5fbad622534c8",
+  "optimization_grid_min": 0.1,
+  "limitations": [
+    "Exploratory fit to a subset of Tier 1 drug evidence; no other Tier 1 endpoints were fitted.",
+    "The 13-state draft is incomplete; the named hybrid closure is borrowed from the related 19-state code.",
+    "Furosemide exposure is an assumed linear dose-to-effective-proxy mapping, not measured pharmacokinetics or NKCC occupancy.",
+    "Pike and Asakuma are guinea pig, Rybak chinchilla; a single species multiplier is an unverified assumption.",
+    "Infusion durations 0.542 min Pike, 0.5 min Asakuma and assumed 0.5 min Rybak; treated K boundary enabled for entire simulation.",
+    "Pike manual group curve errors are baseline-relative, equal-curve-weighted and divided by an illustrative 10 mV, not independent animals or a likelihood.",
+    "Asakuma uses difference of reported EP means and ratio of rounded resistance means at modeled EP nadir, weighted by illustrative 10 mV and 0.2; individual correlations and model discrepancy are unknown.",
+    "Rybak group mean EP and K reductions use reported SE as scales, but covariance, baseline differences and model discrepancy are not included.",
+    "One representative trajectory's minimum need not equal a group mean of individual minima.",
+    "Bounds and grid are numerical choices, not physiological limits; starts are outcome-informed and do not establish a global optimum.",
+    "Other reference parameters remain frozen and rounded; the reference state is not exactly stationary, and no ion/current/water closure is established.",
+    "The 0.1-min grid is still discrete; the nadir objective is nonsmooth and optimization is local.",
+    "Both starts come from the earlier outcome-informed coarse-grid fits and need not explore other basins.",
+    "Sampling refinements are post-fit reevaluations, not verification of the continuous optimum."
+  ],
+  "attempts": [
+    {
+      "start": {
+        "guinea_pig_proxy_per_mg_kg": 0.10403980671342516,
+        "chinchilla_exposure_multiplier": 0.5000000000000399,
+        "drug_conductance_loss": 0.8890788383919611,
+        "drug_k_loss": 0.03047714783251589
+      },
+      "success": true,
+      "message": "`xtol` termination condition is satisfied.",
+      "evaluations": 10,
+      "initial_score": 35.87977088861897,
+      "optimization_score": 31.40599893902439,
+      "parameters": {
+        "guinea_pig_proxy_per_mg_kg": 0.09117747530858059,
+        "chinchilla_exposure_multiplier": 0.5000000000037667,
+        "drug_conductance_loss": 0.90147706068715,
+        "drug_k_loss": 0.035604107273038234
+      },
+      "active_bounds": {
+        "guinea_pig_proxy_per_mg_kg": 0,
+        "chinchilla_exposure_multiplier": -1,
+        "drug_conductance_loss": 0,
+        "drug_k_loss": 0
+      }
+    },
+    {
+      "start": {
+        "guinea_pig_proxy_per_mg_kg": 0.10404028901819322,
+        "chinchilla_exposure_multiplier": 0.5000000012192038,
+        "drug_conductance_loss": 0.8890771619771447,
+        "drug_k_loss": 0.030477313730692665
+      },
+      "success": true,
+      "message": "`xtol` termination condition is satisfied.",
+      "evaluations": 10,
+      "initial_score": 35.88002372469978,
+      "optimization_score": 31.40599898669813,
+      "parameters": {
+        "guinea_pig_proxy_per_mg_kg": 0.09117748441205008,
+        "chinchilla_exposure_multiplier": 0.5000000000459268,
+        "drug_conductance_loss": 0.9014769922686725,
+        "drug_k_loss": 0.0356041110918649
+      },
+      "active_bounds": {
+        "guinea_pig_proxy_per_mg_kg": 0,
+        "chinchilla_exposure_multiplier": -1,
+        "drug_conductance_loss": 0,
+        "drug_k_loss": 0
+      }
+    }
+  ],
+  "best_parameters": {
+    "guinea_pig_proxy_per_mg_kg": 0.09117747530858059,
+    "chinchilla_exposure_multiplier": 0.5000000000037667,
+    "drug_conductance_loss": 0.90147706068715,
+    "drug_k_loss": 0.035604107273038234
+  },
+  "checks": [
+    {
+      "method": "Radau",
+      "step_min": 0.1,
+      "score": 31.406009824014266,
+      "predictions": {
+        "pike_40": {
+          "change_rmse_mV": 20.180933660487238,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_60": {
+          "change_rmse_mV": 26.10554618980176,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_80": {
+          "change_rmse_mV": 25.76294098326162,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "asakuma_60": {
+          "ep_reduction_mV": 116.96063343117046,
+          "ep_nadir_mV_model_reference": -36.960633431170464,
+          "resistance_ratio_at_ep_nadir": 2.18076908897806,
+          "ep_nadir_time_min": 1.1,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        },
+        "rybak_25": {
+          "ep_reduction_mV": 36.60762911584602,
+          "k_reduction_mM": 3.667525224734021,
+          "n": 3,
+          "ep_nadir_time_min": 0.6000000000000001,
+          "k_nadir_time_min": 10.0,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9855357389769935,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07009481403735358,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0157710164679115,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0628514103602666,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03481532081191051,
+              "sampled_maximum": 0.03567941243707116,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.27422081715673,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.45900915589755,
+              "sampled_maximum": 3.145689023964671,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 136.87328838848683,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 43.39237088415398,
+              "sampled_maximum": 80.26975185614482,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399782164872029,
+              "sampled_maximum": 0.007401933457362332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.00014228690384323727,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_50": {
+          "ep_reduction_mV": 87.84068275863017,
+          "k_reduction_mM": 12.380110469660423,
+          "n": 5,
+          "ep_nadir_time_min": 0.6000000000000001,
+          "k_nadir_time_min": 20.3,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9461133584166372,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07034640380197611,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0549648121010105,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.2331977328538681,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03434967711797244,
+              "sampled_maximum": 0.039778620512393566,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 130.03133118494455,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.355859663735483,
+              "sampled_maximum": 11.032288211866847,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 115.42232938752008,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -7.840682758630165,
+              "sampled_maximum": 80.92281771468814,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007398575518387795,
+              "sampled_maximum": 0.007413562065692829,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0009988129876439844,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_100": {
+          "ep_reduction_mV": 113.8646783526334,
+          "k_reduction_mM": 35.08921168000809,
+          "n": 7,
+          "ep_nadir_time_min": 0.9,
+          "k_nadir_time_min": 30.900000000000002,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.8671948715046774,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07099661651761185,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.1659299231854459,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.5655898352920705,
+              "outside_sample_count": 21,
+              "first_outside_time_min": 1.7000000000000002
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03322607313227791,
+              "sampled_maximum": 0.056471150784521064,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 110.72669186101892,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.109064227320186,
+              "sampled_maximum": 24.48580123439352,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.06774978100111,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -33.8646783526334,
+              "sampled_maximum": 82.44426475281135,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007393957029312432,
+              "sampled_maximum": 0.007440932679467955,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.004484209480552081,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "BDF",
+      "step_min": 0.1,
+      "score": 31.40600910730219,
+      "predictions": {
+        "pike_40": {
+          "change_rmse_mV": 20.18093353487275,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_60": {
+          "change_rmse_mV": 26.10554611956866,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_80": {
+          "change_rmse_mV": 25.762940908490034,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "asakuma_60": {
+          "ep_reduction_mV": 116.96063280048986,
+          "ep_nadir_mV_model_reference": -36.960632800489854,
+          "resistance_ratio_at_ep_nadir": 2.180769088980429,
+          "ep_nadir_time_min": 1.1,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        },
+        "rybak_25": {
+          "ep_reduction_mV": 36.60762792656686,
+          "k_reduction_mM": 3.667524871193365,
+          "n": 3,
+          "ep_nadir_time_min": 0.6000000000000001,
+          "k_nadir_time_min": 10.0,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9855357385863384,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.0700948140384706,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.015771014047406,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0628514110232499,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03481532096978342,
+              "sampled_maximum": 0.03567941240454564,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.2742210305969,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.4590091581790663,
+              "sampled_maximum": 3.1456889328258626,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 136.8732882989213,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 43.39237207343314,
+              "sampled_maximum": 80.26975168623753,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007399782165041831,
+              "sampled_maximum": 0.007401933457340337,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.00014228690108370395,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_50": {
+          "ep_reduction_mV": 87.8406823999053,
+          "k_reduction_mM": 12.38011003265541,
+          "n": 5,
+          "ep_nadir_time_min": 0.6000000000000001,
+          "k_nadir_time_min": 20.3,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9461133582398608,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07034640381908049,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0549648092674182,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.2331977334168092,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.034349677381240416,
+              "sampled_maximum": 0.03977862048578233,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 130.03133085176023,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.3558596595348111,
+              "sampled_maximum": 11.03228819231256,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 115.42232931493454,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -7.84068239990531,
+              "sampled_maximum": 80.92281743218648,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007398575518558126,
+              "sampled_maximum": 0.007413562065674849,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0009988129817333838,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_100": {
+          "ep_reduction_mV": 113.86467729155746,
+          "k_reduction_mM": 35.08921134989606,
+          "n": 7,
+          "ep_nadir_time_min": 0.9,
+          "k_nadir_time_min": 30.900000000000002,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.8671948717004971,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07099661651891531,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.165929921541219,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.5655898327376572,
+              "outside_sample_count": 21,
+              "first_outside_time_min": 1.7000000000000002
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03322607338989855,
+              "sampled_maximum": 0.056471150607452794,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 110.72669115358916,
+              "sampled_maximum": 140.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.1090642174572072,
+              "sampled_maximum": 24.485800924233896,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.06775000409006,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -33.86467729155745,
+              "sampled_maximum": 82.44426454227485,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007393957030181478,
+              "sampled_maximum": 0.007440932681323986,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.004484209457315233,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "Radau",
+      "step_min": 0.05,
+      "score": 31.991353332835228,
+      "predictions": {
+        "pike_40": {
+          "change_rmse_mV": 20.180933660487238,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_60": {
+          "change_rmse_mV": 26.10554618980176,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_80": {
+          "change_rmse_mV": 25.76294098326162,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "asakuma_60": {
+          "ep_reduction_mV": 116.97240632738641,
+          "ep_nadir_mV_model_reference": -36.97240632738641,
+          "resistance_ratio_at_ep_nadir": 2.186909565556507,
+          "ep_nadir_time_min": 1.05,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        },
+        "rybak_25": {
+          "ep_reduction_mV": 37.16328518713537,
+          "k_reduction_mM": 3.667525224734021,
+          "n": 3,
+          "ep_nadir_time_min": 0.55,
+          "k_nadir_time_min": 10.0,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9855354563794935,
+              "sampled_maximum": 1.0000006695135955,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07009481409242556,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0157710557877901,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0628514103602666,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03481532081191051,
+              "sampled_maximum": 0.03567941243707116,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.27422081715673,
+              "sampled_maximum": 140.0000121325156,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.45900915589755,
+              "sampled_maximum": 3.1917389606380233,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 136.87328838848683,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 42.83671481286463,
+              "sampled_maximum": 80.26975188328876,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.00739978215056366,
+              "sampled_maximum": 0.007401933457362332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.00014229974016643474,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_50": {
+          "ep_reduction_mV": 87.84068275863017,
+          "k_reduction_mM": 12.380110469660423,
+          "n": 5,
+          "ep_nadir_time_min": 0.6000000000000001,
+          "k_nadir_time_min": 20.3,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9461133584166372,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07034640380197611,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0549648121010105,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.233244186416554,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03434967711797244,
+              "sampled_maximum": 0.03977876448347198,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 130.03133118494455,
+              "sampled_maximum": 140.00004684856023,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.355859663735483,
+              "sampled_maximum": 11.035761600225348,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 115.42232938752008,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -7.840682758630165,
+              "sampled_maximum": 80.92281771468814,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007398575518387795,
+              "sampled_maximum": 0.007413591676289604,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0009988129876439844,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_100": {
+          "ep_reduction_mV": 113.8646783526334,
+          "k_reduction_mM": 35.08923131327279,
+          "n": 7,
+          "ep_nadir_time_min": 0.9,
+          "k_nadir_time_min": 30.950000000000003,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.8671948715046774,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07099661693660178,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.1659299231854459,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.5657221636197847,
+              "outside_sample_count": 41,
+              "first_outside_time_min": 1.7000000000000002
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03322607191754984,
+              "sampled_maximum": 0.05647338449133341,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 110.7266772808709,
+              "sampled_maximum": 140.00011765460337,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.109064227320186,
+              "sampled_maximum": 24.48580123439352,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.06774978100111,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -33.8646783526334,
+              "sampled_maximum": 82.44426475281135,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007393956777898201,
+              "sampled_maximum": 0.007440950510631332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.004484209480552081,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "Radau",
+      "step_min": 0.025,
+      "score": 31.98140523979979,
+      "predictions": {
+        "pike_40": {
+          "change_rmse_mV": 20.180933660487238,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_60": {
+          "change_rmse_mV": 26.10554618980176,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "pike_80": {
+          "change_rmse_mV": 25.76294098326162,
+          "modeled_baseline_mV": 80.0,
+          "observed_digitized_baseline_mV": 82.372881
+        },
+        "asakuma_60": {
+          "ep_reduction_mV": 116.97240632738641,
+          "ep_nadir_mV_model_reference": -36.97240632738641,
+          "resistance_ratio_at_ep_nadir": 2.186909565556507,
+          "ep_nadir_time_min": 1.05,
+          "observed_baseline_minus_nadir_mean_mV": 118.4
+        },
+        "rybak_25": {
+          "ep_reduction_mV": 37.16328518713537,
+          "k_reduction_mM": 3.667525224734021,
+          "n": 3,
+          "ep_nadir_time_min": 0.55,
+          "k_nadir_time_min": 10.0,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9855351303841877,
+              "sampled_maximum": 1.0000006695135955,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07009481409242556,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0157710557877901,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0628520237402654,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.034815320804776576,
+              "sampled_maximum": 0.035679415850374555,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 137.27422058975256,
+              "sampled_maximum": 140.0000121325156,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.4590091489837371,
+              "sampled_maximum": 3.1917389606380233,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 136.87328838848683,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 42.83671481286463,
+              "sampled_maximum": 80.26975193566115,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.00739978215056366,
+              "sampled_maximum": 0.007401933457362332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.00014229974016643474,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_50": {
+          "ep_reduction_mV": 87.90074655794942,
+          "k_reduction_mM": 12.380112180134802,
+          "n": 5,
+          "ep_nadir_time_min": 0.625,
+          "k_nadir_time_min": 20.325000000000003,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.9461133584166372,
+              "sampled_maximum": 1.0000003873051764,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07034640381033745,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.0549648133940954,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.233244186416554,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03434967711797244,
+              "sampled_maximum": 0.039778814175541514,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 130.03133118494455,
+              "sampled_maximum": 140.00004684856023,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.355859663735483,
+              "sampled_maximum": 11.04612729733601,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 115.42232938752008,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -7.900746557949415,
+              "sampled_maximum": 80.92281773229162,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.0073985754936651115,
+              "sampled_maximum": 0.007413591676289604,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0009988129876439844,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        },
+        "rybak_100": {
+          "ep_reduction_mV": 113.8702545532534,
+          "k_reduction_mM": 35.08923131327279,
+          "n": 7,
+          "ep_nadir_time_min": 0.875,
+          "k_nadir_time_min": 30.950000000000003,
+          "declared_ranges": {
+            "flow": {
+              "declared_lower": 0.15,
+              "declared_upper": 2.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.8671948715046774,
+              "sampled_maximum": 1.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "oxygen": {
+              "declared_lower": 0.005,
+              "declared_upper": 0.13,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.07,
+              "sampled_maximum": 0.07099661693660178,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_sync": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.1659299529814715,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "atp_marginal": {
+              "declared_lower": 0.1,
+              "declared_upper": 1.5,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.0,
+              "sampled_maximum": 1.5657221636197847,
+              "outside_sample_count": 83,
+              "first_outside_time_min": 1.675
+            },
+            "strial_volume": {
+              "declared_lower": 0.01,
+              "declared_upper": 0.25,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.03322607191754984,
+              "sampled_maximum": 0.05647338449133341,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_sync": {
+              "declared_lower": 40.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 110.7266772808709,
+              "sampled_maximum": 140.00011765460337,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_intrastrial": {
+              "declared_lower": 0.5,
+              "declared_upper": 60.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 1.1090641835170698,
+              "sampled_maximum": 24.48580123439352,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "k_marginal": {
+              "declared_lower": 60.0,
+              "declared_upper": 180.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 76.06296190578055,
+              "sampled_maximum": 145.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "ep": {
+              "declared_lower": -50.0,
+              "declared_upper": 130.0,
+              "upper_inclusive": true,
+              "sampled_minimum": -33.8702545532534,
+              "sampled_maximum": 82.44426519584806,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "endolymph_atp": {
+              "declared_lower": 0.001,
+              "declared_upper": 5.0,
+              "upper_inclusive": true,
+              "sampled_minimum": 0.007393956770895543,
+              "sampled_maximum": 0.007440950510631332,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "met_adaptation": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.004484209480552081,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            },
+            "trauma": {
+              "declared_lower": 0.0,
+              "declared_upper": 1.0,
+              "upper_inclusive": false,
+              "sampled_minimum": 0.0,
+              "sampled_maximum": 0.0,
+              "outside_sample_count": 0,
+              "first_outside_time_min": null
+            }
+          }
+        }
+      }
+    }
+  ]
+}
